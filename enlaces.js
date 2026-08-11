@@ -10,7 +10,10 @@
   var ENLACES = {
     // Foro y cuentas — publicado en PythonAnywhere el 3/8/2026
     // (ver docs/plan/deploy-pythonanywhere.md).
-    foro: "https://electronart.pythonanywhere.com",
+    // 🔴 Con la raíz pelada, «Entrar al foro» llevaba a la **portada** del
+    // backend, no al foro: el visitante hacía clic y aterrizaba en otra landing
+    // parecida a la que acababa de dejar. Va la ruta completa.
+    foro: "https://electronart.pythonanywhere.com/forum",
     // La tienda: un solo lugar con el checkout real. Los planes (Gumroad para
     // internacional, MercadoPago para Argentina) se configuran en el backend
     // (EA_PAGO_URLS, ver docs/plan/F14-seguridad-idiomas.md). Los botones de
