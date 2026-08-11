@@ -94,10 +94,10 @@
     </ul>
 
     <h2>Instalación</h2>
-    <p>No hay instalador: descomprimí el ZIP donde quieras y ejecutá
-    <code>ElectronArt.exe</code>. Para desinstalar, borrá la carpeta. Tus
-    preferencias y tu biblioteca quedan en <code>%USERPROFILE%\.circuitron</code>,
-    aparte del programa.</p>
+    <p>Bajá el instalador (el archivo que termina en <code>-setup.exe</code>), hacé doble clic y seguí el asistente. Deja el acceso en el menú Inicio, un desinstalador en «Aplicaciones instaladas» y la asociación de los archivos del programa. No pide permisos de administrador.</p>
+    <p>Para actualizar no hace falta desinstalar nada: el instalador nuevo reemplaza a la copia anterior y tus preferencias, tu biblioteca y tu licencia quedan como están. El programa además te avisa solo cuando sale una versión, y podés buscarla a mano desde Ayuda ▸ Buscar actualizaciones…</p>
+    <p>Si preferís no instalar nada, el ZIP sigue publicado: descomprimilo donde quieras y ejecutá <code>ElectronArt.exe</code>. Así no hay accesos directos ni desinstalador: para sacarlo, borrás la carpeta.</p>
+    <p>Tus preferencias, tu biblioteca y tu licencia viven fuera de la carpeta del programa —en <code>%USERPROFILE%\.circuitron</code> y en el registro de Windows—, así que desinstalar no las borra y reinstalar no te hace volver a activar nada.</p>
     <h2>Windows va a mostrarte una advertencia. Es esperable.</h2>
     <p>La primera vez que abras <code>ElectronArt.exe</code>, Windows muestra una
     pantalla azul que dice <i>«Windows protegió su PC»</i>. No es un virus ni un
@@ -114,6 +114,7 @@
 
     <h2>¿Problemas?</h2>
     <p>Si la descarga no arranca, el antivirus la bloquea o la instalación falla, visitá el <a href="#" data-link="foro">foro de la comunidad</a> o escribinos por correo.</p>
+    <p>Si el programa ya está instalado y algo no funciona, abrí Ayuda ▸ Diagnóstico…: arma un informe con tu versión, tu sistema, tu placa de video y el estado de la licencia, y lo podés copiar o mandarlo al foro con un botón. No incluye tu licencia ni tu correo.</p>
   </main>
 
   <footer class="site-footer">
@@ -125,5 +126,9 @@
   <script src="enlaces.js"></script>
   <script src="fondo.js"></script>
   <script src="i18n.js"></script>
+  <!-- Asistente: contesta las dudas de descarga, instalación, planes y
+       cuenta sin salir de la página. Va DESPUÉS de i18n.js a propósito
+       (se traduce solo; ver la cabecera de asistente.js). -->
+  <script src="asistente.js"></script>
 </body>
 </html>

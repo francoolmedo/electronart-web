@@ -304,6 +304,11 @@
       "Plataforma": "Platform",
       "Tamaño": "Size",
       "Windows 10/11 (64 bits)": "Windows 10/11 (64-bit)",
+      /* Las dos variantes que escribe `scripts/gen_downloads.py` desde F22:
+         el instalador y el ZIP portable. Quedan cargadas de antemano para que
+         el primer build con instalador no deje el release en rojo. */
+      "Windows 10/11 (64 bits) — instalador": "Windows 10/11 (64-bit) — installer",
+      "Windows 10/11 (64 bits) — ZIP portable": "Windows 10/11 (64-bit) — portable ZIP",
       "Verificá la descarga": "Verify your download",
       "Después de bajar el archivo, compará su hash SHA-256 con el que figura arriba. Si no coinciden, el archivo se bajó incompleto o alguien lo modificó — no lo ejecutes.":
         "After downloading the file, compare its SHA-256 hash with the one above. If they do not match, the file was downloaded incomplete or someone modified it — do not run it.",
@@ -322,11 +327,20 @@
       "Tarjeta gráfica con OpenGL 2.1 o superior para la vista 3D — cualquier placa o gráfica integrada de la última década alcanza":
         "A graphics card with OpenGL 2.1 or later for the 3D view — any board or integrated GPU from the last decade is enough",
       "Instalación": "Installation",
-      "No hay instalador: descomprimí el ZIP donde quieras y ejecutá":
-        "There is no installer: unzip the ZIP anywhere you like and run",
-      ". Para desinstalar, borrá la carpeta. Tus preferencias y tu biblioteca quedan en":
-        ". To uninstall, delete the folder. Your preferences and library live in",
-      ", aparte del programa.": ", separate from the program.",
+      "Bajá el instalador (el archivo que termina en":
+        "Download the installer (the file ending in",
+      "), hacé doble clic y seguí el asistente. Deja el acceso en el menú Inicio, un desinstalador en «Aplicaciones instaladas» y la asociación de los archivos del programa. No pide permisos de administrador.":
+        "), double-click it and follow the wizard. It leaves a Start menu shortcut, an uninstaller in “Installed apps” and the file association for the program's documents. It does not ask for administrator rights.",
+      "Para actualizar no hace falta desinstalar nada: el instalador nuevo reemplaza a la copia anterior y tus preferencias, tu biblioteca y tu licencia quedan como están. El programa además te avisa solo cuando sale una versión, y podés buscarla a mano desde Ayuda ▸ Buscar actualizaciones…":
+        "To update you do not have to uninstall anything: the new installer replaces the previous copy and your preferences, your library and your licence stay as they are. The program also tells you on its own when a version is released, and you can look for one by hand from Help ▸ Check for updates…",
+      "Si preferís no instalar nada, el ZIP sigue publicado: descomprimilo donde quieras y ejecutá":
+        "If you would rather not install anything, the ZIP is still published: unzip it anywhere you like and run",
+      ". Así no hay accesos directos ni desinstalador: para sacarlo, borrás la carpeta.":
+        ". That way there are no shortcuts and no uninstaller: to remove it, delete the folder.",
+      "Tus preferencias, tu biblioteca y tu licencia viven fuera de la carpeta del programa —en":
+        "Your preferences, your library and your licence live outside the program folder — in",
+      "y en el registro de Windows—, así que desinstalar no las borra y reinstalar no te hace volver a activar nada.":
+        "and in the Windows registry — so uninstalling does not delete them and reinstalling does not make you activate anything again.",
       "Windows va a mostrarte una advertencia. Es esperable.":
         "Windows will show you a warning. That's expected.",
       "La primera vez que abras": "The first time you open",
@@ -350,6 +364,8 @@
         "If the download does not start, the antivirus blocks it or the installation fails, visit the",
       "foro de la comunidad": "community forum",
       "o escribinos por correo.": "or write to us by email.",
+      "Si el programa ya está instalado y algo no funciona, abrí Ayuda ▸ Diagnóstico…: arma un informe con tu versión, tu sistema, tu placa de video y el estado de la licencia, y lo podés copiar o mandarlo al foro con un botón. No incluye tu licencia ni tu correo.":
+        "If the program is already installed and something does not work, open Help ▸ Diagnostics…: it builds a report with your version, your system, your graphics card and the state of your licence, and you can copy it or send it to the forum with one button. It does not include your licence or your email.",
 
       /* ── terminos.html ── */
       "Términos y licencia — ElectronArt": "Terms and licence — ElectronArt",
@@ -966,6 +982,8 @@
       "Plataforma": "Plataforma",
       "Tamaño": "Tamanho",
       "Windows 10/11 (64 bits)": "Windows 10/11 (64 bits)",
+      "Windows 10/11 (64 bits) — instalador": "Windows 10/11 (64 bits) — instalador",
+      "Windows 10/11 (64 bits) — ZIP portable": "Windows 10/11 (64 bits) — ZIP portátil",
       "Verificá la descarga": "Verifique o download",
       "Después de bajar el archivo, compará su hash SHA-256 con el que figura arriba. Si no coinciden, el archivo se bajó incompleto o alguien lo modificó — no lo ejecutes.":
         "Depois de baixar o arquivo, compare o hash SHA-256 com o que está acima. Se não coincidirem, o arquivo foi baixado incompleto ou alguém o modificou — não o execute.",
@@ -984,11 +1002,20 @@
       "Tarjeta gráfica con OpenGL 2.1 o superior para la vista 3D — cualquier placa o gráfica integrada de la última década alcanza":
         "Placa de vídeo com OpenGL 2.1 ou superior para a vista 3D — qualquer placa ou gráfica integrada da última década dá conta",
       "Instalación": "Instalação",
-      "No hay instalador: descomprimí el ZIP donde quieras y ejecutá":
-        "Não há instalador: descompacte o ZIP onde quiser e execute",
-      ". Para desinstalar, borrá la carpeta. Tus preferencias y tu biblioteca quedan en":
-        ". Para desinstalar, apague a pasta. Suas preferências e sua biblioteca ficam em",
-      ", aparte del programa.": ", separadas do programa.",
+      "Bajá el instalador (el archivo que termina en":
+        "Baixe o instalador (o arquivo que termina em",
+      "), hacé doble clic y seguí el asistente. Deja el acceso en el menú Inicio, un desinstalador en «Aplicaciones instaladas» y la asociación de los archivos del programa. No pide permisos de administrador.":
+        "), dê dois cliques e siga o assistente. Ele deixa o atalho no menu Iniciar, um desinstalador em “Aplicativos instalados” e a associação dos arquivos do programa. Não pede permissões de administrador.",
+      "Para actualizar no hace falta desinstalar nada: el instalador nuevo reemplaza a la copia anterior y tus preferencias, tu biblioteca y tu licencia quedan como están. El programa además te avisa solo cuando sale una versión, y podés buscarla a mano desde Ayuda ▸ Buscar actualizaciones…":
+        "Para atualizar não é preciso desinstalar nada: o novo instalador substitui a cópia anterior e suas preferências, sua biblioteca e sua licença continuam como estão. O programa também avisa sozinho quando sai uma versão, e você pode procurar por ela em Ajuda ▸ Procurar atualizações…",
+      "Si preferís no instalar nada, el ZIP sigue publicado: descomprimilo donde quieras y ejecutá":
+        "Se preferir não instalar nada, o ZIP continua publicado: descompacte-o onde quiser e execute",
+      ". Así no hay accesos directos ni desinstalador: para sacarlo, borrás la carpeta.":
+        ". Assim não há atalhos nem desinstalador: para removê-lo, apague a pasta.",
+      "Tus preferencias, tu biblioteca y tu licencia viven fuera de la carpeta del programa —en":
+        "Suas preferências, sua biblioteca e sua licença ficam fora da pasta do programa — em",
+      "y en el registro de Windows—, así que desinstalar no las borra y reinstalar no te hace volver a activar nada.":
+        "e no registro do Windows — então desinstalar não as apaga e reinstalar não faz você ativar nada de novo.",
       "Windows va a mostrarte una advertencia. Es esperable.":
         "O Windows vai mostrar um aviso. É esperado.",
       "La primera vez que abras": "Na primeira vez que você abrir",
@@ -1012,6 +1039,8 @@
         "Se o download não começa, o antivírus o bloqueia ou a instalação falha, visite o",
       "foro de la comunidad": "fórum da comunidade",
       "o escribinos por correo.": "ou nos escreva por e-mail.",
+      "Si el programa ya está instalado y algo no funciona, abrí Ayuda ▸ Diagnóstico…: arma un informe con tu versión, tu sistema, tu placa de video y el estado de la licencia, y lo podés copiar o mandarlo al foro con un botón. No incluye tu licencia ni tu correo.":
+        "Se o programa já está instalado e algo não funciona, abra Ajuda ▸ Diagnóstico…: ele monta um relatório com a sua versão, o seu sistema, a sua placa de vídeo e o estado da licença, e você pode copiá-lo ou enviá-lo ao fórum com um botão. Não inclui a sua licença nem o seu e-mail.",
 
       /* ── terminos.html ── */
       "Términos y licencia — ElectronArt": "Termos e licença — ElectronArt",
