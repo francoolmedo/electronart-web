@@ -252,6 +252,18 @@
 
       /* ── comunidad / CTA / footer ── */
       "Comunidad y soporte": "Community and support",
+      "Quién lo hace": "Who makes it",
+      "EL": "EL",
+      "Franco Olmedo": "Franco Olmedo",
+      "Ingeniero electrónico · Diseño de PCB, firmware embebido y automatización industrial":
+        "Electronics engineer · PCB design, embedded firmware and industrial automation",
+      "ElectronArt lo desarrolla": "ElectronArt is built by",
+      ", un estudio independiente argentino. No hay un comité de producto atrás: hay alguien que diseña placas y que hizo la herramienta que le faltaba, con el módulo eléctrico IEC que sale de trabajar en tableros de verdad.":
+        ", an independent studio in Argentina. There is no product committee behind it: there is someone who designs boards and built the tool he was missing, with an IEC electrical module that comes from working on real control panels.",
+      "Cada versión se publica con sus novedades y su checksum, y los errores se responden en el foro. Si necesitás algo puntual para tu flujo de trabajo, se puede hablar.":
+        "Every release ships with its changelog and its checksum, and bugs get answered on the forum. If you need something specific for your workflow, get in touch.",
+      "Portfolio ▸": "Portfolio ▸",
+      "LinkedIn ▸": "LinkedIn ▸",
       "ElectronArt está en beta y se desarrolla a la vista. Preguntas, ayuda entre usuarios y errores van al mismo lugar, y se responden ahí.":
         "ElectronArt is in beta and is developed in the open. Questions, peer help and bug reports all go to the same place, and get answered there.",
       "Entrar al foro": "Go to the forum",
@@ -903,6 +915,18 @@
         "Posso usá-lo para dar cursos ou numa escola?",
 
       "Comunidad y soporte": "Comunidade e suporte",
+      "Quién lo hace": "Quem faz",
+      "EL": "EL",
+      "Franco Olmedo": "Franco Olmedo",
+      "Ingeniero electrónico · Diseño de PCB, firmware embebido y automatización industrial":
+        "Engenheiro eletrônico · Projeto de PCB, firmware embarcado e automação industrial",
+      "ElectronArt lo desarrolla": "O ElectronArt é desenvolvido pela",
+      ", un estudio independiente argentino. No hay un comité de producto atrás: hay alguien que diseña placas y que hizo la herramienta que le faltaba, con el módulo eléctrico IEC que sale de trabajar en tableros de verdad.":
+        ", um estúdio independente argentino. Não há um comitê de produto atrás: há alguém que projeta placas e que fez a ferramenta que lhe faltava, com o módulo elétrico IEC que vem de trabalhar em painéis de verdade.",
+      "Cada versión se publica con sus novedades y su checksum, y los errores se responden en el foro. Si necesitás algo puntual para tu flujo de trabajo, se puede hablar.":
+        "Cada versão é publicada com suas novidades e seu checksum, e os erros são respondidos no fórum. Se precisar de algo pontual para o seu fluxo de trabalho, dá para conversar.",
+      "Portfolio ▸": "Portfólio ▸",
+      "LinkedIn ▸": "LinkedIn ▸",
       "ElectronArt está en beta y se desarrolla a la vista. Preguntas, ayuda entre usuarios y errores van al mismo lugar, y se responden ahí.":
         "O ElectronArt está em beta e é desenvolvido à vista. Dúvidas, ajuda entre usuários e erros vão para o mesmo lugar, e são respondidos ali.",
       "Entrar al foro": "Entrar no fórum",

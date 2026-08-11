@@ -597,4 +597,49 @@ p { margin: 0 0 1em; }
   .features { grid-template-columns: 1fr; }
   .flow-arrow { transform: rotate(90deg); }
   :root { --chamfer: 9px; }
+  .autor-ficha { grid-template-columns: 1fr; gap: 1.1rem; padding: 1.4rem 1.3rem; }
 }
+
+/* ── Quién lo hace ──────────────────────────────────────────────────────────
+   La ficha del autor. Chaflán en vez de radio, relieve con una sola fuente de
+   luz arriba-izquierda, y el oro **una sola vez** —el monograma—: si el acento
+   se repite en la misma pantalla deja de significar algo. */
+.autor-ficha {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.6rem;
+  align-items: start;
+  background: var(--surface);
+  clip-path: polygon(var(--chamfer) 0, 100% 0, 100% calc(100% - var(--chamfer)),
+                     calc(100% - var(--chamfer)) 100%, 0 100%, 0 var(--chamfer));
+  border-top: 1px solid rgba(233, 198, 75, .10);
+  border-left: 1px solid rgba(233, 198, 75, .10);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .45);
+  padding: 1.9rem 2rem;
+}
+.autor-marca {
+  font-family: Bahnschrift, "DIN Alternate", sans-serif;
+  font-size: 1.55rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  color: var(--gold);
+  width: 62px;
+  height: 62px;
+  display: grid;
+  place-items: center;
+  background: var(--bg);
+  border: 1px solid var(--gold-lo);
+  clip-path: polygon(9px 0, 100% 0, 100% calc(100% - 9px),
+                     calc(100% - 9px) 100%, 0 100%, 0 9px);
+}
+.autor-cuerpo h3 { margin: 0 0 .2rem; font-size: 1.22rem; }
+.autor-rol {
+  font-family: Consolas, "SF Mono", ui-monospace, monospace;
+  font-size: .74rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+  margin: 0 0 1rem;
+}
+.autor-cuerpo p { margin: 0 0 .8rem; }
+.autor-links { display: flex; gap: .6rem; flex-wrap: wrap; margin-top: 1.1rem; }
