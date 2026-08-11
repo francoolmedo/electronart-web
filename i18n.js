@@ -266,7 +266,6 @@
       "Novedades": "What's new",
       "Términos y licencia": "Terms and licence",
       "Contacto": "Contact",
-      "Seguinos": "Follow us",
       "Suite EDA de escritorio.": "Desktop EDA suite.",
       "by": "by",
       "Electronik Lösungen · ElectronArt. Todos los derechos reservados.":
@@ -918,7 +917,6 @@
       "Novedades": "Novidades",
       "Términos y licencia": "Termos e licença",
       "Contacto": "Contato",
-      "Seguinos": "Siga a gente",
       "Suite EDA de escritorio.": "Suíte EDA de desktop.",
       "by": "por",
       "Electronik Lösungen · ElectronArt. Todos los derechos reservados.":

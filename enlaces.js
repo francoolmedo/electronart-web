@@ -31,8 +31,15 @@
     // tráfico de un binario pesado se comería su cuota. GitHub no cobra el
     // tráfico de los releases y sirve por CDN.
     "descarga-9.0": "https://github.com/francoolmedo/electronart-releases/releases/download/v9.0/ElectronArt-v9.0-win64.zip",
-    manual: "",
-    contacto: "soporte@electroniklosungen.com.ar",
+    // El manual viaja con el sitio: es el mismo PDF que se genera con
+    // `python docs/build_manual_pdf.py`, copiado a la raíz al publicar.
+    manual: "Manual-ElectronArt.pdf",
+    // Con `mailto:` y no pelado: sin el esquema, el navegador lo toma como
+    // una ruta relativa y el link no abre el correo.
+    contacto: "mailto:soporte@electroniklosungen.com.ar",
+    // Vacías a propósito: las cuentas de la marca todavía no existen y el pie
+    // del sitio ya no las ofrece. Cuando se creen, se completan acá y se
+    // vuelve a poner la columna «Seguinos» en `index.html`.
     instagram: "",
     youtube: "",
     github: ""
