@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Novedades — ElectronArt</title>
+  <meta name="description" content="Historial de novedades de ElectronArt, la suite EDA de Electronik Lösungen." />
+  <link rel="icon" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .log{max-width:880px;margin:0 auto;padding:clamp(2rem,6vw,3.6rem) 20px}
+    .log h1{margin-bottom:.15em}
+    .log .lead{color:var(--muted-2);margin-bottom:2.6rem}
+    /* Cada versión cuelga de una traza vertical de cobre; la vía marca el hito. */
+    .rel{border-left:2px solid var(--border);padding:0 0 2rem 1.8rem;margin-bottom:.2rem;position:relative}
+    .rel::before{content:"";position:absolute;left:-8px;top:.45rem;width:14px;height:14px;
+      border-radius:50%;background:var(--bg);border:3px solid var(--gold-lo)}
+    .rel:first-of-type::before{border-color:var(--gold);box-shadow:0 0 12px -1px var(--gold)}
+    .rel h2{font-size:1.2rem;margin:0 0 .15rem;color:var(--text)}
+    .rel .date{color:var(--muted-2);font-family:var(--f-data);font-size:.68rem;
+      letter-spacing:.16em;text-transform:uppercase;margin-bottom:.7rem}
+    .rel ul{margin:0;padding:0;list-style:none;display:grid;gap:.45rem;
+      color:var(--muted);line-height:1.6}
+    .rel li{display:flex;gap:.7rem;align-items:flex-start}
+    .rel li::before{content:"";flex:none;width:9px;height:9px;margin-top:.5rem;
+      border-radius:50%;background:var(--bg);border:2px solid var(--border-2)}
+    .rel li b{color:var(--text)}
+    .rel code{font-family:var(--f-data);font-size:.86rem;color:var(--gold)}
+    /* El distintivo de la versión actual se imprime, no se encapsula. */
+    .pill{display:inline-block;background:none;border:0;color:var(--gold);
+      font-family:var(--f-data);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;
+      padding:0;vertical-align:middle;margin-left:.7rem}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html"><img src="assets/logo.svg" alt="ElectronArt" height="30" /></a>
+      <nav>
+        <a href="index.html">← Volver al sitio</a>
+        <select id="selIdioma" class="sel-idioma" aria-label="Idioma">
+          <option value="es">ES</option>
+          <option value="en">EN</option>
+          <option value="pt">PT</option>
+        </select>
+      </nav>
+    </div>
+  </header>
+
+  <main class="log">
+    <h1>⚡ Novedades</h1>
+    <p class="lead">Todo lo que fue ganando ElectronArt, versión a versión.</p>
+
+    <div class="rel">
+      <h2>v9.0 — Máscara, materia y módulo eléctrico <span class="pill">actual</span></h2>
+      <div class="date">Agosto 2026</div>
+      <ul>
+        <li><b>Identidad «Máscara»</b>: chaflanes a 45° en vez de esquinas redondeadas, relieve de máscara de soldadura y pads perforados como viñetas. La misma piel en la app, la web y el foro.</li>
+        <li><b>120 modelos 3D reales</b> de la biblioteca de KiCad, centrados sobre sus pads, con cobre, estaño y oro que reflejan de verdad.</li>
+        <li><b>Impresión por capas y modo plancha</b>: espejado, negro pleno y escala 1:1. Antes el PDF salía con todas las capas encimadas.</li>
+        <li><b>Multicapa que llega igual al Gerber</b>, con impedancia controlada: la placa que se fabrica es la que se diseñó.</li>
+        <li><b>Editor de placa</b>: contorno arrastrable con cotas vivas, portapapeles, vínculo esquemático↔PCB, buscador que entiende español y <b>teclas de una mano</b> (S/T/V/M, Q para mm⇄mil, E propiedades, R/F rotar y voltear).</li>
+        <li><b>Módulo eléctrico industrial</b>: 25 símbolos IEC 60617, riel DIN y gabinetes ajustables, y <b>simulación del esquema de mando</b> (Shift+F9) con enclavamiento, temporizadores, cortocircuito y disparo del térmico.</li>
+        <li><b>Activación con el correo de tu compra</b>: sin pegar códigos largos. La licencia se verifica igual sin conexión.</li>
+      </ul>
+    </div>
+
+    <div class="rel">
+      <h2>v8.74 — Jarvis en la tablet (LAN + token)</h2>
+      <div class="date">Julio 2026</div>
+      <ul>
+        <li><b>Plugins → 📶 Tablet en red local</b>: el Jarvis dashboard ahora se puede abrir desde una tablet o teléfono en el mismo wifi — el lienzo en vivo y los botones de control, en táctil.</li>
+        <li><b>Protegido por token</b>: la app te da el enlace con la llave (<code>?tk=…</code>); sin ella, ningún render ni comando sale de tu PC (verificación en cada pedido, comparación de tiempo constante).</li>
+        <li>El acceso local sigue sin fricción y la opción queda guardada entre sesiones.</li>
+      </ul>
+    </div>
+
+    <div class="rel">
+      <h2>v8.73 — Jarvis dashboard (co-diseño en vivo)</h2>
+      <div class="date">Julio 2026</div>
+      <ul>
+        <li><b>Plugins → 🤖 Jarvis dashboard</b>: un tablero en tu browser (solo 127.0.0.1) con el esquemático y el PCB <b>recargándose solos mientras editás</b>, y control remoto con lista blanca: refrescar render, ajustar vista, repour de planos y DRC con su resultado en pantalla.</li>
+        <li>Arquitectura segura: los comandos se encolan en el server local y se ejecutan en el hilo de la interfaz — el browser jamás puede colgar el editor.</li>
+        <li>Ideal para un segundo monitor, una tablet o co-diseñar con un asistente que ve tu lienzo.</li>
+      </ul>
+    </div>
+
+    <div class="rel">
+      <h2>v8.72 — Propiedades completas en todos los objetos</h2>
+      <div class="date">Julio 2026</div>
+      <ul>
+        <li><b>Los cables tienen formulario completo</b> al seleccionarlos: red, conductor IEC, grosor, estilo, esquinas y color. Las etiquetas de red/buses/puertos también.</li>
+        <li><b>Componentes con colocación editable</b> desde el panel: posición, rotación, espejado y bloqueo.</li>
+        <li><b>Inspector PCB ampliado</b>: referencia, posición X/Y y rotación libre del footprint; red editable en pistas y vías; alto de texto de serigrafía por ítem.</li>
+      </ul>
+    </div>
+
+    <div class="rel">
+      <h2>v8.71 — Planos de cobre nivel pro</h2>
+      <div class="date">Julio 2026</div>
+      <ul>
+        <li><b>Prioridad de pour</b> entre planos solapados: el prioritario gana el solape y el resto le deja clearance (semántica Altium).</li>
+        <li><b>Islas huérfanas</b>: el cobre desconectado de su red se elimina solo al recalcular (apagable por plano).</li>
+        <li><b>Repour selectivo</b> por plano desde el clic derecho, con reporte de islas eliminadas. Los Gerbers salen del mismo motor de pour.</li>
+      </ul>
+    </div>
+
+    <div class="rel">
+      <h2>v8.70 — Cobre siempre sincronizado + 3D arreglado</h2>
+      <div class="date">Julio 2026</div>
+      <ul>
+        <li><b>Las pistas siguen al footprint siempre</b> (drag, flechas, sincronizar, undo) y <b>los planos y teardrops se re-fluyen solos</b> tras cada cambio — el cobre nunca queda desactualizado.</li>
+        <li><b>Visor 3D con profundidad correcta</b> (fin del efecto translúcido) y modelos más reales: bandas de resistencia, electrolíticos con franja de polaridad, patas DIP.</li>
+        <li><b>Dibujá un rectángulo → convertilo en plano de cobre o borde de placa</b> (clic derecho, estilo Altium); plano editable completo: térmico, puente, gap.</li>
+        <li>Traducción completa de menús (EN/PT) y miniaturas de los temas en Ver → Tema. Foro beta con categoría de feedback.</li>
+      </ul>
+    </div>
+
+    <div class="rel">
+      <h2>v8.69 — Caricaturas universales + licencias limpias</h2>
+      <div class="date">Julio 2026</div>
+      <ul>
+        <li><b>Modo caricatura para TODOS los componentes</b>: un generador automático crea el arte educativo de cualquier pieza a partir de su encapsulado, categoría y pines — incluidas las que importás de LCSC/EasyEDA, datasheets o tu biblioteca.</li>
+        <li><b>Lectura de PDFs con backend MIT</b> (pdfplumber): el motor de datasheets ya no depende de bibliotecas AGPL — producto comercial con licencias limpias.</li>
+        <li><b>EULA y términos de compra</b>: licencia clara por edición, tus diseños son 100&nbsp;% tuyos, lista de licencias de terceros incluida.</li>
+      </ul>
+    </div>
+
+    <div class="rel">
+      <h2>v8.68 — Arcos Gerber reales + conductores IEC</h2>
+      <div class="date">Julio 2026</div>
+      <ul>
+        <li><b>Las pistas redondeadas salen al Gerber como arcos G02/G03 verdaderos</b> (modo G75, tangentes exactos): la curva fabricada es idéntica a la de pantalla, sin aplanar a polilíneas.</li>
+        <li><b>El import Gerber lee arcos G02/G03</b> — propios o de otros EDA.</li>
+        <li><b>Numerar conductores (IEC)</b>: numera cada conductor del esquemático en orden de lectura, estilo planos industriales; los rotulados conservan su nombre. Se dibuja sobre cada cable y se guarda con el documento.</li>
+      </ul>
+    </div>
+
+    <div class="rel">
+      <h2>v8.67 — Búsqueda federada de piezas</h2>
+      <div class="date">Julio 2026</div>
+      <ul>
+        <li><b>«Piezas de fabricante» encadena tres niveles solo</b>: catálogo local → LCSC → datasheet. Cualquier componente del mundo sin salir del panel.</li>
+        <li><b>MPN fuera del catálogo → un clic lo trae de LCSC con el CAD real de EasyEDA</b>: símbolo con pines verdaderos y footprint con pads exactos, guardado en tu biblioteca.</li>
+        <li><b>Si tampoco está en LCSC, pasa directo al motor de datasheets</b> con la búsqueda ya corriendo y el preview editable.</li>
+        <li>Honesto por diseño: solo acepta part numbers que corresponden de verdad (exacto o prefijo, nunca fuzzy).</li>
+      </ul>
+    </div>
+
+    <div class="rel">
+      <h2>v8.66 — Imports de fabricación exactos</h2>
+      <div class="date">Julio 2026</div>
+      <ul>
+        <li><b>Import Gerber multi-capa en una pasada</b>: varios archivos (top, bottom e internas In1/In2) con origen común — capas perfectamente alineadas.</li>
+        <li><b>Los planos del Gerber (regiones G36/G37) se importan como zonas de cobre</b>.</li>
+        <li><b>Import EAGLE exacto en rotación y espejo</b>: R90/180/270 y MR* aterrizan con cada pad en su posición absoluta exacta y los SMD en la capa correcta.</li>
+      </ul>
+    </div>
+
+    <div class="rel">
+      <h2>v8.65 — Pulido de uso real</h2>
+      <div class="date">Julio 2026</div>
+      <ul>
+        <li><b>Esc siempre vuelve al cursor normal</b> desde cualquier herramienta (esquemático y PCB).</li>
+        <li><b>Clic derecho sobre cualquier ítem del PCB</b>: Propiedades / Editar / Borrar — incluido el texto de serigrafía.</li>
+        <li><b>Doble clic abre Propiedades/Inspector</b> aunque el panel estuviera cerrado.</li>
+        <li><b>Las pistas conectadas siguen al footprint</b> al arrastrarlo, moverlo o rotarlo — nunca más cobre flotando.</li>
+        <li><b>Vías con propiedades completas</b>: taladro, anillo anular, par de capas, tented y mask expansion con apertura real en el Gerber.</li>
+        <li><b>Menú PCB reorganizado</b> en submenús (Ruteo · Planos y cobre · Dibujar · Edición · Vista · Reglas y análisis).</li>
+        <li><b>Motor de datasheets con etapa LOCAL layout-aware</b>: reconstruye la tabla de pines por geometría del PDF — offline y gratis; la IA con clave queda como último recurso opcional.</li>
+        <li>Manual de usuario rediseñado (portada, índice clickeable, capítulos numerados).</li>
+      </ul>
+    </div>
+
+    <div class="rel">
+      <h2>v8.62 – v8.64 — Motor de datasheets + 3D OpenGL</h2>
+      <div class="date">Julio 2026</div>
+      <ul>
+        <li><b>Importar desde datasheet</b>: escribí cualquier MPN del mundo — encuentra el PDF, interpreta pines y package, con preview 100 % editable.</li>
+        <li><b>IA de respaldo opcional</b> (Preferencias → IA) con validación anti-alucinación estricta.</li>
+        <li><b>Vista 3D OpenGL real</b>: órbita suave, zoom, iluminación con brillos, MSAA 8×.</li>
+        <li><b>+51 partes curadas</b> (155 en total) con pinout de datasheet: op-amps, fuentes, potencia, optoacopladores, interfaces, lógica, RTC, sensores y MCUs (STM32 «Blue Pill», ESP32).</li>
+        <li>Docks flexibles: todos los paneles flotan y anidan donde quieras.</li>
+      </ul>
+    </div>
+
+    <div class="rel">
+      <h2>v8.55 – v8.61 — Plugins, panel de piezas y simulación no lineal</h2>
+      <div class="date">Julio 2026</div>
+      <ul>
+        <li><b>Sistema de plugins</b>: instalá extensiones .zip con menús, exportadores y eventos propios.</li>
+        <li><b>Panel «Piezas de fabricante» acoplable</b> (Ctrl+Shift+M) con stock y precios LCSC en vivo.</li>
+        <li><b>Simulación no lineal</b>: diodo exponencial, MOSFET nivel 1, ayudas de convergencia, generadores PWL/expresión y banco XY.</li>
+        <li><b>Pantalla de inicio</b> con miniaturas de proyectos y <b>paleta de comandos Ctrl+K</b>.</li>
+        <li>Cables exactos al pin (fix de pines off-grid) y render sin recortes.</li>
+      </ul>
+    </div>
+
+    <div class="rel">
+      <h2>v8.42 – v8.54 — PCB de lujo y rendimiento GPU</h2>
+      <div class="date">Julio 2026</div>
+      <ul>
+        <li><b>Modo foto</b> (render realista con cobre metalizado), <b>modo capa única</b>, colores y opacidad por capa en vivo.</li>
+        <li><b>Origen de usuario</b>, rejillas configurables y diálogo de reglas de diseño por categorías con preview.</li>
+        <li><b>Viewport OpenGL + niveles de detalle</b>: placas densas y esquemas gigantes, fluidos.</li>
+        <li>Editor visual de footprints con arrastre de pads, serigrafía y courtyard editables.</li>
+      </ul>
+    </div>
+
+    <div class="rel">
+      <h2>v8.30 – v8.41 — Biblioteca universal e idiomas</h2>
+      <div class="date">Julio 2026</div>
+      <ul>
+        <li><b>Importador EasyEDA/LCSC real</b>: símbolo y footprint reales desde la nube, con un clic.</li>
+        <li>Serie CMOS 4000 y TTL 74xx con pinouts curados; borneras y conectores.</li>
+        <li><b>i18n completo</b> (ES/EN/PT), buscador Ctrl+F, autosave, panel de violaciones DRC/ERC, net-classes, export STEP 3D con color, import/export KiCad, panel de historial visual.</li>
+      </ul>
+    </div>
+
+    <div class="rel">
+      <h2>Antes de v8.30</h2>
+      <div class="date">2026</div>
+      <ul>
+        <li>Ruteo interactivo profesional (posturas 45°/90°, push &amp; shove, pares diferenciales, serpentinas, teardrops, fanout, router negociado PathFinder multicapa).</li>
+        <li>Simulación SPICE con BJT/diodo no lineal, barridos, Monte Carlo, Fourier/THD y Playground interactivo en vivo.</li>
+        <li>Fabricación completa: Gerber, Excellon, Pick &amp; Place, BOM, IPC-2581, ODB++, PDF y Output Job en ZIP.</li>
+        <li>Ladder/PLC, hojas jerárquicas, buses, 7 temas y más de 130 componentes.</li>
+      </ul>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container foot-bottom">
+      <span>© <span id="year">2026</span> Electronik Lösungen · ElectronArt. Todos los derechos reservados.</span>
+      <a href="terminos.html">Términos y licencia</a>
+    </div>
+  </footer>
+  <script src="fondo.js"></script>
+  <script src="i18n.js"></script>
+</body>
+</html>

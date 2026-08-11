@@ -1,0 +1,600 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   ElectronArt — Sistema «Máscara»
+   La misma identidad del software (src/theme/themes.py → tema "Máscara") y del
+   foro. Reglas completas en .claude/skills/electronart-design.
+
+   El criterio: si un recurso lo podría usar cualquier producto, no va. De ahí
+   el chaflán a 45° en vez de esquinas redondeadas, los rótulos impresos sobre
+   el borde en vez de etiquetas, los pads perforados en vez de viñetas y las
+   líneas de cota en vez de divisores.
+   ═══════════════════════════════════════════════════════════════════════════ */
+:root {
+  /* Máscara y sustrato */
+  --bg: #0c0e12;            /* máscara negra mate */
+  --bg-2: #14161b;          /* superficie */
+  --surface: #1b1e25;       /* panel */
+  --surface-2: #242832;     /* panel sobre panel */
+  --border: #2c313d;        /* borde estructural */
+  --border-2: #3a404f;      /* borde de énfasis */
+
+  /* Metales — el oro se usa POCO y por eso pesa */
+  --gold: #c9a227;          /* ENIG, el acento */
+  --gold-hi: #e9c64b;
+  --gold-lo: #7a6417;
+  --copper: #b87333;
+  --tin: #9aa3b0;
+
+  /* Serigrafía */
+  --text: #e7e4dc;
+  --muted: #9a9da6;
+  --muted-2: #62666f;
+
+  /* Estado — separado de la identidad */
+  --ok: #4fb477;
+  --warn: #d9903b;
+  --fail: #d65c5c;
+
+  /* Compatibilidad con el HTML existente */
+  --green: var(--gold);
+  --blue: var(--copper);
+  --amber: var(--warn);
+
+  --chamfer: 12px;
+  --maxw: 1180px;
+  --shadow: 0 18px 44px rgba(0,0,0,.55);
+
+  /* Relieve: una sola luz, arriba a la izquierda, como pieza fresada */
+  --luz:        rgba(233,198,75,.10);
+  --luz-fuerte: rgba(233,198,75,.18);
+  --sombra-1:   rgba(0,0,0,.45);
+  --sombra-2:   rgba(0,0,0,.35);
+  --sombra-3:   rgba(0,0,0,.55);
+
+  /* Kapton: la translucidez es ámbar, nunca blanco */
+  --kapton:      rgba(201,162,39,.07);
+  --kapton-filo: rgba(233,198,75,.28);
+  --kapton-blur: 14px;
+
+  --f-title: "Bahnschrift", "DIN Alternate", "Arial Narrow", sans-serif;
+  --f-body: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  --f-data: "Consolas", "SF Mono", ui-monospace, monospace;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+  }
+  /* El paralaje del fondo también se apaga; el relieve queda. */
+  #cobre-fondo { animation: none !important; }
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--f-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* El tejido de cobre lo dibuja fondo.js; queda detrás de todo. */
+#cobre-fondo {
+  position: fixed; inset: 0;
+  width: 100%; height: 100%;
+  z-index: 0; pointer-events: none;
+}
+body > *:not(#cobre-fondo) { position: relative; z-index: 1; }
+
+/* Paralaje del fondo de trazas: apenas 6px, como si el cobre estuviera una
+   capa atrás del scroll. Se apaga del todo con prefers-reduced-motion. */
+@keyframes paralaje {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(0, -6px, 0); }
+}
+@supports (animation-timeline: scroll()) {
+  #cobre-fondo {
+    animation: paralaje linear both;
+    animation-timeline: scroll();
+  }
+}
+
+a { color: inherit; text-decoration: none; }
+h1, h2, h3, h4 { font-family: var(--f-title); line-height: 1.06; margin: 0 0 .5em; font-weight: 600; letter-spacing: -.005em; }
+p { margin: 0 0 1em; }
+.container { width: min(var(--maxw), 92%); margin-inline: auto; }
+.container.narrow { max-width: 780px; }
+.muted { color: var(--muted); }
+
+/* El degradado de dos colores en el texto es de plantilla: acá el énfasis es
+   oro macizo con la traza de cobre subrayándolo. */
+.grad {
+  color: var(--gold);
+  background: none;
+  -webkit-text-fill-color: currentColor;
+  position: relative;
+  white-space: nowrap;
+}
+.grad::after {
+  content: "";
+  position: absolute; left: 0; right: 0; bottom: .04em;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold-lo), var(--gold-hi), var(--gold-lo));
+  transform: scaleX(0); transform-origin: left;
+  animation: trazar 1s cubic-bezier(.2,.7,.3,1) .45s forwards;
+}
+@keyframes trazar { to { transform: scaleX(1); } }
+
+/* El chaflán: dos esquinas cortadas a 45°, como sale de la fresadora. */
+.chaflan, .card, .price-card, .flow-step, .mock-window, .table-wrap, .faq details, .video-caja {
+  clip-path: polygon(var(--chamfer) 0, 100% 0,
+                     100% calc(100% - var(--chamfer)),
+                     calc(100% - var(--chamfer)) 100%,
+                     0 100%, 0 var(--chamfer));
+  border-radius: 0;
+  /* Bisel de 2px que sigue el chaflán; la sombra de contacto va por filter:
+     el box-shadow exterior lo corta el clip-path. */
+  box-shadow: inset 2px 2px 0 var(--luz), inset -2px -2px 0 var(--sombra-1);
+  filter: drop-shadow(0 1px 1px var(--sombra-1));
+}
+
+/* ── Botones ───────────────────────────────────────────────────────────────
+   El primario es un pad de oro; el hover pasa un brillo, como la soldadura
+   corriendo por la pieza. */
+.btn {
+  position: relative;
+  display: inline-flex; align-items: center; justify-content: center; gap: .5em;
+  padding: .78em 1.5em;
+  font-family: var(--f-data);
+  font-size: .8rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  overflow: hidden;
+  border: 1px solid var(--border-2);
+  color: var(--text);
+  background: transparent;
+  box-shadow: inset 1px 1px 0 var(--luz), inset -1px -1px 0 var(--sombra-1);
+  transition: color .25s, background .25s, border-color .25s, box-shadow .25s, transform .12s;
+  clip-path: polygon(9px 0, 100% 0, 100% calc(100% - 9px), calc(100% - 9px) 100%, 0 100%, 0 9px);
+}
+/* El filo se calienta al pasar, y al presionar la pieza se hunde: la luz
+   pasa abajo a la derecha y la sombra arriba a la izquierda. */
+.btn:hover { box-shadow: inset 1px 1px 0 var(--luz-fuerte), inset -1px -1px 0 var(--sombra-1); }
+.btn:active {
+  transform: translateY(1px);
+  box-shadow: inset 1px 1px 0 var(--sombra-1), inset -1px -1px 0 var(--luz);
+}
+.btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.btn-sm { padding: .55em 1.1em; font-size: .72rem; }
+
+.btn-primary { background: var(--gold); border-color: var(--gold-hi); color: #14161b; font-weight: 700; }
+.btn-primary::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(105deg, transparent 35%, rgba(255,255,255,.55) 50%, transparent 65%);
+  transform: translateX(-120%);
+  transition: transform .6s cubic-bezier(.3,.7,.3,1);
+}
+.btn-primary:hover::before { transform: translateX(120%); }
+.btn-primary:hover { background: var(--gold-hi); }
+
+.btn-ghost { background: transparent; border-color: var(--border-2); color: var(--muted); }
+.btn-ghost:hover {
+  border-color: var(--gold); color: var(--gold-hi);
+  box-shadow: inset 1px 1px 0 var(--luz-fuerte), inset -1px -1px 0 var(--sombra-1), 0 0 20px -7px var(--gold);
+}
+.full { width: 100%; }
+
+/* ── Encabezado ────────────────────────────────────────────────────────────*/
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  backdrop-filter: blur(10px);
+  background: rgba(12,14,18,.86);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 10px 30px -18px var(--sombra-2);
+}
+.nav { display: flex; align-items: center; gap: 1rem; padding: .75rem 0; }
+.brand { display: flex; align-items: center; }
+.nav-links { display: flex; gap: 1.5rem; margin-left: 1.4rem; flex: 1; }
+.nav-links a {
+  position: relative;
+  font-family: var(--f-data);
+  font-size: .72rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding-block: .35rem;
+  transition: color .2s;
+}
+.nav-links a::after {
+  content: "";
+  position: absolute; left: 0; bottom: 0; width: 100%; height: 1px;
+  background: var(--gold);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform .3s cubic-bezier(.2,.7,.3,1);
+}
+.nav-links a:hover { color: var(--text); }
+.nav-links a:hover::after { transform: scaleX(1); }
+.nav-toggle {
+  display: none; background: none; border: 0; color: var(--text); font-size: 1.4rem; cursor: pointer;
+  box-shadow: inset 1px 1px 0 var(--luz), inset -1px -1px 0 var(--sombra-1);
+}
+.nav-toggle:active { box-shadow: inset 1px 1px 0 var(--sombra-1), inset -1px -1px 0 var(--luz); }
+
+/* ── Selector de idioma (F14.2) ────────────────────────────────────────────
+   Pieza del sistema: chaflán, relieve de una sola luz arriba-izquierda y
+   tipografía de datos. NADA de oro: el acento está reservado para el botón de
+   descarga que tiene al lado, y dos acentos juntos no dejan mandar a ninguno. */
+.sel-idioma {
+  font-family: var(--f-data);
+  font-size: .72rem;
+  letter-spacing: .08em;
+  color: var(--muted);
+  background: var(--surface);
+  border: 0;
+  padding: .5em .7em;
+  cursor: pointer;
+  clip-path: polygon(7px 0, 100% 0, 100% calc(100% - 7px), calc(100% - 7px) 100%, 0 100%, 0 7px);
+  box-shadow: inset 1px 1px 0 var(--luz), inset -1px -1px 0 var(--sombra-1),
+              inset 0 0 0 1px var(--line);
+  transition: color .18s ease;
+}
+.sel-idioma:hover { color: var(--text); }
+.sel-idioma:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+/* El desplegable lo pinta el sistema operativo: sus opciones necesitan un
+   fondo propio o quedan texto claro sobre blanco en varios navegadores. */
+.sel-idioma option { background: var(--surface); color: var(--text); }
+
+/* ── Hero ──────────────────────────────────────────────────────────────────*/
+.hero { padding: clamp(3.5rem, 9vw, 7rem) 0 4.5rem; }
+.hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 3.2rem; align-items: center; }
+.eyebrow {
+  font-family: var(--f-data);
+  color: var(--muted-2);
+  font-size: .7rem;
+  font-weight: 400;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  margin-bottom: .9rem;
+}
+.hero h1 { font-size: clamp(2.4rem, 6vw, 4rem); text-wrap: balance; }
+.lead { font-size: 1.1rem; color: var(--muted); max-width: 32em; }
+.hero-cta { display: flex; gap: .8rem; flex-wrap: wrap; margin: 1.6rem 0 1.4rem; }
+
+/* La lista de confianza se marca con pads perforados, no con tildes. */
+.trust { list-style: none; padding: 0; margin: 0; display: flex; gap: 1.6rem; flex-wrap: wrap; color: var(--muted); font-size: .92rem; }
+.trust li { display: flex; align-items: center; gap: .55rem; }
+.trust li::before {
+  content: "";
+  width: 12px; height: 12px; flex: none;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 3px solid var(--gold-lo);
+  box-shadow: 0 0 8px -2px var(--gold);
+  transition: border-color .25s, box-shadow .25s;
+}
+.trust li:hover::before { border-color: var(--gold); box-shadow: 0 0 12px 0 var(--gold); }
+
+/* ── Mock de la app ────────────────────────────────────────────────────────*/
+.mock-window { background: var(--surface); border: 1px solid var(--border); box-shadow: var(--shadow); overflow: hidden; }
+.mock-bar { display: flex; align-items: center; gap: .45rem; padding: .55rem .8rem; background: var(--bg-2); border-bottom: 1px solid var(--border); }
+.dot { width: 9px; height: 9px; border-radius: 50%; background: var(--border-2); }
+.dot.r, .dot.y, .dot.g { background: var(--border-2); }
+.mock-title { margin-left: .6rem; color: var(--muted-2); font-family: var(--f-data); font-size: .72rem; }
+.mock-tabs { display: flex; gap: .2rem; padding: .5rem .6rem 0; background: var(--bg-2); }
+.mtab { padding: .35rem .9rem; font-family: var(--f-data); font-size: .72rem; letter-spacing: .08em; color: var(--muted-2); }
+.mtab.active { color: var(--gold); background: var(--surface); border: 1px solid var(--border); border-bottom: none; }
+.mock-body { background: var(--bg); }
+.mock-svg, .app-shot { display: block; width: 100%; height: auto; }
+
+/* ── Video real de la app ────────────────────────────────────────────
+   El marco es el de la maqueta: chaflán a 45° y bisel del sistema
+   «Máscara». El video es 16:9 y el ancho máximo evita que la sección
+   mande en la página; la sombra gruesa va por filter (drop-shadow) porque
+   el box-shadow exterior lo corta el clip-path. */
+.video-seccion { padding-bottom: 0; }
+.video-caja {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  max-width: 900px;
+  margin-inline: auto;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  filter: drop-shadow(0 24px 40px var(--sombra-3));
+}
+.video-caja video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── El viaje por la placa ─────────────────────────────────────────────────
+   La sección es alta y el contenido queda pegado arriba: ese alto es el
+   «riel» por el que corre la cámara. Cuatro pantallas de scroll, una por
+   capítulo. */
+.viaje-seccion { height: 420vh; position: relative; }
+.viaje-pegado {
+  position: sticky; top: 0;
+  height: 100vh;               /* respaldo para navegadores sin svh */
+  height: min(100svh, 760px);
+  width: 100%;
+  overflow: hidden;
+  display: flex; align-items: flex-end;
+}
+#viaje {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  max-height: 760px;
+  display: block;
+}
+/* Velo para que el texto se lea sobre el cobre sin apagar la escena. */
+.viaje-velo {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg,
+    color-mix(in srgb, var(--bg) 55%, transparent) 0%,
+    transparent 32%, transparent 45%,
+    color-mix(in srgb, var(--bg) 88%, transparent) 100%);
+  pointer-events: none;
+}
+.viaje-textos { position: relative; padding-bottom: clamp(3rem, 9vh, 6rem); }
+.viaje-textos article {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  max-width: 46ch;
+  opacity: 0; transform: translateY(18px);
+  transition: opacity .5s cubic-bezier(.2,.7,.3,1), transform .5s cubic-bezier(.2,.7,.3,1);
+  pointer-events: none;
+}
+.viaje-textos article.activo { opacity: 1; transform: none; }
+.viaje-textos h2 {
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+  margin: .3rem 0 .5rem;
+  text-wrap: balance;
+}
+.viaje-textos p:last-child { color: var(--muted); margin: 0; font-size: 1rem; }
+
+/* Medidor de avance: un instrumento, no una barra de progreso web. */
+.viaje-medidor {
+  position: absolute; right: clamp(1rem, 4vw, 3rem); bottom: clamp(1rem, 4vh, 2.4rem);
+  display: flex; align-items: baseline; gap: .4rem;
+  font-family: var(--f-data);
+  color: var(--muted-2);
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--bg) 80%, transparent);
+  padding: .4rem .8rem;
+  clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+  filter: drop-shadow(0 4px 10px var(--sombra-2));
+}
+.viaje-medidor .rot { font-size: .58rem; letter-spacing: .2em; text-transform: uppercase; }
+.viaje-medidor b {
+  color: var(--gold); font-size: 1.05rem; font-variant-numeric: tabular-nums;
+  min-width: 2.2ch; text-align: right;
+}
+
+@media (max-width: 640px) {
+  .viaje-seccion { height: 360vh; }
+  .viaje-textos article { max-width: none; }
+}
+/* Sin scroll de ventana (dentro de un visor que estira el marco hasta la
+   altura del contenido): la sección mide una pantalla y el recorrido corre
+   solo. Lo pone viaje.js cuando detecta que no hay scroll. */
+.viaje-seccion.viaje-auto { height: min(100svh, 760px); }
+.viaje-seccion.viaje-auto .viaje-pegado { position: relative; }
+/* Sin movimiento: la sección se achica a una pantalla y la cámara queda quieta
+   en el primer capítulo. */
+@media (prefers-reduced-motion: reduce) {
+  .viaje-seccion { height: 100vh; }
+  .viaje-textos article { position: relative; opacity: 1; transform: none; }
+  .viaje-textos article + article { display: none; }
+}
+
+/* ── Secciones y cotas ─────────────────────────────────────────────────────*/
+.section { padding: clamp(3.2rem, 7vw, 5.5rem) 0; }
+.section.alt { background: var(--bg-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.section-title { font-size: clamp(1.7rem, 3.6vw, 2.4rem); text-align: center; }
+
+/* El subtítulo lleva las marcas de una línea de cota a los costados. */
+.section-sub {
+  text-align: center; color: var(--muted);
+  max-width: 44em; margin: 0 auto 2.8rem;
+  position: relative; padding-top: 1.2rem;
+}
+.section-sub::before {
+  content: "";
+  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 120px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-2), transparent);
+}
+
+/* ── Tarjetas ──────────────────────────────────────────────────────────────*/
+.grid { display: grid; gap: 1.1rem; }
+.features { grid-template-columns: repeat(4, 1fr); }
+.card {
+  position: relative;
+  background: linear-gradient(160deg, var(--bg-2), var(--surface));
+  border: 1px solid var(--border);
+  padding: 1.5rem 1.4rem;
+  transition: transform .3s cubic-bezier(.2,.7,.3,1), border-color .3s, box-shadow .3s;
+}
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold-lo);
+  box-shadow: inset 2px 2px 0 var(--luz), inset -2px -2px 0 var(--sombra-1),
+              0 16px 44px -26px #000, 0 0 26px -20px var(--gold);
+}
+.card .ico { font-size: 1.6rem; margin-bottom: .5rem; }
+.card h3 { font-size: 1.12rem; }
+.card p { color: var(--muted); font-size: .93rem; margin: 0; }
+
+/* ── Flujo: los pasos SÍ son una secuencia, el número informa ──────────────*/
+.flow { display: flex; align-items: stretch; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+.flow-step { background: var(--surface); border: 1px solid var(--border); padding: 1.4rem 1.5rem; text-align: center; min-width: 190px; flex: 1; }
+.flow-step .num {
+  display: inline-grid; place-items: center;
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 3px solid var(--gold-lo);
+  color: var(--gold);
+  font-family: var(--f-data); font-weight: 700; font-size: .85rem;
+  margin-bottom: .7rem;
+  box-shadow: 0 0 10px -3px var(--gold);
+}
+.flow-step h3 { font-size: 1.05rem; }
+.flow-step p { color: var(--muted); font-size: .9rem; margin: 0; }
+.flow-arrow { align-self: center; color: var(--copper); font-size: 1.4rem; }
+
+/* ── Comparación ───────────────────────────────────────────────────────────*/
+.table-wrap { overflow-x: auto; border: 1px solid var(--border); }
+.cmp { width: 100%; border-collapse: collapse; min-width: 620px; }
+.cmp th, .cmp td { padding: .85rem 1rem; text-align: center; border-bottom: 1px solid var(--border); }
+.cmp th:first-child, .cmp td:first-child { text-align: left; color: var(--text); }
+.cmp thead th {
+  background: var(--bg-2); color: var(--muted-2);
+  font-family: var(--f-data); font-size: .7rem; font-weight: 400;
+  letter-spacing: .14em; text-transform: uppercase;
+}
+.cmp td { color: var(--muted); font-variant-numeric: tabular-nums; }
+.cmp .hl { background: color-mix(in srgb, var(--gold) 9%, transparent); color: var(--gold); font-weight: 700; }
+.cmp tbody tr { transition: background .2s; }
+.cmp tbody tr:hover { background: color-mix(in srgb, var(--gold) 5%, transparent); }
+.cmp tbody tr:last-child td { border-bottom: none; }
+.fineprint { text-align: center; color: var(--muted-2); font-size: .82rem; margin-top: 1.2rem; }
+.fineprint a { color: var(--gold); }
+
+/* ── Precios ───────────────────────────────────────────────────────────────*/
+.pricing { grid-template-columns: repeat(4, 1fr); align-items: stretch; gap: 1rem; }
+/* Con cuatro planes las tarjetas se angostan: a partir de tablet van de a dos
+   antes de apilarse, si no el texto queda en columnas de dos palabras. */
+@media (max-width: 1080px) {
+  .pricing { grid-template-columns: repeat(2, 1fr); }
+}
+.price-card {
+  position: relative;
+  background: linear-gradient(160deg, var(--bg-2), var(--surface));
+  border: 1px solid var(--border);
+  padding: 2rem 1.6rem 1.7rem;
+  display: flex; flex-direction: column;
+}
+.price-card.featured {
+  border-color: var(--gold-lo);
+  background: linear-gradient(160deg, color-mix(in srgb, var(--gold) 7%, var(--bg-2)), var(--surface));
+  box-shadow: inset 2px 2px 0 var(--luz), inset -2px -2px 0 var(--sombra-1),
+              0 0 34px -22px var(--gold), var(--shadow);
+}
+/* El distintivo se IMPRIME sobre el borde, como el designador de una pieza. */
+.ribbon {
+  position: absolute; top: -.62rem; left: 1.4rem; transform: none;
+  background: var(--bg);
+  color: var(--gold);
+  font-family: var(--f-data); font-weight: 400; font-size: .62rem;
+  letter-spacing: .2em; text-transform: uppercase;
+  padding: 0 .55em;
+  border-radius: 0;
+}
+.price-card h3 { font-size: 1.2rem; }
+.price { margin: .4rem 0 .2rem; font-variant-numeric: tabular-nums; }
+.price .cur { color: var(--muted-2); font-size: .85rem; vertical-align: super; margin-right: .15em; font-family: var(--f-data); }
+.price .amt { font-family: var(--f-title); font-size: 2.8rem; font-weight: 600; letter-spacing: -.02em; }
+.price .per { color: var(--muted-2); font-family: var(--f-data); font-size: .78rem; margin-left: .35em; }
+.price-sub { color: var(--muted); font-size: .9rem; }
+.price-card ul { list-style: none; padding: 0; margin: 1.2rem 0 1.6rem; display: grid; gap: .55rem; flex: 1; }
+.price-card li { color: var(--text); font-size: .92rem; display: flex; gap: .55rem; align-items: flex-start; }
+.price-card li::before {
+  content: ""; flex: none;
+  width: 11px; height: 11px; margin-top: .42rem;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 3px solid var(--gold-lo);
+}
+.price-card li.muted { color: var(--muted-2); }
+.price-card li.muted::before { border-color: var(--border-2); box-shadow: none; }
+
+/* ── FAQ ───────────────────────────────────────────────────────────────────*/
+.faq { display: grid; gap: .7rem; }
+.faq details { background: var(--surface); border: 1px solid var(--border); padding: .1rem .3rem; transition: border-color .25s; }
+.faq details[open] { border-color: var(--gold-lo); }
+.faq summary {
+  cursor: pointer; padding: .95rem 1rem; font-weight: 600; list-style: none; position: relative;
+  box-shadow: inset 1px 1px 0 var(--luz), inset -1px -1px 0 var(--sombra-1);
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
+/* El signo es una vía que se rellena al abrir, no un "+" tipográfico. */
+.faq summary::after {
+  content: "";
+  position: absolute; right: 1rem; top: 50%; transform: translateY(-50%);
+  width: 13px; height: 13px;
+  border-radius: 50%;
+  border: 3px solid var(--border-2);
+  background: var(--bg);
+  transition: border-color .25s, background .25s, box-shadow .25s;
+}
+.faq details[open] summary::after {
+  border-color: var(--gold);
+  background: var(--gold);
+  box-shadow: 0 0 10px -1px var(--gold);
+}
+.faq details p { padding: 0 1rem 1.1rem; margin: 0; color: var(--muted); }
+
+/* ── Banda de cierre ───────────────────────────────────────────────────────*/
+.cta-band {
+  text-align: center;
+  padding: clamp(3.2rem,6vw,4.8rem) 0;
+  background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--gold) 6%, transparent));
+  border-top: 1px solid var(--border);
+}
+.cta-band h2 { font-size: clamp(1.7rem,3.6vw,2.3rem); }
+.cta-band p { color: var(--muted); margin-bottom: 1.5rem; }
+
+/* ── Pie ───────────────────────────────────────────────────────────────────*/
+.site-footer { background: var(--bg-2); border-top: 1px solid var(--border); padding: 2.8rem 0 1.5rem; }
+.foot-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 1.6rem; }
+.foot-grid h4 {
+  color: var(--muted-2); font-family: var(--f-data);
+  font-size: .68rem; letter-spacing: .2em; text-transform: uppercase;
+  font-weight: 400; margin-bottom: .8rem;
+}
+.foot-grid a { display: block; color: var(--muted); padding: .22rem 0; font-size: .92rem; transition: color .2s; }
+.foot-grid a:hover { color: var(--gold); }
+.foot-bottom {
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+  flex-wrap: wrap; margin-top: 2.2rem; padding-top: 1.3rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted-2); font-size: .84rem;
+}
+.foot-bottom a { color: var(--muted); }
+.foot-bottom a:hover { color: var(--gold); }
+
+/* ── Responsive ────────────────────────────────────────────────────────────*/
+@media (max-width: 940px) {
+  .features { grid-template-columns: repeat(2, 1fr); }
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-mock { order: -1; }
+  .pricing { grid-template-columns: 1fr; max-width: 460px; margin-inline: auto; }
+  .foot-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .nav-links {
+    display: none; position: absolute; top: 100%; left: 0; right: 0;
+    flex-direction: column;
+    background: var(--kapton);
+    backdrop-filter: blur(var(--kapton-blur));
+    border-top: 1px solid var(--kapton-filo);
+    box-shadow: 0 24px 48px -24px var(--sombra-3);
+    padding: 1rem 6%; gap: .9rem;
+  }
+  .nav-links.open { display: flex; }
+  .nav-toggle { display: block; }
+  .site-header .nav { position: relative; }
+  .features { grid-template-columns: 1fr; }
+  .flow-arrow { transform: rotate(90deg); }
+  :root { --chamfer: 9px; }
+}

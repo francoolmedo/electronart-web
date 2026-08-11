@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Descargas — ElectronArt</title>
+  <meta name="description" content="Descargá ElectronArt: enlaces de descarga, verificación SHA-256, requisitos del sistema y resolución de problemas." />
+  <link rel="icon" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .legal{max-width:860px;margin:0 auto;padding:clamp(2rem,6vw,3.6rem) 20px;line-height:1.7;color:var(--muted)}
+    .legal h1{margin-bottom:.2em;color:var(--text)}
+    .legal .lead{color:var(--muted-2);margin-bottom:2.2rem}
+    .legal h2{font-size:1.15rem;margin:2.2rem 0 .5rem;color:var(--text)}
+    .legal a{color:var(--gold)}
+    .legal table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.92rem}
+    .legal th,.legal td{border:1px solid var(--border);padding:.6rem .7rem;text-align:left}
+    .legal th{background:var(--bg-2);color:var(--muted-2);font-family:var(--f-data);
+      font-size:.68rem;font-weight:400;letter-spacing:.16em;text-transform:uppercase}
+    .legal td{font-variant-numeric:tabular-nums}
+    .legal code{background:var(--bg-2);border:1px solid var(--border);padding:.1rem .4rem;
+      font-family:var(--f-data);font-size:.86rem;word-break:break-all;color:var(--text)}
+    .legal pre{background:var(--bg-2);border:1px solid var(--border);padding:.8rem 1rem;
+      overflow-x:auto;font-family:var(--f-data);font-size:.86rem;color:var(--text);margin:.6rem 0 1.2rem}
+    .legal .note{background:color-mix(in srgb,var(--gold) 5%,transparent);
+      border:1px dashed var(--border-2);padding:1rem 1.2rem;font-size:.9rem;
+      color:var(--muted);margin-top:2.2rem}
+    /* Lista con pads perforados, igual que en el resto del sistema. */
+    .legal ul{list-style:none;padding:0;display:grid;gap:.5rem}
+    .legal li{display:flex;gap:.7rem;align-items:flex-start}
+    .legal li::before{content:"";flex:none;width:11px;height:11px;margin-top:.44rem;
+      border-radius:50%;background:var(--bg);border:3px solid var(--gold-lo)}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html"><img src="assets/logo.svg" alt="ElectronArt" height="30" /></a>
+      <nav>
+        <a href="index.html">← Volver al sitio</a>
+        <select id="selIdioma" class="sel-idioma" aria-label="Idioma">
+          <option value="es">ES</option>
+          <option value="en">EN</option>
+          <option value="pt">PT</option>
+        </select>
+      </nav>
+    </div>
+  </header>
+
+  <main class="legal">
+    <h1>Descargas</h1>
+    <p class="lead">Enlaces oficiales, requisitos y cómo verificar que la descarga esté completa.</p>
+
+    <!-- AUTO:descargas -->
+    <table>
+      <tr>
+        <th>Archivo</th>
+        <th>Plataforma</th>
+        <th>Tamaño</th>
+        <th>SHA-256</th>
+      </tr>
+      <tr>
+        <td><a href="#" data-link="descarga-9.0">ElectronArt-v9.0-win64.zip</a></td>
+        <td>Windows 10/11 (64 bits)</td>
+        <td>129 MB</td>
+        <td><code>1d438e445a171de9e6f3f9b43b43e9198460faefc8dd75aa2a1a62c9d144ae19</code></td>
+      </tr>
+    </table>
+    <!-- /AUTO:descargas -->
+
+    <h2>Verificá la descarga</h2>
+    <p>Después de bajar el archivo, compará su hash SHA-256 con el que figura arriba. Si no coinciden, el archivo se bajó incompleto o alguien lo modificó — no lo ejecutes.</p>
+
+    <p><b>Windows (PowerShell):</b></p>
+    <pre>Get-FileHash .\ElectronArt-v9.0-win64.zip -Algorithm SHA256</pre>
+
+    <p><b>Linux:</b></p>
+    <pre>sha256sum ElectronArt-v9.0-win64.zip</pre>
+
+    <p><b>macOS:</b></p>
+    <pre>shasum -a 256 ElectronArt-v9.0-win64.zip</pre>
+
+    <p>Al lado de cada ZIP publicamos también su archivo <code>.sha256</code>,
+    si preferís que la verificación la haga la herramienta:</p>
+    <pre>sha256sum -c ElectronArt-v9.0-win64.zip.sha256</pre>
+
+    <h2>Requisitos</h2>
+    <ul>
+      <li>Windows 10 u 11, 64 bits</li>
+      <li>4 GB de RAM (8 GB recomendado para placas grandes)</li>
+      <li>~350 MB de espacio libre (el ZIP descomprimido ocupa unos 275 MB)</li>
+      <li>Tarjeta gráfica con OpenGL 2.1 o superior para la vista 3D — cualquier
+        placa o gráfica integrada de la última década alcanza</li>
+    </ul>
+
+    <h2>Instalación</h2>
+    <p>No hay instalador: descomprimí el ZIP donde quieras y ejecutá
+    <code>ElectronArt.exe</code>. Para desinstalar, borrá la carpeta. Tus
+    preferencias y tu biblioteca quedan en <code>%USERPROFILE%\.circuitron</code>,
+    aparte del programa.</p>
+    <h2>Windows va a mostrarte una advertencia. Es esperable.</h2>
+    <p>La primera vez que abras <code>ElectronArt.exe</code>, Windows muestra una
+    pantalla azul que dice <i>«Windows protegió su PC»</i>. No es un virus ni un
+    error: es SmartScreen avisando que todavía no reconoce este programa.</p>
+    <p>Para continuar: <b>Más información</b> ▸ <b>Ejecutar de todas formas</b>.</p>
+    <p>Por qué pasa, sin vueltas: SmartScreen construye su confianza con la
+    cantidad de descargas que acumula un programa. ElectronArt es nuevo, así que
+    todavía no tiene esa historia. A medida que más gente lo instale, el aviso
+    desaparece solo.</p>
+    <p>Mientras tanto, la forma seria de comprobar que el archivo es el nuestro y
+    llegó entero es el <b>SHA-256 de más arriba</b>: si el número coincide, nadie
+    lo tocó en el camino. Esa verificación es más fuerte que cualquier aviso del
+    sistema operativo.</p>
+
+    <h2>¿Problemas?</h2>
+    <p>Si la descarga no arranca, el antivirus la bloquea o la instalación falla, visitá el <a href="#" data-link="foro">foro de la comunidad</a> o escribinos por correo.</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container foot-bottom">
+      <span>© 2026 Electronik Lösungen · ElectronArt</span>
+      <a href="index.html">electronart.app</a>
+    </div>
+  </footer>
+  <script src="enlaces.js"></script>
+  <script src="fondo.js"></script>
+  <script src="i18n.js"></script>
+</body>
+</html>

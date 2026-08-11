@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Términos y licencia — ElectronArt</title>
+  <meta name="description" content="Términos de compra, descarga y licencia de ElectronArt." />
+  <link rel="icon" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .legal{max-width:860px;margin:0 auto;padding:clamp(2rem,6vw,3.6rem) 20px;line-height:1.7;color:var(--muted)}
+    .legal h1{margin-bottom:.2em;color:var(--text)}
+    .legal .lead{color:var(--muted-2);margin-bottom:2.2rem}
+    .legal h2{font-size:1.15rem;margin:2.2rem 0 .5rem;color:var(--text)}
+    .legal a{color:var(--gold)}
+    .legal table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.92rem}
+    .legal th,.legal td{border:1px solid var(--border);padding:.6rem .7rem;text-align:left}
+    .legal th{background:var(--bg-2);color:var(--muted-2);font-family:var(--f-data);
+      font-size:.68rem;font-weight:400;letter-spacing:.16em;text-transform:uppercase}
+    .legal td{font-variant-numeric:tabular-nums}
+    .legal code{background:var(--bg-2);border:1px solid var(--border);padding:.1rem .4rem;
+      font-family:var(--f-data);font-size:.86rem;word-break:break-all;color:var(--text)}
+    .legal pre{background:var(--bg-2);border:1px solid var(--border);padding:.8rem 1rem;
+      overflow-x:auto;font-family:var(--f-data);font-size:.86rem;color:var(--text);margin:.6rem 0 1.2rem}
+    .legal .note{background:color-mix(in srgb,var(--gold) 5%,transparent);
+      border:1px dashed var(--border-2);padding:1rem 1.2rem;font-size:.9rem;
+      color:var(--muted);margin-top:2.2rem}
+    /* Lista con pads perforados, igual que en el resto del sistema. */
+    .legal ul{list-style:none;padding:0;display:grid;gap:.5rem}
+    .legal li{display:flex;gap:.7rem;align-items:flex-start}
+    .legal li::before{content:"";flex:none;width:11px;height:11px;margin-top:.44rem;
+      border-radius:50%;background:var(--bg);border:3px solid var(--gold-lo)}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html"><img src="assets/logo.svg" alt="ElectronArt" height="30" /></a>
+      <nav>
+        <a href="index.html">← Volver al sitio</a>
+        <select id="selIdioma" class="sel-idioma" aria-label="Idioma">
+          <option value="es">ES</option>
+          <option value="en">EN</option>
+          <option value="pt">PT</option>
+        </select>
+      </nav>
+    </div>
+  </header>
+
+  <main class="legal">
+    <h1>Términos de compra y licencia</h1>
+    <p class="lead">Última actualización: julio 2026 · Se aplican al descargar, comprar,
+    instalar o usar ElectronArt.</p>
+
+    <h2>1. Qué está comprando</h2>
+    <p>ElectronArt es software propietario de <b>Electronik Lösungen</b>. Al comprar
+    una licencia usted adquiere el <b>derecho de uso</b> descrito en el
+    <b>Acuerdo de Licencia de Usuario Final (EULA)</b> incluido con el producto —
+    no la propiedad del software. Las ediciones <b>Pro</b> e <b>Industrial</b> son
+    <b>licencias anuales</b>: se renuevan cada 12 meses e incluyen las
+    actualizaciones publicadas durante ese período. Puede cancelarlas cuando
+    quiera; si vence o se cancela, ElectronArt <b>sigue abriendo y editando sus
+    proyectos</b> con las funciones de la edición Gratuita, y sus archivos
+    permanecen accesibles en su disco y en un formato abierto. Las ediciones
+    <b>Gratuita</b> y <b>Student</b> no vencen.</p>
+
+    <h2>2. Ediciones y alcance de uso</h2>
+    <table>
+      <tr><th>Edición</th><th>Precio</th><th>Uso permitido</th><th>Puestos</th></tr>
+      <tr><td><b>Gratuita</b></td><td>Gratis</td><td>Evaluación y proyectos personales, <b>sin fines comerciales</b>. Placas de hasta 2 capas de cobre; las salidas llevan marca de agua.</td><td>1</td></tr>
+      <tr><td><b>Student</b></td><td>Gratis</td><td>Aprendizaje y proyectos personales, <b>sin fines comerciales</b>, con el módulo eléctrico/PLC incluido. Aulas y laboratorios educativos sin cargo.</td><td>1</td></tr>
+      <tr><td><b>Pro</b></td><td>USD 79 / año</td><td>Todo uso, <b>incluido comercial</b> (productos para la venta, servicios de diseño, uso en empresas) y educativo institucional.</td><td>1 persona / 2 equipos</td></tr>
+      <tr><td><b>Industrial</b></td><td>USD 299 / año</td><td>Todo lo de Pro + el módulo eléctrico/PLC para uso comercial y uso en equipo dentro de una organización, con soporte prioritario.</td><td>Hasta 5 personas</td></tr>
+    </table>
+    <p>¿Su caso no encaja (más puestos, OEM, revendedores, currícula educativa paga)?
+    Escríbanos y armamos una licencia a medida.</p>
+
+    <h2>3. Sus diseños son 100 % suyos</h2>
+    <p>Los esquemáticos, PCBs, Gerbers, BOMs, bibliotecas propias y productos que usted
+    cree con ElectronArt le pertenecen por completo. Puede fabricarlos y venderlos
+    <b>sin regalías, sin atribución y sin restricciones</b>, con cualquier edición —
+    la diferencia entre ediciones está en quién usa el software, no en qué puede
+    hacer con sus resultados. (Única salvedad: las ediciones Gratuita y Student no
+    pueden usarse <i>como herramienta de trabajo</i> comercial.)</p>
+
+    <h2>4. Descarga, activación y reembolsos</h2>
+    <ul>
+      <li>La descarga se entrega por enlace tras la compra (o gratis para Student).</li>
+      <li>El software funciona <b>offline</b>; no exige cuenta ni conexión para diseñar.</li>
+      <li><b>Reembolso completo dentro de los 14 días</b> si el software no funciona en su
+        equipo y el soporte no pudo resolverlo. Las compras vía plataformas de pago se
+        rigen además por las políticas de la plataforma.</li>
+    </ul>
+
+    <h2>5. Datos personales</h2>
+    <p>Se guarda lo <b>mínimo para que la licencia funcione</b>: el correo con el
+    que compró —al que queda ligada la licencia y por el que llega el código— y,
+    si los completa, los datos de facturación. Nada más. El programa <b>no manda
+    telemetría</b>: no se registra qué diseña, qué componentes usa ni cuánto lo
+    usa, y no hace falta cuenta ni conexión para trabajar.</p>
+    <ul>
+      <li>El pago lo procesa la pasarela (Gumroad o MercadoPago) y los datos de
+        la tarjeta <b>nunca pasan por nuestros servidores</b>.</li>
+      <li>El correo se comparte únicamente con el proveedor de envío de mails,
+        para hacerle llegar su licencia.</li>
+      <li>Si reporta un problema desde el programa, se envía lo que muestra el
+        propio diálogo antes de mandarlo —descripción, versión, sistema y, si
+        usted lo marca, el log— y nada más.</li>
+      <li>Puede pedir el borrado de su cuenta y sus datos escribiendo al
+        contacto de abajo; se responde dentro de los 30 días.</li>
+    </ul>
+
+    <h2>6. Limitación de responsabilidad (resumen)</h2>
+    <p>Las simulaciones, verificaciones DRC/ERC y datos de componentes son herramientas
+    de asistencia: <b>no sustituyen la verificación de ingeniería</b>. Usted es
+    responsable de validar sus diseños antes de fabricarlos o conectarlos a
+    instalaciones reales. La responsabilidad total se limita al importe pagado.
+    El detalle completo está en el EULA.</p>
+
+    <h2>7. Código de terceros y marcas</h2>
+    <p>ElectronArt incluye componentes open source bajo sus propias licencias
+    (Qt/PySide6 LGPL-3.0, NumPy/SciPy/Matplotlib/pdfplumber BSD/MIT); la lista
+    completa acompaña al producto. KiCad, EAGLE, Gerber, PSpice, LCSC y EasyEDA se
+    mencionan solo para describir interoperabilidad; sus marcas pertenecen a sus
+    titulares.</p>
+
+    <h2>8. Contacto</h2>
+    <p>Soporte técnico y licencias:
+    <a href="mailto:soporte@electroniklosungen.com.ar">soporte@electroniklosungen.com.ar</a><br>
+    Compras, facturación y consultas comerciales:
+    <a href="mailto:ventas@electroniklosungen.com.ar">ventas@electroniklosungen.com.ar</a></p>
+
+    <div class="note">Este resumen no reemplaza al EULA, que es el acuerdo vinculante y
+    se muestra durante la instalación y en <i>Ayuda → Acerca de</i>. Recomendamos
+    revisión legal profesional para operaciones de volumen o acuerdos corporativos.</div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container foot-bottom">
+      <span>© 2026 Electronik Lösungen · ElectronArt</span>
+      <a href="index.html">electronart</a>
+    </div>
+  </footer>
+  <script src="fondo.js"></script>
+  <script src="i18n.js"></script>
+</body>
+</html>

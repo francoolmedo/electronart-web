@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ElectronArt — EDA profesional: Esquemático, PCB, Simulación y PLC</title>
+  <meta name="description" content="ElectronArt es una suite EDA de escritorio: diseño de esquemáticos, ruteo de PCB con DRC y Gerber, simulación SPICE, editor Ladder/PLC y exportación de fabricación. Por Electronik Lösungen." />
+  <meta name="theme-color" content="#0c0e12" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <!-- Lo que se ve cuando alguien comparte el link por WhatsApp, X o LinkedIn.
+       Sin `og:image` el link sale como un rectángulo vacío con texto chico, y
+       ese es el primer contacto de casi todo el que llega recomendado. -->
+  <meta property="og:title" content="ElectronArt — Suite EDA profesional" />
+  <meta property="og:description" content="Esquemático · PCB · Simulación SPICE · Ladder/PLC · Fabricación. Sin internet, sin suscripción obligatoria." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://electroniklosungen.com.ar/" />
+  <meta property="og:site_name" content="ElectronArt" />
+  <meta property="og:locale" content="es_AR" />
+  <meta property="og:image" content="https://electroniklosungen.com.ar/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="ElectronArt 9.0 — esquemático, SPICE, PCB y 3D en un solo programa" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ElectronArt — Suite EDA profesional" />
+  <meta name="twitter:description" content="Esquemático · PCB · SPICE · Ladder/PLC. Funciona sin internet." />
+  <meta name="twitter:image" content="https://electroniklosungen.com.ar/assets/og-image.png" />
+  <link rel="canonical" href="https://electroniklosungen.com.ar/" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Datos estructurados: sin esto Google ve una página cualquiera. Con esto
+       sabe que es un software de escritorio, para qué sirve y cuánto sale, y
+       puede mostrar el precio en el resultado de búsqueda. Los números salen
+       de `backend/seed.py`; si cambia un precio, cambia acá. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "ElectronArt",
+    "applicationCategory": "DesignApplication",
+    "applicationSubCategory": "EDA / PCB design",
+    "operatingSystem": "Windows 10, Windows 11",
+    "softwareVersion": "9.0",
+    "inLanguage": ["es", "en", "pt"],
+    "url": "https://electroniklosungen.com.ar/",
+    "downloadUrl": "https://electroniklosungen.com.ar/descargas.html",
+    "image": "https://electroniklosungen.com.ar/assets/og-image.png",
+    "description": "Suite EDA de escritorio: captura de esquemáticos, simulación SPICE, ruteo de PCB multicapa con DRC y Gerber, visor 3D y editor Ladder/PLC. Funciona sin conexión.",
+    "featureList": [
+      "Captura de esquemáticos ANSI e IEC",
+      "Simulación SPICE con Monte Carlo y FFT",
+      "PCB de hasta 16 capas con impedancia controlada",
+      "Gerber, Excellon, IPC-2581, ODB++ y STEP 3D",
+      "Módulo eléctrico IEC 60617 y editor Ladder/PLC"
+    ],
+    "publisher": {
+      "@type": "Organization",
+      "name": "Electronik Lösungen",
+      "url": "https://electroniklosungen.com.ar/"
+    },
+    "offers": [
+      {"@type": "Offer", "name": "Gratuita", "price": "0",
+       "priceCurrency": "USD", "category": "free"},
+      {"@type": "Offer", "name": "Student", "price": "0",
+       "priceCurrency": "USD", "category": "free"},
+      {"@type": "Offer", "name": "Pro", "price": "79",
+       "priceCurrency": "USD",
+       "url": "https://francomatic.gumroad.com/l/electronart-pro"},
+      {"@type": "Offer", "name": "Industrial", "price": "299",
+       "priceCurrency": "USD",
+       "url": "https://francomatic.gumroad.com/l/electronart-industrial"}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- ───────────────── Header ───────────────── -->
+  <header class="site-header" id="top">
+    <div class="container nav">
+      <a class="brand" href="#top">
+        <img src="assets/logo.svg" alt="ElectronArt" height="32" />
+      </a>
+      <nav class="nav-links" aria-label="Principal">
+        <a href="#caracteristicas">Características</a>
+        <a href="#flujo">Flujo</a>
+        <a href="#comparacion">Comparación</a>
+        <a href="#precios">Precios</a>
+        <a href="descargas.html">Descargas</a>
+        <a href="#faq">FAQ</a>
+        <a href="#comunidad">Comunidad</a>
+      </nav>
+      <!-- El programa está en tres idiomas desde la v8.30 y la web estaba sólo
+           en español: quien lo abre en inglés y viene a comprar, no entiende la
+           página. El selector va acá, al lado del botón de descarga, porque es
+           donde alguien que no entiende nada lo busca primero. -->
+      <select id="selIdioma" class="sel-idioma" aria-label="Idioma">
+        <option value="es">ES</option>
+        <option value="en">EN</option>
+        <option value="pt">PT</option>
+      </select>
+      <a class="btn btn-primary btn-sm" href="#precios">Descargar</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <!-- ───────────────── Hero ───────────────── -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Electronik Lösungen</p>
+        <h1>Diseñe, simule y fabrique <span class="grad">en una sola herramienta</span></h1>
+        <p class="lead">
+          ElectronArt integra captura de esquemáticos, simulación SPICE,
+          ruteo de PCB multicapa con autorouter configurable y salida de fabricación
+          completa — Gerber con arcos reales, Excellon, IPC-2581, ODB++ —
+          en una aplicación de escritorio rápida y sin dependencias de la nube.
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#precios">Empezar gratis</a>
+          <a class="btn btn-ghost" href="#flujo">Ver el flujo ▸</a>
+        </div>
+        <ul class="trust">
+          <li>✓ Funciona sin internet</li>
+          <li>✓ Sin suscripción obligatoria</li>
+          <li>✓ Windows 10/11</li>
+        </ul>
+      </div>
+
+      <!-- App screenshot -->
+      <div class="hero-mock">
+        <div class="mock-window">
+          <!-- Captura real de la versión actual. La anterior era del tema azul
+               que ya no existe: la vidriera mostraba un producto distinto del
+               que se descarga. -->
+          <img src="assets/app-pcb.png" class="app-shot"
+               alt="ElectronArt — editor de PCB con la placa ruteada, capas y propiedades" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────── El programa en movimiento ───────────────── -->
+  <!-- Clips reales de la v9.0, no mockups: el esquemático, la simulación
+       SPICE y la placa con paneos y zooms suaves. El autoplay sólo arranca
+       al entrar en pantalla y se pausa al salir; con movimiento reducido
+       queda el póster y el visitante usa los controles. -->
+  <section class="section video-seccion" aria-label="El programa, en movimiento">
+    <div class="container">
+      <h2 class="section-title">El programa, en movimiento</h2>
+      <p class="section-sub">Esquemático, simulación SPICE y placa, con paneos y zooms reales.</p>
+      <div class="video-caja">
+        <video id="ea-video" poster="assets/video/poster.png"
+               muted playsinline loop preload="metadata"
+               aria-label="Esquemático, simulación SPICE y placa, con paneos y zooms reales.">
+          <source src="assets/video/ea-9.0-web.webm" type="video/webm" />
+          <source src="assets/video/ea-9.0-web.mp4" type="video/mp4" />
+          Tu navegador no puede reproducir este video.
+        </video>
+      </div>
+    </div>
+    <script>
+      // Autoplay sólo con la sección en pantalla, y se pausa al salir: un
+      // video que corre fuera de vista gasta batería en un teléfono. Con
+      // movimiento reducido no arranca solo — el visitante usa los controles.
+      (function () {
+        "use strict";
+        var video = document.getElementById("ea-video");
+        if (!video) return;
+        var quieto = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (quieto || !("IntersectionObserver" in window)) {
+          video.controls = true;
+          return;
+        }
+        var obs = new IntersectionObserver(function (es) {
+          es.forEach(function (e) {
+            if (e.isIntersecting) {
+              video.play().catch(function () { video.controls = true; });
+            } else {
+              video.pause();
+            }
+          });
+        }, { threshold: 0.25 });
+        obs.observe(video);
+      })();
+    </script>
+  </section>
+
+  <!-- ───────────────── El viaje por la placa ───────────────── -->
+  <!-- El scroll no mueve la página: mueve una cámara sobre una placa que se
+       dibuja de verdad (website/viaje.js). No es un video: pesa unos KB, se ve
+       nítida a cualquier zoom y no depende de que cargue nada. -->
+  <section class="viaje-seccion" aria-label="Recorrido por una placa">
+    <div class="viaje-pegado">
+      <canvas id="viaje" aria-hidden="true"></canvas>
+      <div class="viaje-velo"></div>
+      <div class="container viaje-textos">
+        <article data-viaje-cap class="activo">
+          <p class="eyebrow">Cobre</p>
+          <h2>Cada pista es una decisión</h2>
+          <p>Ancho, capa, separación, impedancia. ElectronArt las respeta
+          mientras ruteás, no cuando ya es tarde.</p>
+        </article>
+        <article data-viaje-cap>
+          <p class="eyebrow">Vías</p>
+          <h2>Bajás de capa sin perder la red</h2>
+          <p>El autoruteo pone la vía donde hace falta y no donde no: un pad
+          pasante ya cruza la placa, y ahí no va ninguna.</p>
+        </article>
+        <article data-viaje-cap>
+          <p class="eyebrow">Componentes</p>
+          <h2>Modelos de verdad, no cajitas</h2>
+          <p>Más de cien encapsulados con las medidas del fabricante, y el
+          modo caricatura para cuando lo que importa es entender.</p>
+        </article>
+        <article data-viaje-cap>
+          <p class="eyebrow">Fabricación</p>
+          <h2>Y termina en un archivo que la fábrica acepta</h2>
+          <p>Gerber con arcos reales, taladros, Pick &amp; Place, BOM,
+          IPC-2581 y ODB++. Sin sorpresas.</p>
+        </article>
+      </div>
+      <div class="viaje-medidor">
+        <span class="rot">Avance</span>
+        <b id="viaje-avance">00</b>
+        <span class="rot">%</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────── Features ───────────────── -->
+  <section id="caracteristicas" class="section">
+    <div class="container">
+      <h2 class="section-title">Un flujo de trabajo completo, sin cambiar de programa</h2>
+      <p class="section-sub">Esquemático, placa, simulación y documentación comparten un mismo proyecto y se mantienen sincronizados.</p>
+      <div class="grid features">
+        <article class="card">
+          <h3>Captura de esquemáticos</h3>
+          <p>137 símbolos en estilos ANSI, IEC y educativo, buses, hojas jerárquicas, numeración de conductores IEC, cross-probing con la placa y anotación automática de referencias.</p>
+        </article>
+        <article class="card">
+          <h3>Ruteo de PCB profesional</h3>
+          <p>Ruteo interactivo a 45°/90°/arcos, pares diferenciales, serpentinas de igualación, planos de cobre y teardrops. Autorouter con estrategia, grilla y costos ajustables, dos caras y vías puestas por conectividad.</p>
+        </article>
+        <article class="card">
+          <h3>Simulación SPICE integrada</h3>
+          <p>DC, transitorio y AC con modelos no lineales reales (diodo exponencial, BJT Ebers-Moll, MOSFET nivel 1, SCR/Triac con enganche), barridos, Monte Carlo, Fourier/THD y banco con osciloscopio.</p>
+        </article>
+        <article class="card">
+          <h3>Salida de fabricación</h3>
+          <p>Paquete completo en un clic: Gerber RS-274X con arcos G02/G03 reales, Excellon, Pick &amp; Place, BOM con stock en vivo, PDF, IPC-2581 y ODB++, listo para JLCPCB o PCBWay.</p>
+        </article>
+        <article class="card">
+          <h3>Interoperabilidad</h3>
+          <p>Importa KiCad, EAGLE, Gerber multicapa, IPC-2581 y ODB++; exporta STEP 3D con color, DXF y bibliotecas KiCad. Sus proyectos nunca quedan encerrados en un formato.</p>
+        </article>
+        <article class="card">
+          <h3>Verificación DRC y ERC</h3>
+          <p>Reglas por clase de red (clearance, ancho, anillo anular, borde, taladros, pares diferenciales) con panel de violaciones navegable, y verificación eléctrica del esquemático.</p>
+        </article>
+        <article class="card">
+          <h3>Biblioteca de componentes real</h3>
+          <p>Catálogo curado de más de 150 partes verificadas, stock LCSC en vivo, importación del CAD real de EasyEDA y un motor que interpreta datasheets en PDF para crear el símbolo exacto.</p>
+        </article>
+        <article class="card">
+          <h3>Control industrial y PLC</h3>
+          <p>Símbolos IEC de potencia y maniobra, contactores con referencias cruzadas, editor Ladder con simulación en vivo y co-simulación de microcontroladores AVR en el esquemático.</p>
+        </article>
+        <article class="card">
+          <h3>Vista 3D de la placa</h3>
+          <p>Visor OpenGL integrado, no una exportación: cuerpos por encapsulado, cobre y máscara reales, sombreado ambiental horneado, LED translúcidos y render 4K para presentar el proyecto. También exporta STEP con color.</p>
+        </article>
+        <article class="card">
+          <h3>Modo caricatura</h3>
+          <p>El mismo circuito, dibujado como en un libro de electrónica: cada componente de la biblioteca tiene su ilustración reconocible. Para enseñar, documentar o entender de un vistazo qué hace la placa.</p>
+        </article>
+        <article class="card">
+          <h3>Tablero en vivo</h3>
+          <p>Abrí el esquemático y el PCB en el browser —o en una tablet del mismo wifi, protegida con token— y vas viendo cómo se actualizan mientras editás, con botones para refrescar, repour y DRC.</p>
+        </article>
+        <article class="card">
+          <h3>Rápido con placas grandes</h3>
+          <p>Niveles de detalle al alejar, ancho mínimo de pista en pantalla (las pistas nunca desaparecen), antialias que se aparta durante el paneo e índice espacial que hace el DRC cientos de veces más rápido en placas de miles de pistas.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────── Workflow ───────────────── -->
+  <section id="flujo" class="section alt">
+    <div class="container">
+      <h2 class="section-title">Del esquema a la fábrica</h2>
+      <div class="flow">
+        <div class="flow-step"><span class="num">1</span><h3>Dibujá</h3><p>Colocá componentes y cableá tu circuito.</p></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><span class="num">2</span><h3>Simulá</h3><p>Verificá el comportamiento con SPICE y ERC.</p></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><span class="num">3</span><h3>Ruteá</h3><p>Sincronizá a PCB, ruteá el cobre y corré el DRC.</p></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><span class="num">4</span><h3>Fabricá</h3><p>Exportá Gerber, taladros, Pick&amp;Place y BOM.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────── Comparison ───────────────── -->
+  <section id="comparacion" class="section">
+    <div class="container">
+      <h2 class="section-title">Cómo se compara</h2>
+      <p class="section-sub">Lo esencial de las grandes suites, sin la complejidad ni el precio.</p>
+      <div class="table-wrap">
+        <table class="cmp">
+          <thead>
+            <tr>
+              <th>Función</th>
+              <th class="hl">ElectronArt</th>
+              <th>Altium</th>
+              <th>Eagle</th>
+              <th>Proteus</th>
+              <th>EasyEDA</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Esquemático + PCB</td><td class="hl">✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+            <tr><td>Simulación SPICE integrada</td><td class="hl">✓</td><td>~</td><td>✗</td><td>✓</td><td>✓</td></tr>
+            <tr><td>Editor Ladder / PLC</td><td class="hl">✓</td><td>✗</td><td>✗</td><td>~</td><td>✗</td></tr>
+            <tr><td>Esquemas eléctricos IEC + simulación de mando</td><td class="hl">✓</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td></tr>
+            <tr><td>Funciona 100% offline</td><td class="hl">✓</td><td>✓</td><td>~</td><td>✓</td><td>✗</td></tr>
+            <tr><td>Sin suscripción obligatoria</td><td class="hl">✓</td><td>✗</td><td>✗</td><td>✓</td><td>~</td></tr>
+            <tr><td>Exportación Gerber / BOM</td><td class="hl">✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+            <tr><td>Precio de entrada</td><td class="hl">Gratis</td><td>$$$</td><td>$$</td><td>$$</td><td>Gratis*</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="fineprint">Comparativa orientativa. Marcas de terceros pertenecen a sus respectivos dueños. “~” = parcial / con limitaciones.</p>
+    </div>
+  </section>
+
+  <!-- ───────────────── Pricing ───────────────── -->
+  <section id="precios" class="section alt">
+    <div class="container">
+      <h2 class="section-title">Precios simples, en USD</h2>
+      <p class="section-sub">Licencia anual. Sin nube y sin cuenta obligatoria.</p>
+      <div class="grid pricing">
+        <!-- Los cuatro niveles son los de `src/licensing/license.py`. Lo que
+             lista cada tarjeta sale de FEATURE_MIN_TIER, no de lo que suene
+             bien.
+             Rebalanceo del 4/8/2026: la Gratuita listaba «esquemático, PCB, 3D,
+             autorouter, SPICE y Gerber» y se diferenciaba de Pro SOLO por la
+             marca de agua — quien la leía no tenía un motivo para pagar. Ahora
+             cada nivel resuelve un caso distinto y la Gratuita conserva la
+             promesa real: llegar al Gerber de una placa de 2 capas sin pagar. -->
+        <article class="price-card">
+          <h3>Gratuita</h3>
+          <p class="price"><span class="amt">Gratis</span></p>
+          <p class="price-sub">Sin registro, sin límite de tiempo</p>
+          <ul>
+            <li>✓ Esquemático, PCB y 3D completos</li>
+            <li>✓ Autorouter, DRC y ERC</li>
+            <li>✓ Simulación SPICE</li>
+            <li>✓ Gerber, Excellon y BOM</li>
+            <li class="muted">— Hasta 2 capas de cobre</li>
+            <li class="muted">— Con marca de agua, uso no comercial</li>
+          </ul>
+          <a class="btn btn-ghost full" href="descargas.html">Descargar</a>
+        </article>
+
+        <article class="price-card">
+          <h3>Estudiante</h3>
+          <p class="price"><span class="amt">Gratis</span></p>
+          <p class="price-sub">Verificando que estudiás</p>
+          <ul>
+            <li>✓ Todo lo de Gratuita, sin marca de agua</li>
+            <li>✓ Hasta 6 capas de cobre</li>
+            <li>✓ Pares diferenciales y serpentinas</li>
+            <li>✓ Monte Carlo y FFT en SPICE</li>
+            <li>✓ Lectura de datasheets con IA</li>
+            <li>✓ Módulo eléctrico y PLC completo</li>
+            <li class="muted">— Uso no comercial</li>
+          </ul>
+          <a class="btn btn-ghost full" data-pay="student" data-link="tienda"
+             href="#">Pedir licencia</a>
+        </article>
+
+        <article class="price-card featured">
+          <div class="ribbon">Más elegido</div>
+          <h3>Pro</h3>
+          <p class="price"><span class="cur">USD</span><span class="amt">79</span><span class="per">/ año</span></p>
+          <p class="price-sub">Para makers y profesionales</p>
+          <ul>
+            <li>✓ Uso comercial</li>
+            <li>✓ Hasta 16 capas de cobre</li>
+            <li>✓ Pares diferenciales y serpentinas</li>
+            <li>✓ Monte Carlo y FFT en SPICE</li>
+            <li>✓ IPC-2581, ODB++ y STEP 3D</li>
+            <li>✓ Actualizaciones 1 año</li>
+          </ul>
+          <a class="btn btn-primary full" data-pay="pro" data-link="tienda"
+             href="#">Comprar Pro</a>
+          <!-- El salto de «gratis con marca de agua» a «pagar un año entero»
+               era demasiado grande: en el medio no había forma de saber si el
+               programa sirve para el trabajo de uno. La prueba no pide tarjeta,
+               así que tampoco hay nada que cancelar después. -->
+          <a class="btn btn-ghost full prueba-link" data-link="prueba"
+             href="#">Probarlo 14 días gratis</a>
+          <p class="fineprint">Sin tarjeta y sin renovación automática.</p>
+        </article>
+
+        <article class="price-card">
+          <h3>Industrial</h3>
+          <p class="price"><span class="cur">USD</span><span class="amt">299</span><span class="per">/ año</span></p>
+          <p class="price-sub">Para control y automatización</p>
+          <ul>
+            <li>✓ Todo lo de Pro</li>
+            <li>✓ Librería IEC 60617 de control</li>
+            <li>✓ Simulación del esquema de mando</li>
+            <li>✓ Montaje en riel DIN y tablero</li>
+            <li>✓ Editor Ladder / PLC</li>
+            <li>✓ Soporte prioritario y licencia de equipo</li>
+          </ul>
+          <a class="btn btn-ghost full" data-pay="industrial" data-link="tienda"
+             href="#">Comprar Industrial</a>
+        </article>
+      </div>
+      <p class="fineprint">¿En Argentina? También aceptamos <a href="#" data-pay="mercadopago" data-link="tienda">MercadoPago</a> · Pagos con tarjeta internacional vía <a href="#" data-pay="gumroad" data-link="tienda">Gumroad</a>.
+      Al comprar o descargar aceptás los <a href="terminos.html">Términos y licencia (EULA)</a>. Tus diseños son 100&nbsp;% tuyos.</p>
+    </div>
+  </section>
+
+  <!-- ───────────────── FAQ ───────────────── -->
+  <section id="faq" class="section">
+    <div class="container narrow">
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <div class="faq">
+        <details>
+          <summary>¿Necesito conexión a internet?</summary>
+          <p>No. Todo lo que hace al diseño —esquemático, simulación, ruteo, DRC, vista 3D y salida de fabricación— corre entero en tu máquina, sin cuenta ni nube. La lectura de datasheets en PDF también es local: reconstruye la tabla de pines por la geometría del documento. Internet hace falta sólo si usás lo que es online por naturaleza: stock LCSC en vivo, importar el CAD de EasyEDA o conectar tu propia clave de IA como último recurso para un datasheet difícil.</p>
+        </details>
+        <details>
+          <summary>¿En qué sistemas corre?</summary>
+          <p>El programa corre en <b>Windows, Linux y macOS</b>: está hecho con Python y PySide6 (Qt6), y no depende de nada propio de un sistema. Hoy publicamos el <b>instalador de Windows 10 y 11</b>; en Linux y macOS se ejecuta desde el código, y el paquete compilado para esos dos está en camino.</p>
+        </details>
+        <details>
+          <summary>¿La licencia es por suscripción?</summary>
+          <p>Pro e Industrial son anuales: se renuevan cada 12 meses y podés cancelarlas cuando quieras. Lo que <b>no</b> es por suscripción es el programa: funciona sin conexión y tus archivos son tuyos, en tu disco, en un formato abierto. Gratuita y Estudiante no vencen.</p>
+        </details>
+        <details>
+          <summary>¿Puedo usar la versión gratuita comercialmente?</summary>
+          <p>No. La Gratuita y la de Estudiante son para uso personal y educativo. Para trabajo comercial necesitás Pro o Industrial.</p>
+        </details>
+        <details>
+          <summary>¿Qué puedo hacer realmente con la versión Gratuita?</summary>
+          <p>Un diseño completo de dos caras, de punta a punta: dibujar el esquemático, simularlo en SPICE, rutear la placa a mano o con el autorouter, verificar con DRC y ERC, mirarla en 3D y exportar el Gerber, el Excellon y el BOM para mandarla a fabricar. Sale con una marca de agua y es para uso no comercial. Lo que queda para los planes pagos es lo que necesita un trabajo más exigente: más de dos capas, pares diferenciales y serpentinas de igualación, Monte Carlo y FFT, las salidas IPC-2581/ODB++/STEP que pide una fábrica grande, y el módulo eléctrico industrial.</p>
+        </details>
+        <details>
+          <summary>¿Qué es el módulo eléctrico / Industrial?</summary>
+          <p>Es la parte que no hace un EDA de electrónica: esquemas eléctricos de mando y potencia con la simbología normalizada IEC 60617 —bobinas, contactores, guardamotores, relés térmicos, disyuntores diferenciales, temporizadores, transformadores de mando y borneras—, el montaje del tablero sobre riel DIN, y la <strong>simulación del esquema</strong>: apretás el pulsador de marcha en pantalla, la bobina se energiza, el contactor engancha, el motor arranca y el térmico dispara si lo sobrecargás. Incluye el editor Ladder para la lógica del PLC. Está en Industrial, y también en Estudiante para uso no comercial: quien está aprendiendo electrotécnica lo necesita entero.</p>
+        </details>
+        <details>
+          <summary>¿Exporta archivos para fabricar en JLCPCB/PCBWay?</summary>
+          <p>Sí. Exporta Gerber RS-274X, taladros Excellon, Pick&amp;Place y BOM, compatibles con las fábricas más comunes.</p>
+        </details>
+        <details>
+          <summary>¿Qué métodos de pago aceptan?</summary>
+          <p>Tarjeta internacional vía Gumroad/Stripe y MercadoPago para Argentina y Latinoamérica.</p>
+        </details>
+        <details>
+          <summary>¿De quién son los diseños que hago con ElectronArt?</summary>
+          <p>Suyos, al 100&nbsp;%. Los esquemáticos, PCBs, Gerbers y productos que diseñe le pertenecen
+          por completo y puede comercializarlos sin regalías ni atribución, con cualquier edición.
+          El detalle está en los <a href="terminos.html">Términos y licencia</a>.</p>
+        </details>
+        <details>
+          <summary>¿Puedo usarlo para dictar cursos o en una escuela?</summary>
+          <p>Las instituciones educativas pueden usar la edición Student en aulas y laboratorios sin
+          cargo. Para cursos pagos que se apoyan en el software corresponde una licencia por docente:
+          Pro si el curso es de diseño electrónico y de PCB, e Industrial si se apoya en el módulo
+          eléctrico/PLC, que Pro no incluye.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────── Comunidad ───────────────── -->
+  <section id="comunidad" class="section alt">
+    <div class="container narrow">
+      <h2 class="section-title">Comunidad y soporte</h2>
+      <p class="section-sub">ElectronArt está en beta y se desarrolla a la vista. Preguntas, ayuda entre usuarios y errores van al mismo lugar, y se responden ahí.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#" data-link="foro">Entrar al foro</a>
+        <a class="btn btn-ghost" href="descargas.html">Descargas y checksums ▸</a>
+      </div>
+      <p class="fineprint">¿Encontraste un error? Desde la app, <b>Ayuda → «Reportar un problema…»</b> arma el reporte con la versión, tu sistema y el log — sin que tengas que buscar nada.</p>
+    </div>
+  </section>
+
+  <!-- ───────────────── CTA band ───────────────── -->
+  <section class="cta-band">
+    <div class="container">
+      <h2>Diseñá tu próxima placa hoy</h2>
+      <p>Descargá la versión gratuita y llegá hasta el Gerber sin pagar nada.</p>
+      <a class="btn btn-primary" href="#precios">Empezar gratis</a>
+    </div>
+  </section>
+
+  <!-- ───────────────── Footer ───────────────── -->
+  <footer class="site-footer">
+    <div class="container foot-grid">
+      <div>
+        <img src="assets/logo.svg" alt="ElectronArt" height="28" />
+        <p class="muted">Suite EDA de escritorio.<br/>by <strong>Electronik Lösungen</strong></p>
+      </div>
+      <div>
+        <h4>Producto</h4>
+        <a href="#caracteristicas">Características</a>
+        <a href="#precios">Precios</a>
+        <a href="descargas.html">Descargas</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div>
+        <h4>Recursos</h4>
+        <a href="#" data-link="manual">Manual</a>
+        <a href="#" data-link="foro">Foro</a>
+        <a href="changelog.html">Novedades</a>
+        <a href="terminos.html">Términos y licencia</a>
+        <a href="#" data-link="contacto">Contacto</a>
+      </div>
+      <div>
+        <h4>Seguinos</h4>
+        <a href="#" data-link="instagram">Instagram</a>
+        <a href="#" data-link="youtube">YouTube</a>
+        <a href="#" data-link="github">GitHub</a>
+      </div>
+    </div>
+    <div class="container foot-bottom">
+      <span>© <span id="year">2026</span> Electronik Lösungen · ElectronArt. Todos los derechos reservados.</span>
+      <span class="muted"><a href="terminos.html">Términos y licencia</a> · Software propietario — sus diseños le pertenecen</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="i18n.js"></script>
+  <script src="enlaces.js"></script>
+  <script src="fondo.js"></script>
+  <script src="viaje.js"></script>
+</body>
+</html>
