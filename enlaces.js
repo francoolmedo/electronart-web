@@ -33,6 +33,12 @@
     // cuenta gratuita de PythonAnywhere admite 100 MB por archivo, y el
     // tráfico de un binario pesado se comería su cuota. GitHub no cobra el
     // tráfico de los releases y sirve por CDN.
+    // El instalador va primero en la tabla y es la descarga recomendada desde
+    // F22: deja accesos, desinstalador y asociación de archivos, y no pide
+    // permisos de administrador. La clave la escribe `gen_downloads.py` como
+    // `instalador-<versión>`; sin esta entrada, la fila que él genera queda
+    // apuntando a un enlace que no existe.
+    "instalador-9.0": "https://github.com/francoolmedo/electronart-releases/releases/download/v9.0/ElectronArt-v9.0-win64-setup.exe",
     "descarga-9.0": "https://github.com/francoolmedo/electronart-releases/releases/download/v9.0/ElectronArt-v9.0-win64.zip",
     // El manual viaja con el sitio: es el mismo PDF que se genera con
     // `python docs/build_manual_pdf.py`, copiado a la raíz al publicar.
