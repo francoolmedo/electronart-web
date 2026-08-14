@@ -621,7 +621,17 @@ p { margin: 0 0 1em; }
   .nav-links {
     display: none; position: absolute; top: 100%; left: 0; right: 0;
     flex-direction: column;
-    background: var(--kapton);
+    /* 🔴 Fondo OPACO debajo del tinte, no sólo el tinte.
+       El kapton son `rgba(201,162,39,.07)`: un 7 %, o sea casi nada. Toda la
+       legibilidad quedaba a cargo del `backdrop-filter`, y donde el navegador
+       no lo aplica —o lo degrada, que en un teléfono pasa seguido— el menú se
+       abría encima de la captura del programa y los enlaces no se leían.
+       Es una lámina apoyada sobre la placa, y una lámina tapa lo que tiene
+       abajo: el ámbar se conserva como tinte, pero el sustrato va sólido.
+       Con blur, además, sigue viéndose el desenfoque por detrás. */
+    background:
+      linear-gradient(var(--kapton), var(--kapton)),
+      color-mix(in srgb, var(--bg) 97%, transparent);
     backdrop-filter: blur(var(--kapton-blur));
     border-top: 1px solid var(--kapton-filo);
     box-shadow: 0 24px 48px -24px var(--sombra-3);
