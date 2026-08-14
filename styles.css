@@ -88,7 +88,19 @@ body {
   width: 100%; height: 100%;
   z-index: 0; pointer-events: none;
 }
-body > *:not(#cobre-fondo) { position: relative; z-index: 1; }
+/* 🔴 El encabezado queda FUERA de esta regla, y no es un detalle.
+   Esta línea le ponía `z-index:1` a todos los hijos del body, encabezado
+   incluido, y su especificidad es (1,0,1) —el `:not()` aporta la de su
+   argumento, que es un ID— contra (0,1,0) del `.site-header` de más abajo. O
+   sea que el `z-index:50` que el encabezado declara **nunca se aplicaba**:
+   quedaba en 1, empatado con cada sección, y con el z-index empatado gana el
+   que va después en el documento. Por eso el menú ☰ se metía por debajo del
+   contenido en el teléfono, que es donde ese botón existe.
+   Se lo excluye acá en vez de intentar ganarle por especificidad: contra un
+   ID no alcanza ninguna cantidad de clases —`body > .site-header` es (0,1,1)
+   y pierde igual—, y subirle el número al header tampoco habría servido,
+   porque el problema nunca fue el número. */
+body > *:not(#cobre-fondo):not(.site-header) { position: relative; z-index: 1; }
 
 /* Paralaje del fondo de trazas: apenas 6px, como si el cobre estuviera una
    capa atrás del scroll. Se apaga del todo con prefers-reduced-motion. */
