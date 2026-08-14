@@ -380,7 +380,17 @@ p { margin: 0 0 1em; }
 
 @media (max-width: 640px) {
   .viaje-seccion { height: 360vh; }
+  /* 🔴 El texto pasa a ocupar todo el ancho, y el medidor vive abajo a la
+     derecha: en el teléfono se montaban uno sobre otro y el párrafo quedaba
+     ilegible bajo el «PROGRESS 100 %». En pantalla grande no pasaba porque el
+     artículo corta en 46ch y nunca llega hasta esa esquina.
+     El medidor sube a la esquina de arriba, que en esta sección es cielo:
+     ahí está el cobre de la escena y no hay una sola línea de texto. */
   .viaje-textos article { max-width: none; }
+  .viaje-medidor {
+    top: clamp(1rem, 3vh, 2rem);
+    bottom: auto;
+  }
 }
 /* Sin scroll de ventana (dentro de un visor que estira el marco hasta la
    altura del contenido): la sección mide una pantalla y el recorrido corre
