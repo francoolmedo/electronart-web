@@ -102,6 +102,20 @@ body {
    porque el problema nunca fue el número. */
 body > *:not(#cobre-fondo):not(.site-header) { position: relative; z-index: 1; }
 
+/* Una landing no se mueve de costado, nunca.
+   Franco la abrió en el teléfono y mandó la captura: el pie, el copyright y el
+   panel del asistente aparecían **todos cortados contra el borde izquierdo**.
+   No estaba mal puesto el asistente —lo que estaba corrida era la página—, y un
+   `position: fixed` se va con ella. Cuando la página desborda a lo ancho,
+   además, el dedo la arrastra sin querer al hacer scroll vertical.
+   `clip` y no `hidden` a propósito: `overflow: hidden` en el body convierte al
+   elemento en contenedor de scroll y **rompe el `position: sticky`** del
+   encabezado y del recorrido; `clip` recorta sin crear ese contexto.
+   Es una defensa, no un diagnóstico: lo correcto sigue siendo encontrar qué
+   desborda. Pero mientras eso no esté, ningún desborde nuevo vuelve a mover el
+   sitio entero de lugar. */
+html, body { overflow-x: clip; }
+
 /* Paralaje del fondo de trazas: apenas 6px, como si el cobre estuviera una
    capa atrás del scroll. Se apaga del todo con prefers-reduced-motion. */
 @keyframes paralaje {
