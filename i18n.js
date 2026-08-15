@@ -189,13 +189,12 @@
       /* El ZIP y su hash no se traducen: son el nombre de un archivo y una
          huella. Van igual en los tres idiomas para que el chequeo no los
          reporte como texto olvidado en cada build. */
-      "ElectronArt-v9.0-win64.zip": "ElectronArt-v9.0-win64.zip",
-      "sha256sum ElectronArt-v9.0-win64.zip":
-        "sha256sum ElectronArt-v9.0-win64.zip",
-      "shasum -a 256 ElectronArt-v9.0-win64.zip":
-        "shasum -a 256 ElectronArt-v9.0-win64.zip",
-      "sha256sum -c ElectronArt-v9.0-win64.zip.sha256":
-        "sha256sum -c ElectronArt-v9.0-win64.zip.sha256",
+      "sha256sum ElectronArt-*-win64.zip":
+        "sha256sum ElectronArt-*-win64.zip",
+      "shasum -a 256 ElectronArt-*-win64.zip":
+        "shasum -a 256 ElectronArt-*-win64.zip",
+      "sha256sum -c ElectronArt-*-win64.zip.sha256":
+        "sha256sum -c ElectronArt-*-win64.zip.sha256",
       "Para makers y profesionales": "For makers and professionals",
       "✓ Uso comercial": "✓ Commercial use",
       "✓ Hasta 16 capas de cobre": "✓ Up to 16 copper layers",
@@ -899,13 +898,12 @@
       "— Uso no comercial": "— Uso não comercial",
       "Pedir licencia": "Pedir licença",
       "Más elegido": "Mais escolhido",
-      "ElectronArt-v9.0-win64.zip": "ElectronArt-v9.0-win64.zip",
-      "sha256sum ElectronArt-v9.0-win64.zip":
-        "sha256sum ElectronArt-v9.0-win64.zip",
-      "shasum -a 256 ElectronArt-v9.0-win64.zip":
-        "shasum -a 256 ElectronArt-v9.0-win64.zip",
-      "sha256sum -c ElectronArt-v9.0-win64.zip.sha256":
-        "sha256sum -c ElectronArt-v9.0-win64.zip.sha256",
+      "sha256sum ElectronArt-*-win64.zip":
+        "sha256sum ElectronArt-*-win64.zip",
+      "shasum -a 256 ElectronArt-*-win64.zip":
+        "shasum -a 256 ElectronArt-*-win64.zip",
+      "sha256sum -c ElectronArt-*-win64.zip.sha256":
+        "sha256sum -c ElectronArt-*-win64.zip.sha256",
       "Para makers y profesionales": "Para makers e profissionais",
       "✓ Uso comercial": "✓ Uso comercial",
       "✓ Hasta 16 capas de cobre": "✓ Até 16 camadas de cobre",

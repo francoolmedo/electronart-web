@@ -78,17 +78,17 @@
     <p>Después de bajar el archivo, compará su hash SHA-256 con el que figura arriba. Si no coinciden, el archivo se bajó incompleto o alguien lo modificó — no lo ejecutes.</p>
 
     <p><b>Windows (PowerShell):</b></p>
-    <pre>Get-FileHash .\ElectronArt-v9.0-win64.zip -Algorithm SHA256</pre>
+    <pre>Get-FileHash .\ElectronArt-*-win64-setup.exe -Algorithm SHA256</pre>
 
     <p><b>Linux:</b></p>
-    <pre>sha256sum ElectronArt-v9.0-win64.zip</pre>
+    <pre>sha256sum ElectronArt-*-win64.zip</pre>
 
     <p><b>macOS:</b></p>
-    <pre>shasum -a 256 ElectronArt-v9.0-win64.zip</pre>
+    <pre>shasum -a 256 ElectronArt-*-win64.zip</pre>
 
     <p>Al lado de cada ZIP publicamos también su archivo <code>.sha256</code>,
     si preferís que la verificación la haga la herramienta:</p>
-    <pre>sha256sum -c ElectronArt-v9.0-win64.zip.sha256</pre>
+    <pre>sha256sum -c ElectronArt-*-win64.zip.sha256</pre>
 
     <h2>Requisitos</h2>
     <ul>
