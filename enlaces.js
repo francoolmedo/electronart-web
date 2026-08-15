@@ -38,8 +38,8 @@
     // permisos de administrador. La clave la escribe `gen_downloads.py` como
     // `instalador-<versión>`; sin esta entrada, la fila que él genera queda
     // apuntando a un enlace que no existe.
-    "instalador-9.0": "https://github.com/francoolmedo/electronart-releases/releases/download/v9.0/ElectronArt-v9.0-win64-setup.exe",
-    "descarga-9.0": "https://github.com/francoolmedo/electronart-releases/releases/download/v9.0/ElectronArt-v9.0-win64.zip",
+    "instalador-9.1": "https://github.com/francoolmedo/electronart-releases/releases/download/v9.1/ElectronArt-v9.1-win64-setup.exe",
+    "descarga-9.1": "https://github.com/francoolmedo/electronart-releases/releases/download/v9.1/ElectronArt-v9.1-win64.zip",
     // El manual viaja con el sitio: es el mismo PDF que se genera con
     // `python docs/build_manual_pdf.py`, copiado a la raíz al publicar.
     manual: "Manual-ElectronArt.pdf",
