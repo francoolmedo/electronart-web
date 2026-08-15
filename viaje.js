@@ -41,6 +41,42 @@
   function construir() {
     pistas = []; vias = []; pads = []; chips = []; puntos = [];
 
+    // Recorta los segmentos para que no superen los límites físicos del
+    // sustrato. Una pista que sale del contorno es una placa infabricable.
+    //
+    // El recorte NO va al borde: va a `borde(ancho)`. Son dos razones, y las
+    // dos se ven en pantalla. Las pistas se dibujan con `lineCap = "round"`,
+    // así que el eje termina en el punto y el cobre sigue medio ancho más
+    // allá — recortando en x=0 el semicírculo del extremo queda igual afuera.
+    // Y aun sin eso, cobre pegado al fresado no se fabrica: toda placa lleva
+    // su separación al borde, y el que mira esto sabe cuánta.
+    var CLEARANCE = 0.4;                 // mm al borde, como en el DRC de verdad
+    function borde(ancho) { return ancho / 2 + CLEARANCE; }
+
+    function recortar(pts, ancho) {
+      var m = borde(ancho), x0 = m, x1 = ANCHO - m;
+      var ok = [];
+      for (var i = 0; i < pts.length; i++) {
+        var p = pts[i];
+        if (p[0] < x0) {
+          if (i + 1 < pts.length && pts[i + 1][0] >= x0) {
+            var dx = pts[i + 1][0] - p[0], dy = pts[i + 1][1] - p[1];
+            ok.push([x0, p[1] + (dx ? (dy / dx) * (x0 - p[0]) : 0)]);
+          }
+        } else if (p[0] > x1) {
+          if (ok.length > 0) {
+            var prev = ok[ok.length - 1];
+            var dx2 = p[0] - prev[0], dy2 = p[1] - prev[1];
+            ok.push([x1, prev[1] + (dx2 ? (dy2 / dx2) * (x1 - prev[0]) : 0)]);
+          }
+          break;
+        } else {
+          ok.push([p[0], p[1]]);
+        }
+      }
+      return ok;
+    }
+
     // El camino principal: la pista por la que viaja la cámara. Va de
     // izquierda a derecha con quiebres a 45°, como se rutea de verdad.
     var x = -20, y = ALTO * 0.62;
@@ -59,6 +95,7 @@
       }
     }
     puntos.push([ANCHO + 20, y]);
+    puntos = recortar(puntos, 1.6);
     pistas.push({ pts: puntos, ancho: 1.6, principal: true });
 
     // Pistas de acompañamiento: dan densidad y contexto.
@@ -77,8 +114,17 @@
           }
         }
       }
-      pistas.push({ pts: pts, ancho: 0.7 + Math.random() * 0.5, principal: false });
+      var ancho = 0.7 + Math.random() * 0.5;
+      pistas.push({ pts: recortar(pts, ancho), ancho: ancho, principal: false });
     }
+
+    // Las vías nacían de los quiebres, y los quiebres podían caer fuera. Se
+    // filtran con su propio radio: lo que sale del contorno es el anillo, no
+    // el centro.
+    var R_VIA = 1.9;
+    vias = vias.filter(function (v) {
+      return v[0] >= borde(R_VIA * 2) && v[0] <= ANCHO - borde(R_VIA * 2);
+    });
 
     // Integrados. Van ANCLADOS AL CAMINO, no en posiciones fijas de la placa:
     // puestos al azar, la cámara atravesaba tramos enteros sin nada alrededor y

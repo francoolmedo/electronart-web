@@ -148,11 +148,15 @@
       <h2 class="section-title">El programa, en movimiento</h2>
       <p class="section-sub">Esquemático, simulación SPICE y placa, con paneos y zooms reales.</p>
       <div class="video-caja">
+        <!-- El MP4 va PRIMERO y no es un detalle de gusto: son 6,1 MB contra
+             los 13,7 del WebM, y el navegador se queda con el primer <source>
+             que declara soportar. Con el WebM adelante, un teléfono bajaba el
+             doble para ver lo mismo. -->
         <video id="ea-video" poster="assets/video/poster.png"
                muted playsinline loop preload="metadata"
                aria-label="Esquemático, simulación SPICE y placa, con paneos y zooms reales.">
-          <source src="assets/video/ea-9.0-web.webm" type="video/webm" />
           <source src="assets/video/ea-9.0-web.mp4" type="video/mp4" />
+          <source src="assets/video/ea-9.0-web.webm" type="video/webm" />
           Tu navegador no puede reproducir este video.
         </video>
       </div>

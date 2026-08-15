@@ -483,8 +483,20 @@
      kapton para el panel (nunca vidrio blanco), pads perforados en la lista
      y el oro usado dos veces por pantalla, no más. */
 
+  /* ── positioned: fixed, de verdad ────────────────────────────────────────
+     El botón cuelga del `body` y ni `body` ni `html` tienen transform,
+     filter, perspective ni will-change: el sospechoso clásico del `fixed`
+     que no está donde dice no es. La causa es otra: `styles.css` tiene una
+     regla `body > *:not(#cobre-fondo):not(.site-header) { position: relative;
+     z-index: 1; }` (línea ~103) que fuerza esas propiedades a TODO hijo
+     directo del body —y el `:not(#cobre-fondo)` le da un nivel de ID de
+     especificidad, así que le GANA al `#ea-asis-tab` (1,0,0). El botón se
+     caía al flujo normal, al final del documento, pegado al borde izquierdo
+     pese al `right:18px`. Los `!important` van sólo acá, sobre las dos
+     propiedades que contiende esa regla, y dentro del estilo propio del
+     asistente: no tocan el resto de la página. */
   var CSS = [
-    "#ea-asis,#ea-asis-tab{position:fixed;right:18px;z-index:9999;font-family:var(--f-body,system-ui)}",
+    "#ea-asis,#ea-asis-tab{position:fixed!important;right:18px;z-index:9999!important;font-family:var(--f-body,system-ui)}",
     "#ea-asis-tab{bottom:18px;display:flex;align-items:center;gap:.55rem;",
     "  padding:.62rem 1.05rem;cursor:pointer;border:1px solid var(--border-2,#3a404f);",
     "  background:var(--surface,#1b1e25);color:var(--text,#e7e4dc);",
