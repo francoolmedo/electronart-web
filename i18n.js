@@ -491,6 +491,34 @@
       "Tu navegador no puede reproducir este video.":
         "Your browser cannot play this video.",
 
+      /* ── v9.1 ── */
+      "v9.1 — acabado de placa y marca nueva":
+        "v9.1 — board finish and a new mark",
+      "Lágrimas que se funden con la pista":
+        "Teardrops that blend into the track",
+      ": los flancos salen tangentes al pad y llegan paralelos a la pista, así que el quiebre en la unión pasó de casi cincuenta grados a tres.":
+        ": the flanks leave the pad tangentially and reach the track parallel to it, so the kink at the junction went from nearly fifty degrees down to three.",
+      "Codos a 45°":
+        "45° corners",
+      ": se cortan de una vez sobre toda la placa, después de rutear y sin tocar el motor que hoy cierra el cien por ciento.":
+        ": mitred across the whole board in one go, after routing and without touching the router that today closes one hundred per cent.",
+      "Identificación en la serigrafía":
+        "Board identification on the silkscreen",
+      ": qué placa es y de qué revisión, colocada sola en un borde libre. Si no entra sin pisar un componente, no se imprime.":
+        ": which board this is and which revision, placed on its own along a free edge. If it does not fit without covering a component, it is not printed.",
+      "Propiedades del pad":
+        "Pad properties",
+      ": doble clic sobre el pad abre las suyas y no las del componente entero — forma, tamaño en cada eje y red.":
+        ": double-clicking a pad opens its own properties rather than the whole component's — shape, size on each axis and net.",
+      "Agujeros de montaje y puntos de prueba":
+        "Mounting holes and test points",
+      "como objetos de la placa, que se guardan con el proyecto. Las reglas avisan si les queda cobre ajeno bajo la arandela o si el barreno está tan al borde que el tornillo parte la fibra.":
+        " as board objects, saved with the project. The rules warn you if foreign copper sits under the washer, or if the hole is so close to the edge that the screw will crack the fibreglass.",
+      "Identidad nueva":
+        "A new identity",
+      ": la ligadura EA en el programa, el sitio y el foro, y los archivos .ea con su propio ícono para distinguirlos del programa en el explorador.":
+        ": the EA ligature across the program, the site and the forum, and .ea files with an icon of their own so they read apart from the program in the file explorer.",
+
       /* ── v9.0 ── */
       "v9.0 — Máscara, materia y módulo eléctrico":
         "v9.0 — Mask, matter and the electrical module",
@@ -1165,6 +1193,34 @@
         "Esquemático, simulação SPICE e placa, com paneios e zooms reais.",
       "Tu navegador no puede reproducir este video.":
         "Seu navegador não consegue reproduzir este vídeo.",
+
+      /* ── v9.1 ── */
+      "v9.1 — acabado de placa y marca nueva":
+        "v9.1 — acabamento da placa e marca nova",
+      "Lágrimas que se funden con la pista":
+        "Lágrimas que se fundem com a trilha",
+      ": los flancos salen tangentes al pad y llegan paralelos a la pista, así que el quiebre en la unión pasó de casi cincuenta grados a tres.":
+        ": os flancos saem tangentes ao pad e chegam paralelos à trilha, então a quebra na junção passou de quase cinquenta graus para três.",
+      "Codos a 45°":
+        "Cantos a 45°",
+      ": se cortan de una vez sobre toda la placa, después de rutear y sin tocar el motor que hoy cierra el cien por ciento.":
+        ": cortados de uma vez em toda a placa, depois de rotear e sem mexer no motor que hoje fecha cem por cento.",
+      "Identificación en la serigrafía":
+        "Identificação na serigrafia",
+      ": qué placa es y de qué revisión, colocada sola en un borde libre. Si no entra sin pisar un componente, no se imprime.":
+        ": qual placa é e de qual revisão, posicionada sozinha em uma borda livre. Se não couber sem cobrir um componente, não é impressa.",
+      "Propiedades del pad":
+        "Propriedades do pad",
+      ": doble clic sobre el pad abre las suyas y no las del componente entero — forma, tamaño en cada eje y red.":
+        ": clicar duas vezes no pad abre as dele e não as do componente inteiro — formato, tamanho em cada eixo e rede.",
+      "Agujeros de montaje y puntos de prueba":
+        "Furos de fixação e pontos de teste",
+      "como objetos de la placa, que se guardan con el proyecto. Las reglas avisan si les queda cobre ajeno bajo la arandela o si el barreno está tan al borde que el tornillo parte la fibra.":
+        " como objetos da placa, salvos junto com o projeto. As regras avisam se sobra cobre de outra rede sob a arruela ou se o furo está tão na borda que o parafuso racha a fibra.",
+      "Identidad nueva":
+        "Identidade nova",
+      ": la ligadura EA en el programa, el sitio y el foro, y los archivos .ea con su propio ícono para distinguirlos del programa en el explorador.":
+        ": a ligadura EA no programa, no site e no fórum, e os arquivos .ea com ícone próprio para distingui-los do programa no explorador.",
 
       /* ── v9.0 ── */
       "v9.0 — Máscara, materia y módulo eléctrico":
