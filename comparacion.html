@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ElectronArt frente a KiCad, Altium, EasyEDA y Flux — comparación</title>
+  <meta name="description" content="Comparación honesta de ElectronArt con KiCad, Altium, Eagle, EasyEDA, Proteus y Flux: qué hace cada uno mejor, y cuándo conviene otro programa y no éste." />
+  <link rel="icon" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="canonical" href="https://electroniklosungen.com.ar/comparacion.html" />
+  <style>
+    .comp{max-width:900px;margin:0 auto;padding:clamp(2rem,6vw,3.6rem) 20px;line-height:1.7;color:var(--muted)}
+    .comp h1{margin-bottom:.2em;color:var(--text)}
+    .comp .lead{color:var(--muted-2);margin-bottom:2.2rem}
+    .comp h2{font-size:1.2rem;margin:2.6rem 0 .5rem;color:var(--text)}
+    .comp h3{font-size:.95rem;margin:1.4rem 0 .3rem;color:var(--muted-2);
+      font-family:var(--f-data);font-weight:400;letter-spacing:.14em;text-transform:uppercase}
+    .comp a{color:var(--gold)}
+    .comp table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.92rem}
+    .comp th,.comp td{border:1px solid var(--border);padding:.6rem .7rem;text-align:left}
+    .comp th{background:var(--bg-2);color:var(--muted-2);font-family:var(--f-data);
+      font-size:.68rem;font-weight:400;letter-spacing:.16em;text-transform:uppercase}
+    .comp td{font-variant-numeric:tabular-nums}
+    .comp .note{background:color-mix(in srgb,var(--gold) 5%,transparent);
+      border:1px dashed var(--border-2);padding:1rem 1.2rem;font-size:.9rem;
+      color:var(--muted);margin-top:2.2rem}
+    /* Cada competidor es una tarjeta con borde completo y su rótulo impreso
+       sobre el borde, como el designador de un componente. Nada de riel de
+       acento a la izquierda. */
+    .rival{border:1px solid var(--border);padding:1.5rem 1.4rem 1.3rem;margin:1.6rem 0;
+      position:relative;background:var(--bg-2);
+      clip-path:polygon(12px 0,100% 0,100% calc(100% - 12px),calc(100% - 12px) 100%,0 100%,0 12px)}
+    .rival h2{margin:0 0 .6rem;font-size:1.1rem}
+    .rival .gana,.rival .pierde{margin:.5rem 0 0;font-size:.94rem}
+    .rival .gana b{color:var(--ok,#4FB477)}
+    .rival .pierde b{color:var(--muted-2)}
+    .comp ul{list-style:none;padding:0;display:grid;gap:.5rem;margin:.6rem 0 0}
+    .comp li{display:flex;gap:.7rem;align-items:flex-start}
+    .comp li::before{content:"";flex:none;width:11px;height:11px;margin-top:.44rem;
+      border-radius:50%;background:var(--bg);border:3px solid var(--gold-lo)}
+    .cta-final{margin:2.8rem 0 0;padding-top:1.6rem;border-top:1px solid var(--border)}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html"><img src="assets/logo.svg" alt="ElectronArt" height="30" /></a>
+      <nav>
+        <a href="index.html">← Volver al sitio</a>
+        <select id="selIdioma" class="sel-idioma" aria-label="Idioma">
+          <option value="es">ES</option>
+          <option value="en">EN</option>
+          <option value="pt">PT</option>
+        </select>
+      </nav>
+    </div>
+  </header>
+
+  <main class="comp">
+    <h1>Cómo se compara ElectronArt</h1>
+    <p class="lead">Comparación honesta con los programas que probablemente ya
+    esté evaluando. Incluye los casos en los que le conviene otro y no éste:
+    perder media hora leyendo esto es más barato que elegir mal.</p>
+
+    <h2>La versión corta</h2>
+    <p>ElectronArt es una suite de escritorio que hace el esquemático, el ruteo
+    de la placa, la simulación SPICE, el diagrama Ladder y el esquema eléctrico
+    IEC <b>en el mismo programa</b>, funciona sin conexión y está en castellano
+    de origen. Es el único que junta la parte electrónica con la parte de mando
+    industrial.</p>
+    <p>No es el más maduro ni el que tiene la biblioteca más grande. Si necesita
+    ocho capas, un equipo trabajando sobre la misma placa o el respaldo de una
+    empresa grande, hay opciones mejores y están nombradas acá abajo.</p>
+
+    <div class="rival">
+      <h2>Contra KiCad</h2>
+      <p>KiCad es gratis, es libre y es muy bueno. Es la comparación más difícil
+      y la más honesta de hacer.</p>
+      <p class="gana"><b>Elija KiCad si:</b> quiere costo cero, la biblioteca de
+      componentes más grande que existe, o una comunidad enorme donde cualquier
+      duda ya está contestada.</p>
+      <p class="pierde"><b>Elija ElectronArt si:</b> trabaja también con lógica
+      de mando —Ladder, contactores, esquemas IEC— y no quiere saltar entre dos
+      programas; si prefiere una interfaz en castellano en vez de una traducción
+      parcial; o si quiere un asistente que le proponga los cambios y se los
+      dibuje encima antes de aplicarlos.</p>
+    </div>
+
+    <div class="rival">
+      <h2>Contra Altium Designer</h2>
+      <p>Altium es el estándar de la industria y se nota. También cuesta lo que
+      cuesta un auto usado por año.</p>
+      <p class="gana"><b>Elija Altium si:</b> hace placas de alta velocidad con
+      muchas capas, trabaja en equipo sobre el mismo diseño, o su cliente le
+      exige entregar el proyecto en ese formato.</p>
+      <p class="pierde"><b>Elija ElectronArt si:</b> es una persona o un taller
+      chico, y ese precio no cierra por más que la herramienta sea buena. Las
+      funciones que usa todos los días —esquemático, ruteo con reglas, planos de
+      cobre, Gerber, BOM— están, y la licencia sale una fracción.</p>
+    </div>
+
+    <div class="rival">
+      <h2>Contra Eagle</h2>
+      <p>Eagle dejó de venderse por separado y su camino de actualización es
+      Fusion, que es una suite de mecánica con electrónica adentro.</p>
+      <p class="gana"><b>Elija Fusion si:</b> el diseño mecánico manda y la
+      placa es una parte de un conjunto que ya modela ahí.</p>
+      <p class="pierde"><b>Elija ElectronArt si:</b> venía usando Eagle por lo
+      que era —un programa de placas, liviano, de escritorio— y no quiere
+      mudarse a una suite de CAD entera para seguir haciendo lo mismo.</p>
+    </div>
+
+    <div class="rival">
+      <h2>Contra EasyEDA</h2>
+      <p>EasyEDA es gratis y está pegado a un fabricante: se diseña y se manda a
+      hacer sin salir de la página.</p>
+      <p class="gana"><b>Elija EasyEDA si:</b> va a fabricar con ese proveedor y
+      quiere el camino más corto entre el diseño y la placa en la mano.</p>
+      <p class="pierde"><b>Elija ElectronArt si:</b> no quiere que su diseño
+      viva en el servidor de otro, necesita trabajar sin internet, o no quiere
+      quedar atado a una única fábrica.</p>
+    </div>
+
+    <div class="rival">
+      <h2>Contra Flux</h2>
+      <p>Flux es el que más se le parece en la idea: un asistente que ayuda a
+      diseñar. La diferencia es dónde corre y cómo se paga.</p>
+      <p class="gana"><b>Elija Flux si:</b> quiere trabajar en el navegador, en
+      equipo y en tiempo real, y la suscripción mensual no le molesta.</p>
+      <p class="pierde"><b>Elija ElectronArt si:</b> necesita que el asistente
+      corra <b>en su máquina</b>. Para trabajo bajo acuerdo de confidencialidad
+      esa diferencia lo es todo: el diseño no sale de la computadora. Y porque
+      acá el programa sigue funcionando cuando se cae internet.</p>
+    </div>
+
+    <div class="rival">
+      <h2>Contra Proteus</h2>
+      <p>Proteus es fuerte en simulación con microcontrolador: se le carga el
+      firmware y se lo ve correr contra el circuito.</p>
+      <p class="gana"><b>Elija Proteus si:</b> su trabajo es sobre todo simular
+      firmware antes de tener la placa.</p>
+      <p class="pierde"><b>Elija ElectronArt si:</b> necesita el flujo completo
+      hasta la fabricación, y además la parte de mando industrial en el mismo
+      lugar.</p>
+    </div>
+
+    <h2>La tabla</h2>
+    <table>
+      <thead>
+        <tr><th>Función</th><th>ElectronArt</th><th>Altium</th><th>KiCad</th>
+        <th>EasyEDA</th><th>Flux</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Asistente que dibuja el cambio antes de aplicarlo</td>
+        <td>✓</td><td>✗</td><td>✗</td><td>✗</td><td>~</td></tr>
+        <tr><td>El asistente puede correr en su máquina</td>
+        <td>✓</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td></tr>
+        <tr><td>Esquemático y PCB</td>
+        <td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+        <tr><td>Simulación SPICE integrada</td>
+        <td>✓</td><td>~</td><td>✓</td><td>✓</td><td>~</td></tr>
+        <tr><td>Editor Ladder / PLC</td>
+        <td>✓</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td></tr>
+        <tr><td>Esquemas eléctricos IEC</td>
+        <td>✓</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td></tr>
+        <tr><td>Funciona sin conexión</td>
+        <td>✓</td><td>✓</td><td>✓</td><td>✗</td><td>✗</td></tr>
+        <tr><td>Interfaz en castellano de origen</td>
+        <td>✓</td><td>~</td><td>~</td><td>~</td><td>✗</td></tr>
+        <tr><td>Exportación Gerber y BOM</td>
+        <td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+        <tr><td>Biblioteca de componentes muy grande</td>
+        <td>~</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+        <tr><td>Trabajo en equipo sobre el mismo diseño</td>
+        <td>✗</td><td>✓</td><td>~</td><td>✓</td><td>✓</td></tr>
+      </tbody>
+    </table>
+    <p><small>«~» significa parcial o con limitaciones. Las dos últimas filas
+    son las que ElectronArt todavía no gana, y están puestas a propósito.</small></p>
+
+    <h2>Pruébelo sin pagar nada</h2>
+    <p class="cta-final">La edición gratuita no vence y no pide tarjeta. Bájela,
+    haga una placa de verdad y recién ahí decida.</p>
+    <ul>
+      <li><a href="descargas.html">Descargar ElectronArt</a></li>
+      <li><a href="index.html">Ver todas las funciones y los precios</a></li>
+    </ul>
+
+    <p class="note">Comparación orientativa, escrita en agosto de 2026. Las
+    marcas de terceros pertenecen a sus dueños y no hay ninguna relación entre
+    ellos y ElectronArt. Los programas cambian: si encuentra algo desactualizado
+    o injusto, escríbanos y lo corregimos.</p>
+  </main>
+
+  <script src="i18n.js"></script>
+</body>
+</html>
