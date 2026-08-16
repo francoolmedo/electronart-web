@@ -1,0 +1,14 @@
+# ElectronArt — https://electroniklosungen.com.ar
+User-agent: *
+Allow: /
+
+# Los rastreadores de IA también: que el producto aparezca cuando alguien le
+# pregunta a un asistente «qué EDA hay en español» es tráfico, no una amenaza.
+User-agent: GPTBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+
+Sitemap: https://electroniklosungen.com.ar/sitemap.xml

@@ -556,7 +556,7 @@
     </div>
     <div class="container foot-bottom">
       <span>© <span id="year">2026</span> Electronik Lösungen · ElectronArt. Todos los derechos reservados.</span>
-      <span class="muted"><a href="terminos.html">Términos y licencia</a> · Software propietario — sus diseños le pertenecen</span>
+      <span class="muted"><a href="terminos.html">Términos y licencia</a> · <a href="privacidad.html">Privacidad</a> · Software propietario — sus diseños le pertenecen</span>
     </div>
   </footer>
 
@@ -569,5 +569,22 @@
   <script src="enlaces.js"></script>
   <script src="fondo.js"></script>
   <script src="viaje.js"></script>
+<script>
+// Analítica propia de ElectronArt: sin cookies, sin terceros.
+(function(){try{
+  var d={r:location.pathname,f:document.referrer||""};
+  var b=new Blob([JSON.stringify(d)],{type:"text/plain"});
+  (navigator.sendBeacon&&navigator.sendBeacon("https://electronart.pythonanywhere.com/api/v",b))||
+    fetch("https://electronart.pythonanywhere.com/api/v",{method:"POST",body:JSON.stringify(d),
+      headers:{"Content-Type":"text/plain"},keepalive:true,mode:"no-cors"});
+  document.addEventListener("click",function(e){
+    var a=e.target.closest&&e.target.closest("[data-ev]");
+    if(!a)return;
+    var p={r:location.pathname,f:document.referrer||"",e:a.dataset.ev};
+    navigator.sendBeacon&&navigator.sendBeacon("https://electronart.pythonanywhere.com/api/v",
+      new Blob([JSON.stringify(p)],{type:"text/plain"}));
+  },true);
+}catch(_){}})();
+</script>
 </body>
 </html>

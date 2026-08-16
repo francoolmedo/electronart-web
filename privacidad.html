@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacidad — ElectronArt</title>
+  <meta name="description" content="Qué datos recolecta ElectronArt y qué hace con ellos. Sus diseños nunca salen de su computadora." />
+  <link rel="icon" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .legal{max-width:860px;margin:0 auto;padding:clamp(2rem,6vw,3.6rem) 20px;line-height:1.7;color:var(--muted)}
+    .legal h1{margin-bottom:.2em;color:var(--text)}
+    .legal .lead{color:var(--muted-2);margin-bottom:2.2rem}
+    .legal h2{font-size:1.15rem;margin:2.2rem 0 .5rem;color:var(--text)}
+    .legal a{color:var(--gold)}
+    .legal table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.92rem}
+    .legal th,.legal td{border:1px solid var(--border);padding:.6rem .7rem;text-align:left}
+    .legal th{background:var(--bg-2);color:var(--muted-2);font-family:var(--f-data);
+      font-size:.68rem;font-weight:400;letter-spacing:.16em;text-transform:uppercase}
+    .legal td{font-variant-numeric:tabular-nums}
+    .legal code{background:var(--bg-2);border:1px solid var(--border);padding:.1rem .4rem;
+      font-family:var(--f-data);font-size:.86rem;word-break:break-all;color:var(--text)}
+    .legal pre{background:var(--bg-2);border:1px solid var(--border);padding:.8rem 1rem;
+      overflow-x:auto;font-family:var(--f-data);font-size:.86rem;color:var(--text);margin:.6rem 0 1.2rem}
+    .legal .note{background:color-mix(in srgb,var(--gold) 5%,transparent);
+      border:1px dashed var(--border-2);padding:1rem 1.2rem;font-size:.9rem;
+      color:var(--muted);margin-top:2.2rem}
+    /* Lista con pads perforados, igual que en el resto del sistema. */
+    .legal ul{list-style:none;padding:0;display:grid;gap:.5rem}
+    .legal li{display:flex;gap:.7rem;align-items:flex-start}
+    .legal li::before{content:"";flex:none;width:11px;height:11px;margin-top:.44rem;
+      border-radius:50%;background:var(--bg);border:3px solid var(--gold-lo)}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html"><img src="assets/logo.svg" alt="ElectronArt" height="30" /></a>
+      <nav>
+        <a href="index.html">← Volver al sitio</a>
+        <select id="selIdioma" class="sel-idioma" aria-label="Idioma">
+          <option value="es">ES</option>
+          <option value="en">EN</option>
+          <option value="pt">PT</option>
+        </select>
+      </nav>
+    </div>
+  </header>
+
+  <main class="legal">
+    <h1>Privacidad</h1>
+    <p class="lead">Última actualización: agosto&nbsp;2026 · Qué datos toca ElectronArt,
+    cuáles no, y qué puede pedirnos que hagamos con ellos.</p>
+
+    <h2>Lo más importante, primero</h2>
+    <p><b>Sus diseños nunca salen de su computadora.</b> Los esquemáticos, las placas,
+    las simulaciones y los archivos de fabricación se guardan en su disco, en un formato
+    abierto y documentado. No se suben a ningún servidor, ni nuestro ni de terceros, y
+    no los miramos.</p>
+    <p>El programa funciona <b>sin conexión</b>. La licencia se verifica con una firma
+    criptográfica en su propia máquina: no hace falta que el programa «llame a casa»
+    para dejarlo trabajar.</p>
+
+    <h2>1. Qué guardamos, y por qué</h2>
+    <table>
+      <tr><th>Dato</th><th>Cuándo</th><th>Para qué</th></tr>
+      <tr><td>Correo electrónico</td><td>Al crear la cuenta o comprar</td>
+          <td>Enviarle la licencia, permitirle entrar y recuperar la contraseña</td></tr>
+      <tr><td>Nombre</td><td>Al crear la cuenta</td><td>Emitir la licencia a su nombre</td></tr>
+      <tr><td>Contraseña</td><td>Al crear la cuenta</td>
+          <td>Se guarda <b>cifrada de ida</b> (hash). No la conocemos ni podemos recuperarla</td></tr>
+      <tr><td>País, teléfono, empresa, CUIT/VAT</td><td><b>Opcionales</b>, si los carga usted</td>
+          <td>Facturación. Puede dejarlos vacíos</td></tr>
+      <tr><td>Compras</td><td>Al pagar</td><td>Sostener su licencia y renovarla</td></tr>
+      <tr><td>Lo que publica en el foro</td><td>Si escribe en el foro</td><td>Es público, lo elige usted</td></tr>
+    </table>
+
+    <h2>2. Qué NO guardamos</h2>
+    <ul>
+      <li>Sus proyectos, esquemáticos, placas ni archivos de fabricación.</li>
+      <li>Los datos de su tarjeta. El pago lo procesan <b>Gumroad</b> y
+      <b>MercadoPago</b> en sus propias páginas; nosotros recibimos únicamente el
+      aviso de que el pago se hizo.</li>
+      <li>Su ubicación, su agenda, sus contactos ni el contenido de su disco.</li>
+      <li>Un perfil suyo para publicidad. No vendemos ni cedemos datos a nadie,
+      y no hay rastreadores de terceros en el sitio.</li>
+    </ul>
+
+    <h2>3. Cuándo el programa se conecta a internet</h2>
+    <p>Son cuatro momentos, y ninguno manda su diseño:</p>
+    <ul>
+      <li><b>Activar la licencia</b>: se envía su correo y el código de compra para
+      recibir la licencia firmada.</li>
+      <li><b>Avisar de una versión nueva</b>: se consulta cuál es la última publicada.
+      Si no hay internet, no pasa nada y el programa no avisa.</li>
+      <li><b>Bajar una hoja de datos</b>, cuando usted se lo pide: se envía el código
+      del componente que escribió.</li>
+      <li><b>Reportar un problema</b>, cuando usted se lo pide: se le muestra
+      <b>exactamente lo que se va a enviar antes de enviarlo</b>, y puede cancelar.</li>
+    </ul>
+
+    <h2>4. El sitio web</h2>
+    <p>Contamos visitas con una herramienta <b>propia</b>: no usamos Google Analytics
+    ni ningún servicio externo, y <b>no ponemos cookies de seguimiento</b> —por eso
+    tampoco le mostramos un cartel de cookies—. De cada visita guardamos la fecha, la
+    página, y el dominio desde el que llegó.</p>
+    <p><b>No guardamos su dirección IP.</b> Para no contar diez veces a la misma
+    persona que recarga usamos un identificador anónimo que se calcula con una clave
+    que <b>cambia todos los días</b>: no se puede volver a la persona, ni seguirla de
+    un día para otro.</p>
+
+    <h2>5. Con quién compartimos</h2>
+    <p>Sólo con quienes hacen falta para que el producto funcione, y cada uno con sus
+    propios términos:</p>
+    <ul>
+      <li><b>Gumroad</b> y <b>MercadoPago</b> — cobrar.</li>
+      <li>El proveedor de correo — mandarle la licencia y el reset de contraseña.</li>
+      <li><b>PythonAnywhere</b> — donde corre el servidor.</li>
+      <li><b>GitHub</b> — desde donde se descargan los instaladores.</li>
+    </ul>
+    <p>Nadie más. No vendemos datos.</p>
+
+    <h2>6. Sus derechos</h2>
+    <p>Puede pedirnos, escribiendo a
+    <a href="mailto:electroniklosungen@gmail.com">electroniklosungen@gmail.com</a>:</p>
+    <ul>
+      <li><b>Ver</b> todos los datos que tenemos suyos.</li>
+      <li><b>Corregir</b> lo que esté mal (también desde <i>Mi cuenta</i>).</li>
+      <li><b>Borrar</b> su cuenta y sus datos. ⚠️ Al hacerlo pierde el acceso a
+      renovar o volver a descargar su licencia desde su cuenta; el programa ya
+      instalado sigue funcionando.</li>
+      <li><b>Llevarse</b> sus datos en un archivo.</li>
+    </ul>
+    <p>Contestamos dentro de los 30 días.</p>
+
+    <h2>7. Cuánto tiempo los guardamos</h2>
+    <p>Mientras tenga la cuenta abierta. Si la borra, eliminamos sus datos personales;
+    conservamos el registro de las compras el tiempo que exige la ley contable, porque
+    no podemos borrarlo.</p>
+
+    <h2>8. Menores</h2>
+    <p>El producto no está dirigido a menores de 16 años y no pedimos su edad. Si es
+    responsable de un menor y cree que cargó datos, escríbanos y los borramos.</p>
+
+    <h2>9. Cambios</h2>
+    <p>Si esta política cambia de manera relevante, lo avisamos en el sitio y por
+    correo a quienes tengan cuenta. La fecha de arriba dice cuándo se actualizó.</p>
+
+    <div class="note">
+      <b>Responsable:</b> Electronik Lösungen, Argentina ·
+      <a href="mailto:electroniklosungen@gmail.com">electroniklosungen@gmail.com</a><br />
+      Ver también los <a href="terminos.html">Términos de compra y licencia</a>.
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container foot-bottom">
+      <span>© 2026 Electronik Lösungen · ElectronArt</span>
+      <a href="index.html">electronart</a>
+    </div>
+  </footer>
+  <script src="fondo.js"></script>
+  <script src="i18n.js"></script>
+  <!-- Asistente: contesta las dudas de descarga, instalación, planes y
+       cuenta sin salir de la página. Va DESPUÉS de i18n.js a propósito
+       (se traduce solo; ver la cabecera de asistente.js). -->
+  <script src="asistente.js"></script>
+<script>
+// Analítica propia de ElectronArt: sin cookies, sin terceros.
+(function(){try{
+  var d={r:location.pathname,f:document.referrer||""};
+  var b=new Blob([JSON.stringify(d)],{type:"text/plain"});
+  (navigator.sendBeacon&&navigator.sendBeacon("https://electronart.pythonanywhere.com/api/v",b))||
+    fetch("https://electronart.pythonanywhere.com/api/v",{method:"POST",body:JSON.stringify(d),
+      headers:{"Content-Type":"text/plain"},keepalive:true,mode:"no-cors"});
+  document.addEventListener("click",function(e){
+    var a=e.target.closest&&e.target.closest("[data-ev]");
+    if(!a)return;
+    var p={r:location.pathname,f:document.referrer||"",e:a.dataset.ev};
+    navigator.sendBeacon&&navigator.sendBeacon("https://electronart.pythonanywhere.com/api/v",
+      new Blob([JSON.stringify(p)],{type:"text/plain"}));
+  },true);
+}catch(_){}})();
+</script>
+</body>
+</html>

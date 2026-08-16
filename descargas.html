@@ -60,13 +60,13 @@
         <th>SHA-256</th>
       </tr>
       <tr>
-        <td><a href="#" data-link="instalador-9.1">ElectronArt-v9.1-win64-setup.exe</a></td>
+        <td><a href="#" data-link="instalador-9.1" data-ev="descargar">ElectronArt-v9.1-win64-setup.exe</a></td>
         <td>Windows 10/11 (64 bits) — instalador</td>
         <td>89.6 MB</td>
         <td><code>fca1d56dcb562c771537a692d81966e304906ae483333b4aac731a44ffbe03a7</code></td>
       </tr>
       <tr>
-        <td><a href="#" data-link="descarga-9.1">ElectronArt-v9.1-win64.zip</a></td>
+        <td><a href="#" data-link="descarga-9.1" data-ev="descargar">ElectronArt-v9.1-win64.zip</a></td>
         <td>Windows 10/11 (64 bits) — ZIP portable</td>
         <td>129 MB</td>
         <td><code>3d170b19cea5206b6e1fd1ab6c7a90440beba53546dec988fed874dd6e809bd9</code></td>
@@ -119,7 +119,7 @@
     sistema operativo.</p>
 
     <h2>¿Problemas?</h2>
-    <p>Si la descarga no arranca, el antivirus la bloquea o la instalación falla, visitá el <a href="#" data-link="foro">foro de la comunidad</a> o escribinos por correo.</p>
+    <p>Si la descarga no arranca, el antivirus la bloquea o la instalación falla, visitá el <a href="#" data-link="foro" data-ev="descargar">foro de la comunidad</a> o escribinos por correo.</p>
     <p>Si el programa ya está instalado y algo no funciona, abrí Ayuda ▸ Diagnóstico…: arma un informe con tu versión, tu sistema, tu placa de video y el estado de la licencia, y lo podés copiar o mandarlo al foro con un botón. No incluye tu licencia ni tu correo.</p>
   </main>
 
@@ -136,5 +136,22 @@
        cuenta sin salir de la página. Va DESPUÉS de i18n.js a propósito
        (se traduce solo; ver la cabecera de asistente.js). -->
   <script src="asistente.js"></script>
+<script>
+// Analítica propia de ElectronArt: sin cookies, sin terceros.
+(function(){try{
+  var d={r:location.pathname,f:document.referrer||""};
+  var b=new Blob([JSON.stringify(d)],{type:"text/plain"});
+  (navigator.sendBeacon&&navigator.sendBeacon("https://electronart.pythonanywhere.com/api/v",b))||
+    fetch("https://electronart.pythonanywhere.com/api/v",{method:"POST",body:JSON.stringify(d),
+      headers:{"Content-Type":"text/plain"},keepalive:true,mode:"no-cors"});
+  document.addEventListener("click",function(e){
+    var a=e.target.closest&&e.target.closest("[data-ev]");
+    if(!a)return;
+    var p={r:location.pathname,f:document.referrer||"",e:a.dataset.ev};
+    navigator.sendBeacon&&navigator.sendBeacon("https://electronart.pythonanywhere.com/api/v",
+      new Blob([JSON.stringify(p)],{type:"text/plain"}));
+  },true);
+}catch(_){}})();
+</script>
 </body>
 </html>

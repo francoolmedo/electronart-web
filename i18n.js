@@ -276,6 +276,7 @@
       "Foro": "Forum",
       "Novedades": "What's new",
       "Términos y licencia": "Terms and licence",
+      "Privacidad": "Privacy",
       "Contacto": "Contact",
       "Suite EDA de escritorio.": "Desktop EDA suite.",
       "by": "by",
@@ -475,6 +476,125 @@
       "Ayuda → Acerca de": "Help → About",
       ". Recomendamos revisión legal profesional para operaciones de volumen o acuerdos corporativos.":
         ". We recommend professional legal review for high-volume operations or corporate agreements.",
+
+      /* ── privacidad.html ── */
+      "Privacidad — ElectronArt": "Privacy — ElectronArt",
+      "Última actualización: agosto 2026 · Qué datos toca ElectronArt, cuáles no, y qué puede pedirnos que hagamos con ellos.":
+        "Last updated: August 2026 · What data ElectronArt touches, what it does not, and what you may ask us to do with it.",
+      "Lo más importante, primero": "The most important thing, first",
+      "Sus diseños nunca salen de su computadora.": "Your designs never leave your computer.",
+      "Los esquemáticos, las placas, las simulaciones y los archivos de fabricación se guardan en su disco, en un formato abierto y documentado. No se suben a ningún servidor, ni nuestro ni de terceros, y no los miramos.":
+        "The schematics, boards, simulations and fabrication files are kept on your disk, in an open, documented format. They are not uploaded to any server, neither ours nor a third party's, and we do not look at them.",
+      "El programa funciona": "The program works",
+      "sin conexión": "offline",
+      ". La licencia se verifica con una firma criptográfica en su propia máquina: no hace falta que el programa «llame a casa» para dejarlo trabajar.":
+        ". The licence is verified with a cryptographic signature on your own machine: the program does not need to “phone home” to keep working.",
+      "1. Qué guardamos, y por qué": "1. What we store, and why",
+      "Dato": "Data",
+      "Cuándo": "When",
+      "Para qué": "Purpose",
+      "Correo electrónico": "Email address",
+      "Al crear la cuenta o comprar": "When you create the account or buy",
+      "Enviarle la licencia, permitirle entrar y recuperar la contraseña":
+        "To send you the licence, let you log in and recover your password",
+      "Nombre": "Name",
+      "Al crear la cuenta": "When you create the account",
+      "Emitir la licencia a su nombre": "Issue the licence in your name",
+      "Contraseña": "Password",
+      "Se guarda": "It is stored",
+      "cifrada de ida": "one-way encrypted",
+      "(hash). No la conocemos ni podemos recuperarla":
+        "(hash). We do not know it and cannot recover it",
+      "País, teléfono, empresa, CUIT/VAT": "Country, phone, company, CUIT/VAT",
+      "Opcionales": "Optional",
+      ", si los carga usted": ", if you fill them in",
+      "Facturación. Puede dejarlos vacíos": "Billing. You can leave them blank",
+      "Compras": "Purchases",
+      "Al pagar": "When you pay",
+      "Sostener su licencia y renovarla": "To keep your licence active and renew it",
+      "Lo que publica en el foro": "What you post on the forum",
+      "Si escribe en el foro": "If you write in the forum",
+      "Es público, lo elige usted": "It is public, and you choose it",
+      "2. Qué NO guardamos": "2. What we do NOT store",
+      "Sus proyectos, esquemáticos, placas ni archivos de fabricación.":
+        "Your projects, schematics, boards or fabrication files.",
+      "Los datos de su tarjeta. El pago lo procesan":
+        "Your card details. The payment is processed by",
+      "en sus propias páginas; nosotros recibimos únicamente el aviso de que el pago se hizo.":
+        "on their own pages; we only receive the notice that the payment went through.",
+      "Su ubicación, su agenda, sus contactos ni el contenido de su disco.":
+        "Your location, calendar, contacts or the contents of your disk.",
+      "Un perfil suyo para publicidad. No vendemos ni cedemos datos a nadie, y no hay rastreadores de terceros en el sitio.":
+        "A profile of you for advertising. We do not sell or hand over data to anyone, and there are no third-party trackers on the site.",
+      "3. Cuándo el programa se conecta a internet":
+        "3. When the program connects to the internet",
+      "Son cuatro momentos, y ninguno manda su diseño:":
+        "There are four moments, and none of them sends your design:",
+      "Activar la licencia": "Activate the licence",
+      ": se envía su correo y el código de compra para recibir la licencia firmada.":
+        ": your email and your purchase code are sent to receive the signed licence.",
+      "Avisar de una versión nueva": "Notify about a new version",
+      ": se consulta cuál es la última publicada. Si no hay internet, no pasa nada y el programa no avisa.":
+        ": it checks which is the latest published one. If there is no internet, nothing happens and the program does not warn you.",
+      "Bajar una hoja de datos": "Download a datasheet",
+      ", cuando usted se lo pide: se envía el código del componente que escribió.":
+        ", when you ask for it: the code of the component you typed is sent.",
+      "Reportar un problema": "Report a problem",
+      ", cuando usted se lo pide: se le muestra": ", when you ask for it: it shows you",
+      "exactamente lo que se va a enviar antes de enviarlo":
+        "exactly what is about to be sent before sending it",
+      ", y puede cancelar.": ", and you can cancel.",
+      "4. El sitio web": "4. The website",
+      "Contamos visitas con una herramienta": "We count visits with a tool",
+      "propia": "of our own",
+      ": no usamos Google Analytics ni ningún servicio externo, y":
+        ": we do not use Google Analytics or any external service, and",
+      "no ponemos cookies de seguimiento": "we do not set tracking cookies",
+      "—por eso tampoco le mostramos un cartel de cookies—. De cada visita guardamos la fecha, la página, y el dominio desde el que llegó.":
+        "—which is why we do not show you a cookie banner either—. For each visit we store the date, the page, and the domain it came from.",
+      "No guardamos su dirección IP.": "We do not store your IP address.",
+      "Para no contar diez veces a la misma persona que recarga usamos un identificador anónimo que se calcula con una clave que":
+        "To avoid counting ten times the same person who reloads, we use an anonymous identifier computed with a key that",
+      "cambia todos los días": "changes every day",
+      ": no se puede volver a la persona, ni seguirla de un día para otro.":
+        ": it cannot be traced back to the person, nor can they be followed from one day to the next.",
+      "5. Con quién compartimos": "5. Who we share with",
+      "Sólo con quienes hacen falta para que el producto funcione, y cada uno con sus propios términos:":
+        "Only with those needed to make the product work, and each under their own terms:",
+      "— cobrar.": "— to charge you.",
+      "El proveedor de correo — mandarle la licencia y el reset de contraseña.":
+        "The email provider — to send you the licence and the password reset.",
+      "PythonAnywhere": "PythonAnywhere",
+      "— donde corre el servidor.": "— where the server runs.",
+      "— desde donde se descargan los instaladores.": "— from where the installers are downloaded.",
+      "Nadie más. No vendemos datos.": "No one else. We do not sell data.",
+      "6. Sus derechos": "6. Your rights",
+      "Puede pedirnos, escribiendo a": "You can ask us, by writing to",
+      "electroniklosungen@gmail.com": "electroniklosungen@gmail.com",
+      "Ver": "View",
+      "todos los datos que tenemos suyos.": "all the data we hold about you.",
+      "Corregir": "Correct",
+      "lo que esté mal (también desde": "what is wrong (also from",
+      "Mi cuenta": "My account",
+      ").": ").",
+      "Borrar": "Delete",
+      "su cuenta y sus datos. ⚠️ Al hacerlo pierde el acceso a renovar o volver a descargar su licencia desde su cuenta; el programa ya instalado sigue funcionando.":
+        "your account and your data. ⚠️ By doing so you lose access to renewing or re-downloading your licence from your account; the already installed program keeps working.",
+      "Llevarse": "Take",
+      "sus datos en un archivo.": "your data in a file.",
+      "Contestamos dentro de los 30 días.": "We reply within 30 days.",
+      "7. Cuánto tiempo los guardamos": "7. How long we keep them",
+      "Mientras tenga la cuenta abierta. Si la borra, eliminamos sus datos personales; conservamos el registro de las compras el tiempo que exige la ley contable, porque no podemos borrarlo.":
+        "While your account stays open. If you delete it, we erase your personal data; we keep the record of purchases for as long as accounting law requires, because we cannot erase that.",
+      "8. Menores": "8. Minors",
+      "El producto no está dirigido a menores de 16 años y no pedimos su edad. Si es responsable de un menor y cree que cargó datos, escríbanos y los borramos.":
+        "The product is not aimed at anyone under 16, and we do not ask for age. If you are responsible for a minor and believe their data was entered, write to us and we will delete it.",
+      "9. Cambios": "9. Changes",
+      "Si esta política cambia de manera relevante, lo avisamos en el sitio y por correo a quienes tengan cuenta. La fecha de arriba dice cuándo se actualizó.":
+        "If this policy changes significantly, we announce it on the site and by email to those who have an account. The date at the top says when it was last updated.",
+      "Responsable:": "Data controller:",
+      "Electronik Lösungen, Argentina ·": "Electronik Lösungen, Argentina ·",
+      "Ver también los": "See also the",
 
       /* ── changelog.html ── */
       "Novedades — ElectronArt": "What's new — ElectronArt",
@@ -982,6 +1102,7 @@
       "Foro": "Fórum",
       "Novedades": "Novidades",
       "Términos y licencia": "Termos e licença",
+      "Privacidad": "Privacidade",
       "Contacto": "Contato",
       "Suite EDA de escritorio.": "Suíte EDA de desktop.",
       "by": "por",
@@ -1176,7 +1297,126 @@
         "Este resumo não substitui o EULA, que é o acordo vinculante e é exibido durante a instalação e em",
       "Ayuda → Acerca de": "Ajuda → Sobre",
       ". Recomendamos revisión legal profesional para operaciones de volumen o acuerdos corporativos.":
-        ". Recomendamos revisão jurídica profissional para operações de volume ou acordos corporativos.",
+        ". Recomendamos revisión jurídica profesional para operaciones de volumen o acuerdos corporativos.",
+
+      /* ── privacidad.html ── */
+      "Privacidad — ElectronArt": "Privacidade — ElectronArt",
+      "Última actualización: agosto 2026 · Qué datos toca ElectronArt, cuáles no, y qué puede pedirnos que hagamos con ellos.":
+        "Última atualização: agosto de 2026 · Quais dados o ElectronArt toca, quais não, e o que você pode nos pedir que façamos com eles.",
+      "Lo más importante, primero": "O mais importante, primeiro",
+      "Sus diseños nunca salen de su computadora.": "Seus projetos nunca saem do seu computador.",
+      "Los esquemáticos, las placas, las simulaciones y los archivos de fabricación se guardan en su disco, en un formato abierto y documentado. No se suben a ningún servidor, ni nuestro ni de terceros, y no los miramos.":
+        "Os esquemáticos, as placas, as simulações e os arquivos de fabricação são guardados no seu disco, em um formato aberto e documentado. Não são enviados a nenhum servidor, nem nosso nem de terceiros, e não os observamos.",
+      "El programa funciona": "O programa funciona",
+      "sin conexión": "sem conexão",
+      ". La licencia se verifica con una firma criptográfica en su propia máquina: no hace falta que el programa «llame a casa» para dejarlo trabajar.":
+        ". A licença é verificada com uma assinatura criptográfica na sua própria máquina: não é preciso que o programa “ligue para casa” para deixá-lo trabalhar.",
+      "1. Qué guardamos, y por qué": "1. O que guardamos, e por quê",
+      "Dato": "Dado",
+      "Cuándo": "Quando",
+      "Para qué": "Para quê",
+      "Correo electrónico": "E-mail",
+      "Al crear la cuenta o comprar": "Ao criar a conta ou comprar",
+      "Enviarle la licencia, permitirle entrar y recuperar la contraseña":
+        "Enviar a licença, permitir que você entre e recuperar a senha",
+      "Nombre": "Nome",
+      "Al crear la cuenta": "Ao criar a conta",
+      "Emitir la licencia a su nombre": "Emitir a licença em seu nome",
+      "Contraseña": "Senha",
+      "Se guarda": "É guardada",
+      "cifrada de ida": "com criptografia unidirecional",
+      "(hash). No la conocemos ni podemos recuperarla":
+        "(hash). Não a conhecemos nem podemos recuperá-la",
+      "País, teléfono, empresa, CUIT/VAT": "País, telefone, empresa, CUIT/VAT",
+      "Opcionales": "Opcionais",
+      ", si los carga usted": ", se você as preencher",
+      "Facturación. Puede dejarlos vacíos": "Faturamento. Você pode deixá-los vazios",
+      "Compras": "Compras",
+      "Al pagar": "Ao pagar",
+      "Sostener su licencia y renovarla": "Manter a sua licença e renová-la",
+      "Lo que publica en el foro": "O que você publica no fórum",
+      "Si escribe en el foro": "Se você escreve no fórum",
+      "Es público, lo elige usted": "É público, você escolhe",
+      "2. Qué NO guardamos": "2. O que NÃO guardamos",
+      "Sus proyectos, esquemáticos, placas ni archivos de fabricación.":
+        "Seus projetos, esquemáticos, placas nem arquivos de fabricação.",
+      "Los datos de su tarjeta. El pago lo procesan":
+        "Os dados do seu cartão. O pagamento é processado pela",
+      "en sus propias páginas; nosotros recibimos únicamente el aviso de que el pago se hizo.":
+        "em suas próprias páginas; recebemos apenas o aviso de que o pagamento foi feito.",
+      "Su ubicación, su agenda, sus contactos ni el contenido de su disco.":
+        "Sua localização, sua agenda, seus contatos nem o conteúdo do seu disco.",
+      "Un perfil suyo para publicidad. No vendemos ni cedemos datos a nadie, y no hay rastreadores de terceros en el sitio.":
+        "Um perfil seu para publicidade. Não vendemos nem cedemos dados a ninguém, e não há rastreadores de terceiros no site.",
+      "3. Cuándo el programa se conecta a internet":
+        "3. Quando o programa se conecta à internet",
+      "Son cuatro momentos, y ninguno manda su diseño:":
+        "São quatro momentos, e nenhum envia o seu projeto:",
+      "Activar la licencia": "Ativar a licença",
+      ": se envía su correo y el código de compra para recibir la licencia firmada.":
+        ": são enviados o seu e-mail e o código de compra para receber a licença assinada.",
+      "Avisar de una versión nueva": "Avisar sobre uma nova versão",
+      ": se consulta cuál es la última publicada. Si no hay internet, no pasa nada y el programa no avisa.":
+        ": é consultado qual é a última versão publicada. Sem internet, não acontece nada e o programa não avisa.",
+      "Bajar una hoja de datos": "Baixar uma folha de dados",
+      ", cuando usted se lo pide: se envía el código del componente que escribió.":
+        ", quando você pedir: é enviado o código do componente que você digitou.",
+      "Reportar un problema": "Reportar um problema",
+      ", cuando usted se lo pide: se le muestra": ", quando você pedir: é mostrado a você",
+      "exactamente lo que se va a enviar antes de enviarlo":
+        "exatamente o que será enviado antes de enviá-lo",
+      ", y puede cancelar.": ", e você pode cancelar.",
+      "4. El sitio web": "4. O site",
+      "Contamos visitas con una herramienta": "Contamos as visitas com uma ferramenta",
+      "propia": "própria",
+      ": no usamos Google Analytics ni ningún servicio externo, y":
+        ": não usamos o Google Analytics nem nenhum serviço externo, e",
+      "no ponemos cookies de seguimiento": "não colocamos cookies de rastreamento",
+      "—por eso tampoco le mostramos un cartel de cookies—. De cada visita guardamos la fecha, la página, y el dominio desde el que llegó.":
+        "—por isso também não mostramos um aviso de cookies—. De cada visita guardamos a data, a página e o domínio de onde veio.",
+      "No guardamos su dirección IP.": "Não guardamos o seu endereço de IP.",
+      "Para no contar diez veces a la misma persona que recarga usamos un identificador anónimo que se calcula con una clave que":
+        "Para não contar dez vezes a mesma pessoa que recarrega, usamos um identificador anônimo calculado com uma chave que",
+      "cambia todos los días": "muda todos os dias",
+      ": no se puede volver a la persona, ni seguirla de un día para otro.":
+        ": não é possível rastrear até a pessoa, nem acompanhá-la de um dia para o outro.",
+      "5. Con quién compartimos": "5. Com quem compartilhamos",
+      "Sólo con quienes hacen falta para que el producto funcione, y cada uno con sus propios términos:":
+        "Apenas com quem é necessário para o produto funcionar, e cada um com os seus próprios termos:",
+      "— cobrar.": "— cobrar.",
+      "El proveedor de correo — mandarle la licencia y el reset de contraseña.":
+        "O provedor de e-mail — para enviar a licença e a redefinição de senha.",
+      "PythonAnywhere": "PythonAnywhere",
+      "— donde corre el servidor.": "— onde roda o servidor.",
+      "— desde donde se descargan los instaladores.": "— de onde os instaladores são baixados.",
+      "Nadie más. No vendemos datos.": "Mais ninguém. Não vendemos dados.",
+      "6. Sus derechos": "6. Seus direitos",
+      "Puede pedirnos, escribiendo a": "Você pode nos pedir, escrevendo para",
+      "electroniklosungen@gmail.com": "electroniklosungen@gmail.com",
+      "Ver": "Ver",
+      "todos los datos que tenemos suyos.": "todos os dados que temos seus.",
+      "Corregir": "Corrigir",
+      "lo que esté mal (también desde": "o que estiver errado (também pela",
+      "Mi cuenta": "Minha conta",
+      ").": ").",
+      "Borrar": "Apagar",
+      "su cuenta y sus datos. ⚠️ Al hacerlo pierde el acceso a renovar o volver a descargar su licencia desde su cuenta; el programa ya instalado sigue funcionando.":
+        "sua conta e seus dados. ⚠️ Ao fazê-lo, você perde o acesso a renovar ou baixar novamente a licença pela sua conta; o programa já instalado continua funcionando.",
+      "Llevarse": "Levar",
+      "sus datos en un archivo.": "seus dados em um arquivo.",
+      "Contestamos dentro de los 30 días.": "Respondemos em até 30 dias.",
+      "7. Cuánto tiempo los guardamos": "7. Por quanto tempo os guardamos",
+      "Mientras tenga la cuenta abierta. Si la borra, eliminamos sus datos personales; conservamos el registro de las compras el tiempo que exige la ley contable, porque no podemos borrarlo.":
+        "Enquanto a conta estiver aberta. Se você a apagar, eliminamos seus dados pessoais; conservamos o registro das compras pelo tempo que a lei contábil exige, porque não podemos apagá-lo.",
+      "8. Menores": "8. Menores",
+      "El producto no está dirigido a menores de 16 años y no pedimos su edad. Si es responsable de un menor y cree que cargó datos, escríbanos y los borramos.":
+        "O produto não é destinado a menores de 16 anos e não pedimos a idade. Se você é responsável por um menor e acredita que os dados dele foram carregados, escreva para nós e nós os apagamos.",
+      "9. Cambios": "9. Mudanças",
+      "Si esta política cambia de manera relevante, lo avisamos en el sitio y por correo a quienes tengan cuenta. La fecha de arriba dice cuándo se actualizó.":
+        "Se esta política mudar de forma relevante, avisamos no site e por e-mail a quem tem conta. A data acima indica quando foi atualizada.",
+      "Responsable:": "Responsável:",
+      "Electronik Lösungen, Argentina ·": "Electronik Lösungen, Argentina ·",
+      "Ver también los": "Veja também os",
 
       /* ── changelog.html ── */
       "Novedades — ElectronArt": "Novidades — ElectronArt",
