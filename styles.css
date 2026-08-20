@@ -525,9 +525,13 @@ p { margin: 0 0 1em; }
   box-shadow: inset 2px 2px 0 var(--luz), inset -2px -2px 0 var(--sombra-1),
               0 0 34px -22px var(--gold), var(--shadow);
 }
-/* El distintivo se IMPRIME sobre el borde, como el designador de una pieza. */
+/* El distintivo se IMPRIME sobre el borde, como el designador de una pieza.
+   ⚠️ Pegado al filo por dentro y NO sobresaliendo: `.price-card` lleva el bisel
+   de esquinas con `clip-path`, y un `clip-path` recorta también a los hijos
+   absolutos. Con `top: -.62rem` los 8,9 px que asomaban no se pintaban y el
+   distintivo se veía partido al medio — ilegible en el sitio publicado. */
 .ribbon {
-  position: absolute; top: -.62rem; left: 1.4rem; transform: none;
+  position: absolute; top: 0; left: 1.4rem; transform: none;
   background: var(--bg);
   color: var(--gold);
   font-family: var(--f-data); font-weight: 400; font-size: .62rem;

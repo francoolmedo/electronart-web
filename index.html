@@ -72,6 +72,96 @@
     ]
   }
   </script>
+  <!-- FAQ estructurada (generada por scripts/gen_faq_schema.py) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Necesito conexión a internet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Todo lo que hace al diseño —esquemático, simulación, ruteo, DRC, vista 3D y salida de fabricación— corre entero en tu máquina, sin cuenta ni nube. La lectura de datasheets en PDF también es local: reconstruye la tabla de pines por la geometría del documento. Internet hace falta sólo si usás lo que es online por naturaleza: stock LCSC en vivo, importar el CAD de EasyEDA o conectar tu propia clave de IA como último recurso para un datasheet difícil."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿En qué sistemas corre?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El programa corre en Windows, Linux y macOS: está hecho con Python y PySide6 (Qt6), y no depende de nada propio de un sistema. Hoy publicamos el instalador de Windows 10 y 11; en Linux y macOS se ejecuta desde el código, y el paquete compilado para esos dos está en camino."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿La licencia es por suscripción?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pro e Industrial son anuales: se renuevan cada 12 meses y podés cancelarlas cuando quieras. Lo que no es por suscripción es el programa: funciona sin conexión y tus archivos son tuyos, en tu disco, en un formato abierto. Gratuita y Estudiante no vencen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Puedo usar la versión gratuita comercialmente?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. La Gratuita y la de Estudiante son para uso personal y educativo. Para trabajo comercial necesitás Pro o Industrial."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué puedo hacer realmente con la versión Gratuita?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Un diseño completo de dos caras, de punta a punta: dibujar el esquemático, simularlo en SPICE, rutear la placa a mano o con el autorouter, verificar con DRC y ERC, mirarla en 3D y exportar el Gerber, el Excellon y el BOM para mandarla a fabricar. Sale con una marca de agua y es para uso no comercial. Lo que queda para los planes pagos es lo que necesita un trabajo más exigente: más de dos capas, pares diferenciales y serpentinas de igualación, Monte Carlo y FFT, las salidas IPC-2581/ODB++/STEP que pide una fábrica grande, y el módulo eléctrico industrial."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué es el módulo eléctrico / Industrial?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Es la parte que no hace un EDA de electrónica: esquemas eléctricos de mando y potencia con la simbología normalizada IEC 60617 —bobinas, contactores, guardamotores, relés térmicos, disyuntores diferenciales, temporizadores, transformadores de mando y borneras—, el montaje del tablero sobre riel DIN, y la simulación del esquema: apretás el pulsador de marcha en pantalla, la bobina se energiza, el contactor engancha, el motor arranca y el térmico dispara si lo sobrecargás. Incluye el editor Ladder para la lógica del PLC. Está en Industrial, y también en Estudiante para uso no comercial: quien está aprendiendo electrotécnica lo necesita entero."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Exporta archivos para fabricar en JLCPCB/PCBWay?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Exporta Gerber RS-274X, taladros Excellon, Pick&Place y BOM, compatibles con las fábricas más comunes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué métodos de pago aceptan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tarjeta internacional vía Gumroad/Stripe y MercadoPago para Argentina y Latinoamérica."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿De quién son los diseños que hago con ElectronArt?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Suyos, al 100 %. Los esquemáticos, PCBs, Gerbers y productos que diseñe le pertenecen por completo y puede comercializarlos sin regalías ni atribución, con cualquier edición. El detalle está en los Términos y licencia."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Puedo usarlo para dictar cursos o en una escuela?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Las instituciones educativas pueden usar la edición Student en aulas y laboratorios sin cargo. Para cursos pagos que se apoyan en el software corresponde una licencia por docente: Pro si el curso es de diseño electrónico y de PCB, e Industrial si se apoya en el módulo eléctrico/PLC, que Pro no incluye."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- /FAQ estructurada -->
 </head>
 <body>
   <!-- ───────────────── Header ───────────────── -->
