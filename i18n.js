@@ -275,14 +275,14 @@
       "Foro": "Forum",
       "Novedades": "What's new",
       "Un asistente que te muestra el cambio antes de hacerlo": "An assistant that shows you the change before making it",
-      "Le pedís lo que necesitás en castellano. Te contesta, dibuja lo que va a hacer sobre tu placa, y sólo lo aplica si vos aceptás.": "Ask for what you need in plain language. It answers, draws what it is about to do on your board, and only applies it if you accept.",
+      "Le pedís lo que necesitás en castellano. Te contesta, dibuja lo que va a hacer sobre tu diseño, y sólo lo aplica si vos aceptás. Corre en tu máquina o con tu propia clave de IA.": "Ask for what you need in plain language. It answers, draws what it is about to do on your design, and only applies it if you accept. It runs on your machine or with your own AI key.",
       "Lo ves antes de que pase": "You see it before it happens",
       "Lo que agrega se dibuja en oro sobre el diseño, lo que saca aparece tachado y lo que mueve muestra su recorrido. Nada toca tu proyecto hasta que apretás Aplicar.": "What it adds is drawn in gold over your design, what it removes appears crossed out, and what it moves shows its path. Nothing touches your project until you hit Apply.",
       "Aceptás lo que querés": "You accept what you want",
       "Cada cambio va en una lista con su tilde. Destildás uno y desaparece del dibujo al instante. Se aplica sólo lo que dejaste marcado, y entra como un solo Ctrl+Z.": "Every change is a ticked line in a list. Untick one and it disappears from the drawing straight away. Only what you left ticked is applied, and it lands as a single Ctrl+Z.",
       "O corre en tu máquina": "Or it runs on your machine",
       "Podés usarlo con tu propia clave, o contra un modelo local: ahí el diseño no sale de tu computadora. Para trabajo bajo acuerdo de confidencialidad, esa diferencia lo es todo.": "Use it with your own API key, or against a local model — then your design never leaves your computer. For work under an NDA, that difference is everything.",
-      "Hoy sabe trabajar sobre la placa: planos de cobre, ruteo, mover componentes, agujeros de montaje y verificación de reglas. No diseña el circuito por vos.": "Today it works on the board: copper pours, routing, moving parts, mounting holes and rule checking. It does not design the circuit for you.",
+      "Trabaja en los cuatro editores: coloca y conecta componentes en el esquemático, rutea y vierte cobre en la placa, corre simulaciones y arma la lógica del Ladder. Vos aceptás cada cambio antes de que toque tu proyecto.": "It works across the four editors: it places and wires components in the schematic, routes and pours copper on the board, runs simulations and builds Ladder logic. You accept every change before it touches your project.",
       "Asistente": "Assistant",
       "Flux": "Flux",
       "Asistente de IA que": "AI assistant that",
@@ -706,10 +706,21 @@
         "Everything ElectronArt has been gaining, release after release.",
       /* ── sección de video ── */
       "El programa, en movimiento": "The program, in motion",
-      "Esquemático, simulación SPICE y placa, con paneos y zooms reales.":
-        "Schematic, SPICE simulation and board, with real pans and zooms.",
+      "El visor 3D con los modelos reales de cada componente y el cobre vertido del plano de masa — el mismo motor que corre dentro del programa.":
+        "The 3D viewer with the real models of every component and the poured copper of the ground plane — the same engine that runs inside the program.",
       "Tu navegador no puede reproducir este video.":
         "Your browser cannot play this video.",
+      /* ── hero: Mica muestra la placa en el visor 3D ── */
+      "Mica": "Mica",
+      "asistente · local": "assistant · local",
+      "Mostrame la placa del ESP32 en 3D": "Show me the ESP32 board in 3D",
+      "Ahí está.": "There it is.",
+      "Con los modelos reales de cada componente y el cobre vertido del plano de masa. Giralá para verla.":
+        "With the real models of every component and the poured copper of the ground plane. Spin it to see it.",
+      "Visor 3D": "3D viewer",
+      "Mica ▸ modelos reales": "Mica ▸ real models",
+      "Mica: el asistente que te muestra el cambio antes de hacerlo":
+        "Mica: the assistant that shows you the change before it happens",
 
       /* ── v9.1 ── */
       "v9.1 — acabado de placa y marca nueva":
@@ -1202,14 +1213,14 @@
       "Foro": "Fórum",
       "Novedades": "Novidades",
       "Un asistente que te muestra el cambio antes de hacerlo": "Um assistente que mostra a mudança antes de fazê-la",
-      "Le pedís lo que necesitás en castellano. Te contesta, dibuja lo que va a hacer sobre tu placa, y sólo lo aplica si vos aceptás.": "Peça o que precisa em linguagem comum. Ele responde, desenha o que vai fazer na sua placa, e só aplica se você aceitar.",
+      "Le pedís lo que necesitás en castellano. Te contesta, dibuja lo que va a hacer sobre tu diseño, y sólo lo aplica si vos aceptás. Corre en tu máquina o con tu propia clave de IA.": "Peça o que precisa em linguagem comum. Ele responde, desenha o que vai fazer no seu projeto, e só aplica se você aceitar. Roda na sua máquina ou com a sua própria chave de IA.",
       "Lo ves antes de que pase": "Você vê antes que aconteça",
       "Lo que agrega se dibuja en oro sobre el diseño, lo que saca aparece tachado y lo que mueve muestra su recorrido. Nada toca tu proyecto hasta que apretás Aplicar.": "O que adiciona é desenhado em dourado sobre o projeto, o que remove aparece riscado, e o que move mostra o seu percurso. Nada toca o seu projeto até você clicar em Aplicar.",
       "Aceptás lo que querés": "Você aceita o que quiser",
       "Cada cambio va en una lista con su tilde. Destildás uno y desaparece del dibujo al instante. Se aplica sólo lo que dejaste marcado, y entra como un solo Ctrl+Z.": "Cada mudança é uma linha marcada numa lista. Desmarque uma e ela some do desenho na hora. Aplica-se apenas o que ficou marcado, e entra como um único Ctrl+Z.",
       "O corre en tu máquina": "Ou roda na sua máquina",
       "Podés usarlo con tu propia clave, o contra un modelo local: ahí el diseño no sale de tu computadora. Para trabajo bajo acuerdo de confidencialidad, esa diferencia lo es todo.": "Use com a sua própria chave, ou com um modelo local — aí o projeto nunca sai do seu computador. Para trabalho sob acordo de confidencialidade, essa diferença é tudo.",
-      "Hoy sabe trabajar sobre la placa: planos de cobre, ruteo, mover componentes, agujeros de montaje y verificación de reglas. No diseña el circuito por vos.": "Hoje trabalha na placa: planos de cobre, roteamento, mover componentes, furos de montagem e verificação de regras. Não projeta o circuito por você.",
+      "Trabaja en los cuatro editores: coloca y conecta componentes en el esquemático, rutea y vierte cobre en la placa, corre simulaciones y arma la lógica del Ladder. Vos aceptás cada cambio antes de que toque tu proyecto.": "Trabalha nos quatro editores: coloca e conecta componentes no esquemático, roteia e verte cobre na placa, roda simulações e monta a lógica do Ladder. Você aceita cada mudança antes de tocar no seu projeto.",
       "Asistente": "Assistente",
       "Flux": "Flux",
       "Asistente de IA que": "Assistente de IA que",
@@ -1629,8 +1640,19 @@
         "Tudo o que o ElectronArt vem ganhando, versão a versão.",
       /* ── sección de video ── */
       "El programa, en movimiento": "O programa, em movimento",
-      "Esquemático, simulación SPICE y placa, con paneos y zooms reales.":
-        "Esquemático, simulação SPICE e placa, com paneios e zooms reais.",
+      "El visor 3D con los modelos reales de cada componente y el cobre vertido del plano de masa — el mismo motor que corre dentro del programa.":
+        "O visualizador 3D com os modelos reais de cada componente e o cobre vertido do plano de massa — o mesmo motor que roda dentro do programa.",
+      /* ── hero: Mica muestra la placa en el visor 3D ── */
+      "Mica": "Mica",
+      "asistente · local": "assistente · local",
+      "Mostrame la placa del ESP32 en 3D": "Mostre-me a placa do ESP32 em 3D",
+      "Ahí está.": "Aí está.",
+      "Con los modelos reales de cada componente y el cobre vertido del plano de masa. Giralá para verla.":
+        "Com os modelos reais de cada componente e o cobre vertido do plano de massa. Gire-a para vê-la.",
+      "Visor 3D": "Visualizador 3D",
+      "Mica ▸ modelos reales": "Mica ▸ modelos reais",
+      "Mica: el asistente que te muestra el cambio antes de hacerlo":
+        "Mica: o assistente que te mostra a mudança antes de fazê-la",
       "Tu navegador no puede reproducir este video.":
         "Seu navegador não consegue reproduzir este vídeo.",
 

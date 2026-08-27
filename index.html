@@ -171,7 +171,7 @@
         <img src="assets/logo.svg" alt="ElectronArt" height="32" />
       </a>
       <nav class="nav-links" aria-label="Principal">
-        <a href="#asistente">Asistente</a>
+        <a href="#asistente">Mica</a>
         <a href="#caracteristicas">Características</a>
         <a href="#flujo">Flujo</a>
         <a href="#comparacion">Comparación</a>
@@ -224,14 +224,27 @@
         </ul>
       </div>
 
-      <!-- App screenshot -->
+      <!-- Mica en acción: el asistente muestra la placa en el visor 3D REAL del
+           programa —modelos reales, cobre vertido—, no una captura ni un dibujo.
+           Es el diferenciador del producto —la IA de diseño local sobre el motor
+           3D de verdad— apareciendo en los primeros segundos. -->
       <div class="hero-mock">
-        <div class="mock-window">
-          <!-- Captura real de la versión actual. La anterior era del tema azul
-               que ya no existe: la vidriera mostraba un producto distinto del
-               que se descarga. -->
-          <img src="assets/app-pcb.png" class="app-shot"
-               alt="ElectronArt — editor de PCB con la placa ruteada, capas y propiedades" />
+        <div class="mica-panel" aria-label="Mica, el asistente de diseño, muestra una placa ESP32 en el visor 3D con modelos reales">
+          <div class="mica-cab"><span class="mica-led"></span><b>Mica</b><span class="mica-s">asistente · local</span></div>
+          <div class="mica-chat">
+            <div class="mica-burb yo">Mostrame la placa del ESP32 en 3D<span class="mica-cur"></span></div>
+            <div class="mica-burb m"><b>Ahí está.</b> Con los modelos reales de cada componente y el cobre vertido del plano de masa. Giralá para verla.</div>
+          </div>
+          <div class="mica-lienzo mica-lienzo-3d">
+            <span class="mica-rl">Visor 3D</span>
+            <span class="mica-chip">Mica ▸ modelos reales</span>
+            <video class="mica-video" muted playsinline loop autoplay preload="metadata"
+                   poster="assets/video/poster-3d.png"
+                   aria-label="Placa de desarrollo ESP32 en el visor 3D, con modelos reales y cobre vertido.">
+              <source src="assets/video/esp32-3d-hero.webm" type="video/webm" />
+              <source src="assets/video/esp32-3d-hero.mp4" type="video/mp4" />
+            </video>
+          </div>
         </div>
       </div>
     </div>
@@ -245,17 +258,17 @@
   <section class="section video-seccion" aria-label="El programa, en movimiento">
     <div class="container">
       <h2 class="section-title">El programa, en movimiento</h2>
-      <p class="section-sub">Esquemático, simulación SPICE y placa, con paneos y zooms reales.</p>
+      <p class="section-sub">El visor 3D con los modelos reales de cada componente y el cobre vertido del plano de masa — el mismo motor que corre dentro del programa.</p>
       <div class="video-caja">
-        <!-- El MP4 va PRIMERO y no es un detalle de gusto: son 6,1 MB contra
-             los 13,7 del WebM, y el navegador se queda con el primer <source>
-             que declara soportar. Con el WebM adelante, un teléfono bajaba el
-             doble para ver lo mismo. -->
-        <video id="ea-video" poster="assets/video/poster.png"
+        <!-- Acá el WebM va PRIMERO porque para este clip es el más liviano
+             (0,76 MB contra 2,3 del MP4), y el navegador se queda con el primer
+             <source> que declara soportar. El MP4 queda de respaldo para los que
+             no reproducen VP9. -->
+        <video id="ea-video" poster="assets/video/poster-3d.png"
                muted playsinline loop preload="metadata"
-               aria-label="Esquemático, simulación SPICE y placa, con paneos y zooms reales.">
-          <source src="assets/video/ea-9.0-web.mp4" type="video/mp4" />
-          <source src="assets/video/ea-9.0-web.webm" type="video/webm" />
+               aria-label="Visor 3D real de una placa ESP32, con modelos reales y cobre vertido, orbitando.">
+          <source src="assets/video/esp32-3d.webm" type="video/webm" />
+          <source src="assets/video/esp32-3d.mp4" type="video/mp4" />
           Tu navegador no puede reproducir este video.
         </video>
       </div>
@@ -334,8 +347,8 @@
        que más distingue al producto y lo que primero hay que mostrar. -->
   <section id="asistente" class="section">
     <div class="container">
-      <h2 class="section-title">Un asistente que te muestra el cambio antes de hacerlo</h2>
-      <p class="section-sub">Le pedís lo que necesitás en castellano. Te contesta, dibuja lo que va a hacer sobre tu placa, y sólo lo aplica si vos aceptás.</p>
+      <h2 class="section-title">Mica: el asistente que te muestra el cambio antes de hacerlo</h2>
+      <p class="section-sub">Le pedís lo que necesitás en castellano. Te contesta, dibuja lo que va a hacer sobre tu diseño, y sólo lo aplica si vos aceptás. Corre en tu máquina o con tu propia clave de IA.</p>
       <div class="grid features">
         <article class="card">
           <h3>Lo ves antes de que pase</h3>
@@ -350,7 +363,7 @@
           <p>Podés usarlo con tu propia clave, o contra un modelo local: ahí el diseño no sale de tu computadora. Para trabajo bajo acuerdo de confidencialidad, esa diferencia lo es todo.</p>
         </article>
       </div>
-      <p class="section-sub">Hoy sabe trabajar sobre la placa: planos de cobre, ruteo, mover componentes, agujeros de montaje y verificación de reglas. No diseña el circuito por vos.</p>
+      <p class="section-sub">Trabaja en los cuatro editores: coloca y conecta componentes en el esquemático, rutea y vierte cobre en la placa, corre simulaciones y arma la lógica del Ladder. Vos aceptás cada cambio antes de que toque tu proyecto.</p>
     </div>
   </section>
 
