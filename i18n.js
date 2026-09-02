@@ -283,6 +283,8 @@
       "O corre en tu máquina": "Or it runs on your machine",
       "Podés usarlo con tu propia clave, o contra un modelo local: ahí el diseño no sale de tu computadora. Para trabajo bajo acuerdo de confidencialidad, esa diferencia lo es todo.": "Use it with your own API key, or against a local model — then your design never leaves your computer. For work under an NDA, that difference is everything.",
       "Trabaja en los cuatro editores: coloca y conecta componentes en el esquemático, rutea y vierte cobre en la placa, corre simulaciones y arma la lógica del Ladder. Vos aceptás cada cambio antes de que toque tu proyecto.": "It works across the four editors: it places and wires components in the schematic, routes and pours copper on the board, runs simulations and builds Ladder logic. You accept every change before it touches your project.",
+      "Mirá a Triana diseñar una placa, de cero": "Watch Triana design a board from scratch",
+      "Le pedís la placa y la hace: la coloca por circuito, la rutea en dos capas, vierte el plano de masa, la mira en 3D y la simula. Grabado dentro del programa real.": "You ask it for the board and it makes it: it places by circuit, routes it on two layers, pours the ground plane, views it in 3D and simulates it. Recorded inside the real program.",
       "Asistente": "Assistant",
       "Flux": "Flux",
       "Asistente de IA que": "AI assistant that",
@@ -291,6 +293,8 @@
       "El asistente puede correr": "The assistant can run",
       "en tu máquina": "on your machine",
       ", sin subir el diseño": ", without uploading your design",
+      "v9.3 — Triana y la biblioteca que faltaba": "v9.3 — Triana and the library that was missing",
+      "el asistente ahora se llama Triana. La biblioteca aprendió a colocar bien los integrados de varias unidades: un comparador cuádruple como el LM339 entra con sus 14 patas reales y su encapsulado DIP-14, no con un símbolo de cinco patas que no mapeaba contra el footprint. Y suma los componentes que faltaban para placas de verdad, con el pinout sacado del datasheet: la referencia TL431 en SOIC-8, los optoacopladores HCPL-M453 y TLP114A, los dobles diodos BAV70/BAV99 y el transistor BC817 — todos SMD, con su marca (A4, A7, 6C) para encontrarlos por lo que dice el chip en la placa.": "the assistant is now called Triana. The library learned to place multi-unit chips properly: a quad comparator like the LM339 comes in with its real 14 pins and its DIP-14 package, not a five-pin symbol that didn't map onto the footprint. And it adds the parts that were missing for real boards, with the pinout taken from the datasheet: the TL431 reference in SOIC-8, the HCPL-M453 and TLP114A optocouplers, the BAV70/BAV99 dual diodes and the BC817 transistor — all SMD, with their marking (A4, A7, 6C) so you can find them by what the chip says on the board.",
       "v9.2 — el asistente de diseño": "v9.2 — the design assistant",
       "Un asistente que te muestra el cambio antes de hacerlo.": "An assistant that shows you the change before making it.",
       "Le pedís lo que necesitás en castellano y te contesta; lo que propone se dibuja": "Ask for what you need in plain language and it answers; what it proposes is drawn",
@@ -710,17 +714,17 @@
         "The 3D viewer with the real models of every component and the poured copper of the ground plane — the same engine that runs inside the program.",
       "Tu navegador no puede reproducir este video.":
         "Your browser cannot play this video.",
-      /* ── hero: Mica muestra la placa en el visor 3D ── */
-      "Mica": "Mica",
+      /* ── hero: Triana muestra la placa en el visor 3D ── */
+      "Triana": "Triana",
       "asistente · local": "assistant · local",
       "Mostrame la placa del ESP32 en 3D": "Show me the ESP32 board in 3D",
       "Ahí está.": "There it is.",
       "Con los modelos reales de cada componente y el cobre vertido del plano de masa. Giralá para verla.":
         "With the real models of every component and the poured copper of the ground plane. Spin it to see it.",
       "Visor 3D": "3D viewer",
-      "Mica ▸ modelos reales": "Mica ▸ real models",
-      "Mica: el asistente que te muestra el cambio antes de hacerlo":
-        "Mica: the assistant that shows you the change before it happens",
+      "Triana ▸ modelos reales": "Triana ▸ real models",
+      "Triana: el asistente que te muestra el cambio antes de hacerlo":
+        "Triana: the assistant that shows you the change before it happens",
 
       /* ── v9.1 ── */
       "v9.1 — acabado de placa y marca nueva":
@@ -753,6 +757,7 @@
       /* ── v9.0 ── */
       "v9.0 — Máscara, materia y módulo eléctrico":
         "v9.0 — Mask, matter and the electrical module",
+      "Septiembre 2026": "September 2026",
       "Agosto 2026": "August 2026",
       "Identidad «Máscara»": "«Mask» identity",
       ": chaflanes a 45° en vez de esquinas redondeadas, relieve de máscara de soldadura y pads perforados como viñetas. La misma piel en la app, la web y el foro.":
@@ -1221,6 +1226,8 @@
       "O corre en tu máquina": "Ou roda na sua máquina",
       "Podés usarlo con tu propia clave, o contra un modelo local: ahí el diseño no sale de tu computadora. Para trabajo bajo acuerdo de confidencialidad, esa diferencia lo es todo.": "Use com a sua própria chave, ou com um modelo local — aí o projeto nunca sai do seu computador. Para trabalho sob acordo de confidencialidade, essa diferença é tudo.",
       "Trabaja en los cuatro editores: coloca y conecta componentes en el esquemático, rutea y vierte cobre en la placa, corre simulaciones y arma la lógica del Ladder. Vos aceptás cada cambio antes de que toque tu proyecto.": "Trabalha nos quatro editores: coloca e conecta componentes no esquemático, roteia e verte cobre na placa, roda simulações e monta a lógica do Ladder. Você aceita cada mudança antes de tocar no seu projeto.",
+      "Mirá a Triana diseñar una placa, de cero": "Veja a Triana projetar uma placa, do zero",
+      "Le pedís la placa y la hace: la coloca por circuito, la rutea en dos capas, vierte el plano de masa, la mira en 3D y la simula. Grabado dentro del programa real.": "Você pede a placa e ela a faz: posiciona por circuito, roteia em duas camadas, verte o plano de massa, vê em 3D e simula. Gravado dentro do programa real.",
       "Asistente": "Assistente",
       "Flux": "Flux",
       "Asistente de IA que": "Assistente de IA que",
@@ -1229,6 +1236,8 @@
       "El asistente puede correr": "O assistente pode rodar",
       "en tu máquina": "na sua máquina",
       ", sin subir el diseño": ", sem enviar o seu projeto",
+      "v9.3 — Triana y la biblioteca que faltaba": "v9.3 — Triana e a biblioteca que faltava",
+      "el asistente ahora se llama Triana. La biblioteca aprendió a colocar bien los integrados de varias unidades: un comparador cuádruple como el LM339 entra con sus 14 patas reales y su encapsulado DIP-14, no con un símbolo de cinco patas que no mapeaba contra el footprint. Y suma los componentes que faltaban para placas de verdad, con el pinout sacado del datasheet: la referencia TL431 en SOIC-8, los optoacopladores HCPL-M453 y TLP114A, los dobles diodos BAV70/BAV99 y el transistor BC817 — todos SMD, con su marca (A4, A7, 6C) para encontrarlos por lo que dice el chip en la placa.": "o assistente agora se chama Triana. A biblioteca aprendeu a posicionar bem os integrados de várias unidades: um comparador quádruplo como o LM339 entra com seus 14 pinos reais e seu encapsulamento DIP-14, não com um símbolo de cinco pinos que não mapeava no footprint. E soma os componentes que faltavam para placas de verdade, com o pinout tirado do datasheet: a referência TL431 em SOIC-8, os optoacopladores HCPL-M453 e TLP114A, os diodos duplos BAV70/BAV99 e o transistor BC817 — todos SMD, com sua marca (A4, A7, 6C) para encontrá-los pelo que o chip diz na placa.",
       "v9.2 — el asistente de diseño": "v9.2 — o assistente de projeto",
       "Un asistente que te muestra el cambio antes de hacerlo.": "Um assistente que mostra a mudança antes de fazê-la.",
       "Le pedís lo que necesitás en castellano y te contesta; lo que propone se dibuja": "Peça o que precisa em linguagem comum e ele responde; o que propõe é desenhado",
@@ -1642,17 +1651,17 @@
       "El programa, en movimiento": "O programa, em movimento",
       "El visor 3D con los modelos reales de cada componente y el cobre vertido del plano de masa — el mismo motor que corre dentro del programa.":
         "O visualizador 3D com os modelos reais de cada componente e o cobre vertido do plano de massa — o mesmo motor que roda dentro do programa.",
-      /* ── hero: Mica muestra la placa en el visor 3D ── */
-      "Mica": "Mica",
+      /* ── hero: Triana muestra la placa en el visor 3D ── */
+      "Triana": "Triana",
       "asistente · local": "assistente · local",
       "Mostrame la placa del ESP32 en 3D": "Mostre-me a placa do ESP32 em 3D",
       "Ahí está.": "Aí está.",
       "Con los modelos reales de cada componente y el cobre vertido del plano de masa. Giralá para verla.":
         "Com os modelos reais de cada componente e o cobre vertido do plano de massa. Gire-a para vê-la.",
       "Visor 3D": "Visualizador 3D",
-      "Mica ▸ modelos reales": "Mica ▸ modelos reais",
-      "Mica: el asistente que te muestra el cambio antes de hacerlo":
-        "Mica: o assistente que te mostra a mudança antes de fazê-la",
+      "Triana ▸ modelos reales": "Triana ▸ modelos reais",
+      "Triana: el asistente que te muestra el cambio antes de hacerlo":
+        "Triana: o assistente que te mostra a mudança antes de fazê-la",
       "Tu navegador no puede reproducir este video.":
         "Seu navegador não consegue reproduzir este vídeo.",
 
@@ -1687,6 +1696,7 @@
       /* ── v9.0 ── */
       "v9.0 — Máscara, materia y módulo eléctrico":
         "v9.0 — Máscara, matéria e módulo elétrico",
+      "Septiembre 2026": "Setembro de 2026",
       "Agosto 2026": "Agosto de 2026",
       "Identidad «Máscara»": "Identidade «Máscara»",
       ": chaflanes a 45° en vez de esquinas redondeadas, relieve de máscara de soldadura y pads perforados como viñetas. La misma piel en la app, la web y el foro.":

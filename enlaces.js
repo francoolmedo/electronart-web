@@ -41,6 +41,8 @@
     // La 9.2 es la que trae el asistente y los modelos 3D. La 9.1 quedaba
     // enlazada acá y su paquete **no incluía ninguno de los dos**: un error
     // de empaquetado hacía que el visor 3D dibujara primitivas.
+    "instalador-9.3": "https://github.com/francoolmedo/electronart-releases/releases/download/v9.3/ElectronArt-v9.3-win64-setup.exe",
+    "descarga-9.3": "https://github.com/francoolmedo/electronart-releases/releases/download/v9.3/ElectronArt-v9.3-win64.zip",
     "instalador-9.2": "https://github.com/francoolmedo/electronart-releases/releases/download/v9.2/ElectronArt-v9.2-win64-setup.exe",
     "descarga-9.2": "https://github.com/francoolmedo/electronart-releases/releases/download/v9.2/ElectronArt-v9.2-win64.zip",
     // El manual viaja con el sitio: es el mismo PDF que se genera con
