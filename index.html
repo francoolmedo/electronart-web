@@ -250,6 +250,43 @@
     </div>
   </section>
 
+  <!-- ───────────────── Lanzamiento: Mica diseña una placa ───────────────── -->
+  <!-- El video de lanzamiento: la intro de marca, el visor 3D real y el
+       programa de verdad con Mica diseñando una placa de cero. Lleva controles
+       para que se pueda mirar entero; autoplay silencioso al entrar en pantalla. -->
+  <section class="section video-seccion alt" aria-label="Mira a Mica diseñar una placa de cero">
+    <div class="container">
+      <h2 class="section-title">Mirá a Mica diseñar una placa, de cero</h2>
+      <p class="section-sub">Le pedís la placa y la hace: la coloca por circuito, la rutea en dos capas, vierte el plano de masa, la mira en 3D y la simula. Grabado dentro del programa real.</p>
+      <div class="video-caja">
+        <video id="ea-lanzamiento" poster="assets/video/lanzamiento-poster.jpg"
+               controls muted playsinline loop preload="metadata"
+               aria-label="Video de lanzamiento de ElectronArt: intro de marca, visor 3D real y el asistente Mica diseñando una placa de cero dentro del programa.">
+          <source src="assets/video/lanzamiento.mp4" type="video/mp4" />
+          Tu navegador no puede reproducir este video.
+        </video>
+      </div>
+    </div>
+    <script>
+      // Autoplay silencioso sólo con la sección en pantalla (se pausa al salir).
+      // Con movimiento reducido no arranca solo: quedan los controles.
+      (function () {
+        "use strict";
+        var v = document.getElementById("ea-lanzamiento");
+        if (!v) return;
+        var quieto = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (quieto || !("IntersectionObserver" in window)) return;
+        var obs = new IntersectionObserver(function (es) {
+          es.forEach(function (e) {
+            if (e.isIntersecting) { v.play().catch(function () {}); }
+            else { v.pause(); }
+          });
+        }, { threshold: 0.35 });
+        obs.observe(v);
+      })();
+    </script>
+  </section>
+
   <!-- ───────────────── El programa en movimiento ───────────────── -->
   <!-- Clips reales de la v9.0, no mockups: el esquemático, la simulación
        SPICE y la placa con paneos y zooms suaves. El autoplay sólo arranca
