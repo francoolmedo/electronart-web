@@ -162,6 +162,32 @@
   }
   </script>
   <!-- /FAQ estructurada -->
+  <!-- Tema claro/oscuro: se aplica ANTES de pintar (sin flash). Default = oscuro
+       (la máscara negra es la identidad); el usuario puede pasar a claro y queda
+       guardado. El toggle se cablea al cargar. -->
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem("ea-tema") === "light")
+          document.documentElement.setAttribute("data-theme", "light");
+      } catch (e) {}
+      document.addEventListener("DOMContentLoaded", function () {
+        var b = document.getElementById("temaToggle");
+        if (!b) return;
+        b.addEventListener("click", function () {
+          var claro = document.documentElement.getAttribute("data-theme") === "light";
+          if (claro) {
+            document.documentElement.removeAttribute("data-theme");
+            try { localStorage.setItem("ea-tema", "dark"); } catch (e) {}
+          } else {
+            document.documentElement.setAttribute("data-theme", "light");
+            try { localStorage.setItem("ea-tema", "light"); } catch (e) {}
+          }
+          window.dispatchEvent(new Event("ea-tema"));
+        });
+      });
+    })();
+  </script>
 </head>
 <body>
   <!-- ───────────────── Header ───────────────── -->
@@ -184,6 +210,21 @@
            en español: quien lo abre en inglés y viene a comprar, no entiende la
            página. El selector va acá, al lado del botón de descarga, porque es
            donde alguien que no entiende nada lo busca primero. -->
+      <button id="temaToggle" class="tema-toggle" type="button"
+              aria-label="Cambiar tema claro/oscuro" title="Tema claro / oscuro">
+        <svg class="ico-sol" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.4" fill="currentColor"/>
+          <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="12" y1="1.6" x2="12" y2="4.6"/><line x1="12" y1="19.4" x2="12" y2="22.4"/>
+            <line x1="1.6" y1="12" x2="4.6" y2="12"/><line x1="19.4" y1="12" x2="22.4" y2="12"/>
+            <line x1="4.4" y1="4.4" x2="6.5" y2="6.5"/><line x1="17.5" y1="17.5" x2="19.6" y2="19.6"/>
+            <line x1="4.4" y1="19.6" x2="6.5" y2="17.5"/><line x1="17.5" y1="6.5" x2="19.6" y2="4.4"/>
+          </g>
+        </svg>
+        <svg class="ico-luna" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="currentColor"/>
+        </svg>
+      </button>
       <select id="selIdioma" class="sel-idioma" aria-label="Idioma">
         <option value="es">ES</option>
         <option value="en">EN</option>
