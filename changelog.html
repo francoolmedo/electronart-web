@@ -52,7 +52,19 @@
     <p class="lead">Todo lo que fue ganando ElectronArt, versión a versión.</p>
 
     <div class="rel">
-      <h2>v9.3 — Triana y la biblioteca que faltaba <span class="pill">actual</span></h2>
+      <h2>v9.4 — La placa se rutea sola <span class="pill">actual</span></h2>
+      <div class="date">Septiembre 2026</div>
+      <ul>
+        <li><b>La placa se rutea sola</b>: una ESP32 de 74 conexiones queda 74 de 74 en menos de cinco segundos, con los codos a 45°, sin rodeos y sin errores de DRC. Corre aparte y la ventana no se traba.</li>
+        <li><b>Triana arma circuitos comunes</b> a partir de lo que le pedís (en beta), los modifica y los pasa a la placa, también con el modelo local y gratis.</li>
+        <li><b>El programa te guía al abrir</b>: la hoja vacía te dice cómo empezar, las disposiciones de paneles están a un clic en la barra de estado y cada editor muestra sólo sus menús.</li>
+        <li><b>Esquemático más prolijo</b>: los cables salen del pin hacia afuera y los rótulos van donde no pisan cables, sin repetirse. El ERC entiende los planos IEC y la BOM se abre bien en Excel.</li>
+        <li><b>63 componentes nuevos</b> con el pinout del datasheet (TCA9548A, PCA9685, Raspberry Pi Pico, HX711, TB6612FNG…) y un <b>manual ilustrado</b> con el programa real.</li>
+      </ul>
+    </div>
+
+    <div class="rel">
+      <h2>v9.3 — Triana y la biblioteca que faltaba</h2>
       <div class="date">Septiembre 2026</div>
       <ul>
         <li>el asistente ahora se llama Triana. La biblioteca aprendió a colocar bien los integrados de varias unidades: un comparador cuádruple como el LM339 entra con sus 14 patas reales y su encapsulado DIP-14, no con un símbolo de cinco patas que no mapeaba contra el footprint. Y suma los componentes que faltaban para placas de verdad, con el pinout sacado del datasheet: la referencia TL431 en SOIC-8, los optoacopladores HCPL-M453 y TLP114A, los dobles diodos BAV70/BAV99 y el transistor BC817 — todos SMD, con su marca (A4, A7, 6C) para encontrarlos por lo que dice el chip en la placa.</li>
@@ -93,7 +105,7 @@
       <div class="date">Agosto 2026</div>
       <ul>
         <li><b>Identidad «Máscara»</b>: chaflanes a 45° en vez de esquinas redondeadas, relieve de máscara de soldadura y pads perforados como viñetas. La misma piel en la app, la web y el foro.</li>
-        <li><b>120 modelos 3D reales</b> de la biblioteca de KiCad, centrados sobre sus pads, con cobre, estaño y oro que reflejan de verdad.</li>
+        <li><b>120 modelos 3D reales</b> de una biblioteca 3D de código abierto, centrados sobre sus pads, con cobre, estaño y oro que reflejan de verdad.</li>
         <li><b>Impresión por capas y modo plancha</b>: espejado, negro pleno y escala 1:1. Antes el PDF salía con todas las capas encimadas.</li>
         <li><b>Multicapa que llega igual al Gerber</b>, con impedancia controlada: la placa que se fabrica es la que se diseñó.</li>
         <li><b>Editor de placa</b>: contorno arrastrable con cotas vivas, portapapeles, vínculo esquemático↔PCB, buscador que entiende español y <b>teclas de una mano</b> (S/T/V/M, Q para mm⇄mil, E propiedades, R/F rotar y voltear).</li>
@@ -136,7 +148,7 @@
       <h2>v8.71 — Planos de cobre nivel pro</h2>
       <div class="date">Julio 2026</div>
       <ul>
-        <li><b>Prioridad de pour</b> entre planos solapados: el prioritario gana el solape y el resto le deja clearance (semántica Altium).</li>
+        <li><b>Prioridad de pour</b> entre planos solapados: el prioritario gana el solape y el resto le deja clearance (semántica estándar de la industria).</li>
         <li><b>Islas huérfanas</b>: el cobre desconectado de su red se elimina solo al recalcular (apagable por plano).</li>
         <li><b>Repour selectivo</b> por plano desde el clic derecho, con reporte de islas eliminadas. Los Gerbers salen del mismo motor de pour.</li>
       </ul>
@@ -148,7 +160,7 @@
       <ul>
         <li><b>Las pistas siguen al footprint siempre</b> (drag, flechas, sincronizar, undo) y <b>los planos y teardrops se re-fluyen solos</b> tras cada cambio — el cobre nunca queda desactualizado.</li>
         <li><b>Visor 3D con profundidad correcta</b> (fin del efecto translúcido) y modelos más reales: bandas de resistencia, electrolíticos con franja de polaridad, patas DIP.</li>
-        <li><b>Dibujá un rectángulo → convertilo en plano de cobre o borde de placa</b> (clic derecho, estilo Altium); plano editable completo: térmico, puente, gap.</li>
+        <li><b>Dibujá un rectángulo → convertilo en plano de cobre o borde de placa</b> (clic derecho, como en las suites pro); plano editable completo: térmico, puente, gap.</li>
         <li>Traducción completa de menús (EN/PT) y miniaturas de los temas en Ver → Tema. Foro beta con categoría de feedback.</li>
       </ul>
     </div>
@@ -157,7 +169,7 @@
       <h2>v8.69 — Caricaturas universales + licencias limpias</h2>
       <div class="date">Julio 2026</div>
       <ul>
-        <li><b>Modo caricatura para TODOS los componentes</b>: un generador automático crea el arte educativo de cualquier pieza a partir de su encapsulado, categoría y pines — incluidas las que importás de LCSC/EasyEDA, datasheets o tu biblioteca.</li>
+        <li><b>Modo caricatura para TODOS los componentes</b>: un generador automático crea el arte educativo de cualquier pieza a partir de su encapsulado, categoría y pines — incluidas las que importás de LCSC, datasheets o tu biblioteca.</li>
         <li><b>Lectura de PDFs con backend MIT</b> (pdfplumber): el motor de datasheets ya no depende de bibliotecas AGPL — producto comercial con licencias limpias.</li>
         <li><b>EULA y términos de compra</b>: licencia clara por edición, tus diseños son 100&nbsp;% tuyos, lista de licencias de terceros incluida.</li>
       </ul>
@@ -178,7 +190,7 @@
       <div class="date">Julio 2026</div>
       <ul>
         <li><b>«Piezas de fabricante» encadena tres niveles solo</b>: catálogo local → LCSC → datasheet. Cualquier componente del mundo sin salir del panel.</li>
-        <li><b>MPN fuera del catálogo → un clic lo trae de LCSC con el CAD real de EasyEDA</b>: símbolo con pines verdaderos y footprint con pads exactos, guardado en tu biblioteca.</li>
+        <li><b>MPN fuera del catálogo → un clic lo trae de LCSC con su CAD real</b>: símbolo con pines verdaderos y footprint con pads exactos, guardado en tu biblioteca.</li>
         <li><b>Si tampoco está en LCSC, pasa directo al motor de datasheets</b> con la búsqueda ya corriendo y el preview editable.</li>
         <li>Honesto por diseño: solo acepta part numbers que corresponden de verdad (exacto o prefijo, nunca fuzzy).</li>
       </ul>
@@ -248,7 +260,7 @@
       <h2>v8.30 – v8.41 — Biblioteca universal e idiomas</h2>
       <div class="date">Julio 2026</div>
       <ul>
-        <li><b>Importador EasyEDA/LCSC real</b>: símbolo y footprint reales desde la nube, con un clic.</li>
+        <li><b>Importador de CAD real desde LCSC</b>: símbolo y footprint reales desde la nube, con un clic.</li>
         <li>Serie CMOS 4000 y TTL 74xx con pinouts curados; borneras y conectores.</li>
         <li><b>i18n completo</b> (ES/EN/PT), buscador Ctrl+F, autosave, panel de violaciones DRC/ERC, net-classes, export STEP 3D con color, import/export KiCad, panel de historial visual.</li>
       </ul>

@@ -707,12 +707,20 @@ body { transition: background-color .35s ease, color .35s ease; }
 /* ── Responsive ────────────────────────────────────────────────────────────*/
 @media (max-width: 940px) {
   .features { grid-template-columns: repeat(2, 1fr); }
-  .hero-grid { grid-template-columns: 1fr; }
+  /* `1fr` a secas toma como mínimo el ancho de su contenido (la maqueta del chat
+     y el h1): en un celular la columna quedaba en ~417 px dentro de 360 y el
+     `overflow-x: clip` cortaba título, párrafo y viñetas sin barra para verlos. */
+  .hero-grid { grid-template-columns: minmax(0, 1fr); }
+  .hero-grid > * { min-width: 0; }
   .hero-mock { order: -1; }
   .pricing { grid-template-columns: 1fr; max-width: 460px; margin-inline: auto; }
   .foot-grid { grid-template-columns: 1fr 1fr; }
 }
-@media (max-width: 640px) {
+/* Los seis enlaces + tema + idioma + Descargar necesitan ~1180 px: por debajo
+   el botón de descarga quedaba aplastado y cortado («CAR»), en tablets y
+   notebooks chicas y no sólo en el celular. Hasta ese ancho va el menú ☰.
+   Medido con `scripts/landing_desbordes.py`. */
+@media (max-width: 1180px) {
   .nav-links {
     display: none; position: absolute; top: 100%; left: 0; right: 0;
     flex-direction: column;
@@ -735,10 +743,24 @@ body { transition: background-color .35s ease, color .35s ease; }
   .nav-links.open { display: flex; }
   .nav-toggle { display: block; }
   .site-header .nav { position: relative; }
+  .nav { gap: .5rem; }
+  .tema-toggle { margin-left: auto; margin-right: 0; }
+  .nav .btn-sm { flex: none; white-space: nowrap; padding: .55em .8em; }
+  .nav-toggle { flex: none; }
+}
+@media (max-width: 640px) {
+  /* «en una sola herramienta» no puede ir con `nowrap`: a 2,4rem mide 417 px. */
+  .hero h1 .grad { white-space: normal; }
   .features { grid-template-columns: 1fr; }
   .flow-arrow { transform: rotate(90deg); }
   :root { --chamfer: 9px; }
   .autor-ficha { grid-template-columns: 1fr; gap: 1.1rem; padding: 1.4rem 1.3rem; }
+}
+@media (max-width: 480px) {
+  /* Marca + tema + idioma + Descargar + ☰ no entran con el logo completo
+     (200 px): queda sólo el ícono EA, que es el primer cuadro del SVG. */
+  .brand { width: 32px; overflow: hidden; flex: none; }
+  .brand img { max-width: none; }
 }
 
 /* ── Quién lo hace ──────────────────────────────────────────────────────────
