@@ -63,10 +63,10 @@
        "priceCurrency": "USD", "category": "free"},
       {"@type": "Offer", "name": "Student", "price": "0",
        "priceCurrency": "USD", "category": "free"},
-      {"@type": "Offer", "name": "Pro", "price": "79",
+      {"@type": "Offer", "name": "Pro", "price": "39",
        "priceCurrency": "USD",
        "url": "https://francomatic.gumroad.com/l/electronart-pro"},
-      {"@type": "Offer", "name": "Industrial", "price": "299",
+      {"@type": "Offer", "name": "Industrial", "price": "149",
        "priceCurrency": "USD",
        "url": "https://francomatic.gumroad.com/l/electronart-industrial"}
     ]
@@ -83,7 +83,7 @@
         "name": "¿Necesito conexión a internet?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. Todo lo que hace al diseño —esquemático, simulación, ruteo, DRC, vista 3D y salida de fabricación— corre entero en tu máquina, sin cuenta ni nube. La lectura de datasheets en PDF también es local: reconstruye la tabla de pines por la geometría del documento. Internet hace falta sólo si usás lo que es online por naturaleza: stock LCSC en vivo, importar el CAD de EasyEDA o conectar tu propia clave de IA como último recurso para un datasheet difícil."
+          "text": "No. Todo lo que hace al diseño —esquemático, simulación, ruteo, DRC, vista 3D y salida de fabricación— corre entero en tu máquina, sin cuenta ni nube. La lectura de datasheets en PDF también es local: reconstruye la tabla de pines por la geometría del documento. Internet hace falta sólo si usás lo que es online por naturaleza: stock LCSC en vivo, importar el CAD de LCSC o conectar tu propia clave de IA como último recurso para un datasheet difícil."
         }
       },
       {
@@ -99,7 +99,15 @@
         "name": "¿La licencia es por suscripción?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Pro e Industrial son anuales: se renuevan cada 12 meses y podés cancelarlas cuando quieras. Lo que no es por suscripción es el programa: funciona sin conexión y tus archivos son tuyos, en tu disco, en un formato abierto. Gratuita y Estudiante no vencen."
+          "text": "No. Durante la beta, Pro e Industrial se pagan una sola vez y la licencia es perpetua, con todas las actualizaciones. El programa funciona sin conexión y tus archivos son tuyos, en tu disco, en un formato abierto. Gratuita y Estudiante no vencen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué significa que está en beta?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Que el programa ya diseña, simula y exporta para fabricar de punta a punta, pero todavía tiene cosas por pulir, y te lo decimos de frente. Triana, el asistente, arma bien los circuitos comunes y todavía se equivoca con pedidos que nunca vio. A cambio, quien entra ahora paga menos de la mitad, una sola vez, y reporta en el foro directo a quien lo programa. El precio de fundador vale hasta el 31/12/2026: después vuelven las licencias anuales para quien compre, y las perpetuas ya vendidas se respetan."
         }
       },
       {
@@ -128,7 +136,7 @@
       },
       {
         "@type": "Question",
-        "name": "¿Exporta archivos para fabricar en JLCPCB/PCBWay?",
+        "name": "¿Exporta archivos para fabricar en cualquier fábrica de PCB?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Sí. Exporta Gerber RS-274X, taladros Excellon, Pick&Place y BOM, compatibles con las fábricas más comunes."
@@ -239,7 +247,7 @@
   <section class="hero">
     <div class="container hero-grid">
       <div class="hero-copy">
-        <p class="eyebrow">Electronik Lösungen</p>
+        <p class="eyebrow">Beta abierta · Precio de fundador hasta el 31/12</p>
         <h1>Diseñe, simule y fabrique <span class="grad">en una sola herramienta</span></h1>
         <p class="lead">
           ElectronArt integra captura de esquemáticos, simulación SPICE,
@@ -259,7 +267,7 @@
              primeros segundos, que es cuando se decide seguir leyendo. -->
         <ul class="trust">
           <li>✓ Funciona sin internet</li>
-          <li>✓ Sin suscripción obligatoria</li>
+          <li>✓ Pago único, sin suscripción</li>
           <li>✓ Abre tus proyectos de KiCad y EAGLE</li>
           <li>✓ Windows 10/11</li>
         </ul>
@@ -295,14 +303,14 @@
   <!-- El video de lanzamiento: la intro de marca, el visor 3D real y el
        programa de verdad con Triana diseñando una placa de cero. Lleva controles
        para que se pueda mirar entero; autoplay silencioso al entrar en pantalla. -->
-  <section class="section video-seccion alt" aria-label="Mira a Triana diseñar una placa de cero">
+  <section class="section video-seccion alt" aria-label="Mirá a Triana armar una placa desde una frase">
     <div class="container">
-      <h2 class="section-title">Mirá a Triana diseñar una placa, de cero</h2>
-      <p class="section-sub">Le pedís la placa y la hace: la coloca por circuito, la rutea en dos capas, vierte el plano de masa, la mira en 3D y la simula. Grabado dentro del programa real.</p>
+      <h2 class="section-title">Mirá a Triana armar una placa desde una frase</h2>
+      <p class="section-sub">Grabado dentro del programa real: le pide un ESP32 con LEDs, lo pasa a la placa, la rutea, vierte el plano de masa y la muestra en 3D. Triana está en beta: con circuitos comunes anda bien y con pedidos que nunca vio todavía se equivoca. La mejoramos cada semana.</p>
       <div class="video-caja">
         <video id="ea-lanzamiento" poster="assets/video/lanzamiento-poster.jpg"
                controls muted playsinline loop preload="metadata"
-               aria-label="Video de lanzamiento de ElectronArt: intro de marca, visor 3D real y el asistente Triana diseñando una placa de cero dentro del programa.">
+               aria-label="Video de lanzamiento de ElectronArt: intro de marca, visor 3D real y el asistente Triana armando una placa desde una frase dentro del programa.">
           <source src="assets/video/lanzamiento.mp4" type="video/mp4" />
           Tu navegador no puede reproducir este video.
         </video>
@@ -464,7 +472,7 @@
         </article>
         <article class="card">
           <h3>Salida de fabricación</h3>
-          <p>Paquete completo en un clic: Gerber RS-274X con arcos G02/G03 reales, Excellon, Pick &amp; Place, BOM con stock en vivo, PDF, IPC-2581 y ODB++, listo para JLCPCB o PCBWay.</p>
+          <p>Paquete completo en un clic: Gerber RS-274X con arcos G02/G03 reales, Excellon, Pick &amp; Place, BOM con stock en vivo, PDF, IPC-2581 y ODB++, listo para cualquier fábrica de PCB.</p>
         </article>
         <article class="card">
           <h3>Tus proyectos de KiCad y EAGLE abren acá</h3>
@@ -476,7 +484,7 @@
         </article>
         <article class="card">
           <h3>Biblioteca de componentes real</h3>
-          <p>Catálogo curado de más de 150 partes verificadas, stock LCSC en vivo, importación del CAD real de EasyEDA y un motor que interpreta datasheets en PDF para crear el símbolo exacto.</p>
+          <p>Catálogo curado de más de 150 partes verificadas, stock LCSC en vivo, importación de su CAD real y un motor que interpreta datasheets en PDF para crear el símbolo exacto.</p>
         </article>
         <article class="card">
           <h3>Control industrial y PLC</h3>
@@ -558,8 +566,8 @@
   <!-- ───────────────── Pricing ───────────────── -->
   <section id="precios" class="section alt">
     <div class="container">
-      <h2 class="section-title">Precios simples, en USD</h2>
-      <p class="section-sub">Licencia anual. Sin nube y sin cuenta obligatoria.</p>
+      <h2 class="section-title">Precio de fundador: pagás una vez, es tuyo para siempre</h2>
+      <p class="section-sub">ElectronArt está en beta. Quien entra ahora paga menos de la mitad, una sola vez, y se queda con la licencia perpetua y todas las actualizaciones. Hasta el 31/12/2026.</p>
       <div class="grid pricing">
         <!-- Los cuatro niveles son los de `src/licensing/license.py`. Lo que
              lista cada tarjeta sale de FEATURE_MIN_TIER, no de lo que suene
@@ -602,9 +610,10 @@
         </article>
 
         <article class="price-card featured">
-          <div class="ribbon">Más elegido</div>
+          <div class="ribbon">Fundador · beta</div>
           <h3>Pro</h3>
-          <p class="price"><span class="cur">USD</span><span class="amt">79</span><span class="per">/ año</span></p>
+          <p class="price"><span class="cur">USD</span><span class="amt">39</span><span class="per">pago único</span></p>
+          <p class="price-sub"><s>USD 79 / año</s> · licencia perpetua</p>
           <p class="price-sub">Para makers y profesionales</p>
           <ul>
             <li>✓ Uso comercial</li>
@@ -612,7 +621,7 @@
             <li>✓ Pares diferenciales y serpentinas</li>
             <li>✓ Monte Carlo y FFT en SPICE</li>
             <li>✓ IPC-2581, ODB++ y STEP 3D</li>
-            <li>✓ Actualizaciones 1 año</li>
+            <li>✓ Actualizaciones incluidas, para siempre</li>
           </ul>
           <a class="btn btn-primary full" data-pay="pro" data-link="tienda"
              href="#">Comprar Pro</a>
@@ -622,12 +631,13 @@
                así que tampoco hay nada que cancelar después. -->
           <a class="btn btn-ghost full prueba-link" data-link="prueba"
              href="#">Probarlo 14 días gratis</a>
-          <p class="fineprint">Sin tarjeta y sin renovación automática.</p>
+          <p class="fineprint">Sin tarjeta. Y si comprás y no te sirve, te devolvemos la plata dentro de los 14 días.</p>
         </article>
 
         <article class="price-card">
           <h3>Industrial</h3>
-          <p class="price"><span class="cur">USD</span><span class="amt">299</span><span class="per">/ año</span></p>
+          <p class="price"><span class="cur">USD</span><span class="amt">149</span><span class="per">pago único</span></p>
+          <p class="price-sub"><s>USD 299 / año</s> · licencia perpetua</p>
           <p class="price-sub">Para control y automatización</p>
           <ul>
             <li>✓ Todo lo de Pro</li>
@@ -641,7 +651,7 @@
              href="#">Comprar Industrial</a>
         </article>
       </div>
-      <p class="fineprint">¿En Argentina? También aceptamos <a href="#" data-pay="mercadopago" data-link="tienda">MercadoPago</a> · Pagos con tarjeta internacional vía <a href="#" data-pay="gumroad" data-link="tienda">Gumroad</a>.
+      <p class="fineprint">¿En Argentina? Pagás en pesos con <a href="#" data-pay="mercadopago" data-link="tienda">MercadoPago</a> ($ 59.900 Pro · $ 224.900 Industrial) · Pagos con tarjeta internacional vía <a href="#" data-pay="gumroad" data-link="tienda">Gumroad</a>.
       Al comprar o descargar aceptás los <a href="terminos.html">Términos y licencia (EULA)</a>. Tus diseños son 100&nbsp;% tuyos.</p>
     </div>
   </section>
@@ -653,7 +663,7 @@
       <div class="faq">
         <details>
           <summary>¿Necesito conexión a internet?</summary>
-          <p>No. Todo lo que hace al diseño —esquemático, simulación, ruteo, DRC, vista 3D y salida de fabricación— corre entero en tu máquina, sin cuenta ni nube. La lectura de datasheets en PDF también es local: reconstruye la tabla de pines por la geometría del documento. Internet hace falta sólo si usás lo que es online por naturaleza: stock LCSC en vivo, importar el CAD de EasyEDA o conectar tu propia clave de IA como último recurso para un datasheet difícil.</p>
+          <p>No. Todo lo que hace al diseño —esquemático, simulación, ruteo, DRC, vista 3D y salida de fabricación— corre entero en tu máquina, sin cuenta ni nube. La lectura de datasheets en PDF también es local: reconstruye la tabla de pines por la geometría del documento. Internet hace falta sólo si usás lo que es online por naturaleza: stock LCSC en vivo, importar el CAD de LCSC o conectar tu propia clave de IA como último recurso para un datasheet difícil.</p>
         </details>
         <details>
           <summary>¿En qué sistemas corre?</summary>
@@ -661,7 +671,11 @@
         </details>
         <details>
           <summary>¿La licencia es por suscripción?</summary>
-          <p>Pro e Industrial son anuales: se renuevan cada 12 meses y podés cancelarlas cuando quieras. Lo que <b>no</b> es por suscripción es el programa: funciona sin conexión y tus archivos son tuyos, en tu disco, en un formato abierto. Gratuita y Estudiante no vencen.</p>
+          <p>No. Durante la beta, Pro e Industrial se pagan una sola vez y la licencia es perpetua, con todas las actualizaciones. El programa funciona sin conexión y tus archivos son tuyos, en tu disco, en un formato abierto. Gratuita y Estudiante no vencen.</p>
+        </details>
+        <details>
+          <summary>¿Qué significa que está en beta?</summary>
+          <p>Que el programa ya diseña, simula y exporta para fabricar de punta a punta, pero todavía tiene cosas por pulir, y te lo decimos de frente. Triana, el asistente, arma bien los circuitos comunes y todavía se equivoca con pedidos que nunca vio. A cambio, quien entra ahora paga menos de la mitad, una sola vez, y reporta en el foro directo a quien lo programa. El precio de fundador vale hasta el 31/12/2026: después vuelven las licencias anuales para quien compre, y las perpetuas ya vendidas se respetan.</p>
         </details>
         <details>
           <summary>¿Puedo usar la versión gratuita comercialmente?</summary>
@@ -676,7 +690,7 @@
           <p>Es la parte que no hace un EDA de electrónica: esquemas eléctricos de mando y potencia con la simbología normalizada IEC 60617 —bobinas, contactores, guardamotores, relés térmicos, disyuntores diferenciales, temporizadores, transformadores de mando y borneras—, el montaje del tablero sobre riel DIN, y la <strong>simulación del esquema</strong>: apretás el pulsador de marcha en pantalla, la bobina se energiza, el contactor engancha, el motor arranca y el térmico dispara si lo sobrecargás. Incluye el editor Ladder para la lógica del PLC. Está en Industrial, y también en Estudiante para uso no comercial: quien está aprendiendo electrotécnica lo necesita entero.</p>
         </details>
         <details>
-          <summary>¿Exporta archivos para fabricar en JLCPCB/PCBWay?</summary>
+          <summary>¿Exporta archivos para fabricar en cualquier fábrica de PCB?</summary>
           <p>Sí. Exporta Gerber RS-274X, taladros Excellon, Pick&amp;Place y BOM, compatibles con las fábricas más comunes.</p>
         </details>
         <details>

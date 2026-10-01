@@ -31,6 +31,45 @@
      traducción cortada a la mitad se lee peor que no traducir. */
   var T = {
     en: {
+      /* ── beta de fundador (29/9) ── */
+      "39": "39",
+      "149": "149",
+      "compradas durante la beta (hasta el 31/12/2026) son": "bought during the beta (until 31 Dec 2026) are",
+      "licencias perpetuas de fundador": "perpetual founder licences",
+      ": se pagan una sola vez, no vencen e incluyen todas las actualizaciones. Las compradas después de la beta serán": ": paid once, they never expire and include every update. Those bought after the beta will be",
+      ". Si una licencia anual vence, ElectronArt": ". If a yearly licence expires, ElectronArt",
+      "no vencen. Si una compra no le sirve, le devolvemos el importe si lo pide dentro de los 14 días.": "editions never expire. If a purchase doesn't work for you, we refund it if you ask within 14 days.",
+      "v9.4 — La placa se rutea sola": "v9.4 — The board routes itself",
+      "La placa se rutea sola": "The board routes itself",
+      ": una ESP32 de 74 conexiones queda 74 de 74 en menos de cinco segundos, con los codos a 45°, sin rodeos y sin errores de DRC. Corre aparte y la ventana no se traba.": ": a 74-connection ESP32 board gets 74 of 74 in under five seconds, with 45° corners, no detours and no DRC errors. It runs separately so the window never freezes.",
+      "Triana arma circuitos comunes": "Triana builds common circuits",
+      "a partir de lo que le pedís (en beta), los modifica y los pasa a la placa, también con el modelo local y gratis.": "from what you ask for (in beta), edits them and moves them to the board, also with the free local model.",
+      "El programa te guía al abrir": "The program guides you when it opens",
+      ": la hoja vacía te dice cómo empezar, las disposiciones de paneles están a un clic en la barra de estado y cada editor muestra sólo sus menús.": ": the empty sheet tells you how to start, panel layouts are one click away in the status bar and each editor shows only its own menus.",
+      "Esquemático más prolijo": "Tidier schematics",
+      ": los cables salen del pin hacia afuera y los rótulos van donde no pisan cables, sin repetirse. El ERC entiende los planos IEC y la BOM se abre bien en Excel.": ": wires leave the pin outwards and labels go where they don't cover wires, without repeating. ERC understands IEC sheets and the BOM opens cleanly in Excel.",
+      "63 componentes nuevos": "63 new components",
+      "con el pinout del datasheet (TCA9548A, PCA9685, Raspberry Pi Pico, HX711, TB6612FNG…) y un": "with the datasheet pinout (TCA9548A, PCA9685, Raspberry Pi Pico, HX711, TB6612FNG…) and an",
+      "manual ilustrado": "illustrated manual",
+      "con el programa real.": "made with the real program.",
+      "Beta abierta · Precio de fundador hasta el 31/12": "Open beta · Founder pricing until Dec 31",
+      "✓ Pago único, sin suscripción": "✓ One-time payment, no subscription",
+      "Mirá a Triana armar una placa desde una frase": "Watch Triana build a board from one sentence",
+      "Grabado dentro del programa real: le pide un ESP32 con LEDs, lo pasa a la placa, la rutea, vierte el plano de masa y la muestra en 3D. Triana está en beta: con circuitos comunes anda bien y con pedidos que nunca vio todavía se equivoca. La mejoramos cada semana.": "Recorded inside the real program: asked for an ESP32 with LEDs, it moves it to the board, routes it, pours the ground plane and shows it in 3D. Triana is in beta: it does well with common circuits and still gets requests it has never seen wrong. We improve it every week.",
+      "Precio de fundador: pagás una vez, es tuyo para siempre": "Founder pricing: pay once, yours forever",
+      "ElectronArt está en beta. Quien entra ahora paga menos de la mitad, una sola vez, y se queda con la licencia perpetua y todas las actualizaciones. Hasta el 31/12/2026.": "ElectronArt is in beta. Join now and pay less than half, once, and keep a perpetual licence with every update. Until 31 Dec 2026.",
+      "Fundador · beta": "Founder · beta",
+      "pago único": "one-time",
+      "· licencia perpetua": "· perpetual licence",
+      "✓ Actualizaciones incluidas, para siempre": "✓ Updates included, forever",
+      "Sin tarjeta. Y si comprás y no te sirve, te devolvemos la plata dentro de los 14 días.": "No card needed. And if you buy and it doesn't work for you, we refund you within 14 days.",
+      "¿En Argentina? Pagás en pesos con": "In Argentina? Pay in pesos with",
+      "($ 59.900 Pro · $ 224.900 Industrial) · Pagos con tarjeta internacional vía": "($ 59,900 Pro · $ 224,900 Industrial) · International card payments via",
+      "No. Durante la beta, Pro e Industrial se pagan una sola vez y la licencia es perpetua, con todas las actualizaciones. El programa funciona sin conexión y tus archivos son tuyos, en tu disco, en un formato abierto. Gratuita y Estudiante no vencen.": "No. During the beta, Pro and Industrial are a one-time payment with a perpetual licence and every update. The program works offline and your files are yours, on your disk, in an open format. Free and Student never expire.",
+      "¿Qué significa que está en beta?": "What does beta mean?",
+      "Que el programa ya diseña, simula y exporta para fabricar de punta a punta, pero todavía tiene cosas por pulir, y te lo decimos de frente. Triana, el asistente, arma bien los circuitos comunes y todavía se equivoca con pedidos que nunca vio. A cambio, quien entra ahora paga menos de la mitad, una sola vez, y reporta en el foro directo a quien lo programa. El precio de fundador vale hasta el 31/12/2026: después vuelven las licencias anuales para quien compre, y las perpetuas ya vendidas se respetan.": "The program already designs, simulates and exports for fabrication end to end, but it still has rough edges, and we tell you so upfront. Triana, the assistant, builds common circuits well and still gets requests it has never seen wrong. In exchange, if you join now you pay less than half, once, and report in the forum straight to the person who writes it. Founder pricing lasts until 31 Dec 2026: after that, new purchases go back to yearly licences, and perpetual licences already sold are honoured.",
+      "USD 39, pago único (beta)": "USD 39, one-time (beta)",
+      "USD 149, pago único (beta)": "USD 149, one-time (beta)",
       /* ── head / meta ── */
       "ElectronArt — EDA profesional: Esquemático, PCB, Simulación y PLC":
         "ElectronArt — Professional EDA: Schematic, PCB, Simulation and PLC",
@@ -61,7 +100,6 @@
       "Empezar gratis": "Start for free",
       "Ver el flujo ▸": "See the workflow ▸",
       "✓ Funciona sin internet": "✓ Works offline",
-      "✓ Sin suscripción obligatoria": "✓ No forced subscription",
       "✓ Windows 10/11": "✓ Windows 10/11",
       "ElectronArt — editor de PCB con la placa ruteada, capas y propiedades":
         "ElectronArt — PCB editor showing the routed board, layers and properties",
@@ -101,16 +139,16 @@
       "DC, transitorio y AC con modelos no lineales reales (diodo exponencial, BJT Ebers-Moll, MOSFET nivel 1, SCR/Triac con enganche), barridos, Monte Carlo, Fourier/THD y banco con osciloscopio.":
         "DC, transient and AC with real non-linear models (exponential diode, Ebers-Moll BJT, level-1 MOSFET, latching SCR/Triac), sweeps, Monte Carlo, Fourier/THD and a bench with an oscilloscope.",
       "Salida de fabricación": "Fabrication output",
-      "Paquete completo en un clic: Gerber RS-274X con arcos G02/G03 reales, Excellon, Pick & Place, BOM con stock en vivo, PDF, IPC-2581 y ODB++, listo para JLCPCB o PCBWay.":
-        "The complete package in one click: Gerber RS-274X with true G02/G03 arcs, Excellon, Pick & Place, BOM with live stock, PDF, IPC-2581 and ODB++, ready for JLCPCB or PCBWay.",
+      "Paquete completo en un clic: Gerber RS-274X con arcos G02/G03 reales, Excellon, Pick & Place, BOM con stock en vivo, PDF, IPC-2581 y ODB++, listo para cualquier fábrica de PCB.":
+        "The complete package in one click: Gerber RS-274X with true G02/G03 arcs, Excellon, Pick & Place, BOM with live stock, PDF, IPC-2581 and ODB++, ready for any PCB fab.",
       "Importa KiCad, EAGLE, Gerber multicapa, IPC-2581 y ODB++; exporta STEP 3D con color, DXF y bibliotecas KiCad. Sus proyectos nunca quedan encerrados en un formato.":
         "Imports KiCad, EAGLE, multilayer Gerber, IPC-2581 and ODB++; exports coloured 3D STEP, DXF and KiCad libraries. Your projects are never locked into a format.",
       "Verificación DRC y ERC": "DRC and ERC checking",
       "Reglas por clase de red (clearance, ancho, anillo anular, borde, taladros, pares diferenciales) con panel de violaciones navegable, y verificación eléctrica del esquemático.":
         "Rules per net class (clearance, width, annular ring, board edge, drills, differential pairs) with a navigable violations panel, plus electrical checking of the schematic.",
       "Biblioteca de componentes real": "A real component library",
-      "Catálogo curado de más de 150 partes verificadas, stock LCSC en vivo, importación del CAD real de EasyEDA y un motor que interpreta datasheets en PDF para crear el símbolo exacto.":
-        "A curated catalogue of over 150 verified parts, live LCSC stock, import of real EasyEDA CAD, and an engine that reads PDF datasheets to build the exact symbol.",
+      "Catálogo curado de más de 150 partes verificadas, stock LCSC en vivo, importación de su CAD real y un motor que interpreta datasheets en PDF para crear el símbolo exacto.":
+        "A curated catalogue of over 150 verified parts, live LCSC stock, import of their real CAD, and an engine that reads PDF datasheets to build the exact symbol.",
       "Control industrial y PLC": "Industrial control and PLC",
       "Símbolos IEC de potencia y maniobra, contactores con referencias cruzadas, editor Ladder con simulación en vivo y co-simulación de microcontroladores AVR en el esquemático.":
         "IEC power and switchgear symbols, contactors with cross-references, a Ladder editor with live simulation, and AVR microcontroller co-simulation right in the schematic.",
@@ -161,9 +199,6 @@
         "Indicative comparison. Third-party trademarks belong to their respective owners. “~” = partial / with limitations.",
 
       /* ── precios ── */
-      "Precios simples, en USD": "Simple pricing, in USD",
-      "Licencia anual. Sin nube y sin cuenta obligatoria.":
-        "Yearly licence. No cloud, no mandatory account.",
       "/ año": "/ year",
       "Gratuita": "Free",
       "Sin registro, sin límite de tiempo": "No sign-up, no time limit",
@@ -183,7 +218,6 @@
       "✓ Módulo eléctrico y PLC completo": "✓ Full electrical and PLC module",
       "— Uso no comercial": "— Non-commercial use",
       "Pedir licencia": "Request a licence",
-      "Más elegido": "Most popular",
       "Pro": "Pro",
       /* El ZIP y su hash no se traducen: son el nombre de un archivo y una
          huella. Van igual en los tres idiomas para que el chequeo no los
@@ -198,7 +232,6 @@
       "✓ Uso comercial": "✓ Commercial use",
       "✓ Hasta 16 capas de cobre": "✓ Up to 16 copper layers",
       "✓ IPC-2581, ODB++ y STEP 3D": "✓ IPC-2581, ODB++ and 3D STEP",
-      "✓ Actualizaciones 1 año": "✓ 1 year of updates",
       "Comprar Pro": "Buy Pro",
       "Industrial": "Industrial",
       "Para control y automatización": "For control and automation",
@@ -223,11 +256,7 @@
       "; en Linux y macOS se ejecuta desde el código, y el paquete compilado para esos dos está en camino.":
         "; on Linux and macOS you run it from source, and the compiled package for those two is on its way.",
       "¿La licencia es por suscripción?": "Is the licence a subscription?",
-      "Pro e Industrial son anuales: se renuevan cada 12 meses y podés cancelarlas cuando quieras. Lo que":
-        "Pro and Industrial are yearly: they renew every 12 months and you can cancel whenever you want. What is",
       "no": "not",
-      "es por suscripción es el programa: funciona sin conexión y tus archivos son tuyos, en tu disco, en un formato abierto. Gratuita y Estudiante no vencen.":
-        "a subscription is the program itself: it runs offline and your files are yours, on your disk, in an open format. Free and Student never expire.",
       "¿Puedo usar la versión gratuita comercialmente?":
         "Can I use the free version commercially?",
       "No. La Gratuita y la de Estudiante son para uso personal y educativo. Para trabajo comercial necesitás Pro o Industrial.":
@@ -236,8 +265,8 @@
         "What can I actually do with the Free version?",
       "¿Qué es el módulo eléctrico / Industrial?":
         "What is the electrical / Industrial module?",
-      "¿Exporta archivos para fabricar en JLCPCB/PCBWay?":
-        "Does it export files for JLCPCB/PCBWay?",
+      "¿Exporta archivos para fabricar en cualquier fábrica de PCB?":
+        "Does it export files for any PCB fab?",
       "Sí. Exporta Gerber RS-274X, taladros Excellon, Pick&Place y BOM, compatibles con las fábricas más comunes.":
         "Yes. It exports Gerber RS-274X, Excellon drills, Pick & Place and BOM, compatible with the most common fabs.",
       "¿Qué métodos de pago aceptan?": "What payment methods do you accept?",
@@ -283,8 +312,6 @@
       "O corre en tu máquina": "Or it runs on your machine",
       "Podés usarlo con tu propia clave, o contra un modelo local: ahí el diseño no sale de tu computadora. Para trabajo bajo acuerdo de confidencialidad, esa diferencia lo es todo.": "Use it with your own API key, or against a local model — then your design never leaves your computer. For work under an NDA, that difference is everything.",
       "Trabaja en los cuatro editores: coloca y conecta componentes en el esquemático, rutea y vierte cobre en la placa, corre simulaciones y arma la lógica del Ladder. Vos aceptás cada cambio antes de que toque tu proyecto.": "It works across the four editors: it places and wires components in the schematic, routes and pours copper on the board, runs simulations and builds Ladder logic. You accept every change before it touches your project.",
-      "Mirá a Triana diseñar una placa, de cero": "Watch Triana design a board from scratch",
-      "Le pedís la placa y la hace: la coloca por circuito, la rutea en dos capas, vierte el plano de masa, la mira en 3D y la simula. Grabado dentro del programa real.": "You ask it for the board and it makes it: it places by circuit, routes it on two layers, pours the ground plane, views it in 3D and simulates it. Recorded inside the real program.",
       "Asistente": "Assistant",
       "Flux": "Flux",
       "Asistente de IA que": "AI assistant that",
@@ -391,7 +418,6 @@
         "· Proprietary software — your designs belong to you",
 
       /* ── letra chica de precios (partida por los enlaces de pago) ── */
-      "¿En Argentina? También aceptamos": "In Argentina? We also take",
       "· Pagos con tarjeta internacional vía": "· International card payments via",
       ". Al comprar o descargar aceptás los":
         ". By buying or downloading you accept the",
@@ -491,9 +517,7 @@
       "incluido con el producto — no la propiedad del software. Las ediciones":
         "included with the product — not ownership of the software. The",
       "son": "and",
-      "licencias anuales": "editions are yearly licences",
-      ": se renuevan cada 12 meses e incluyen las actualizaciones publicadas durante ese período. Puede cancelarlas cuando quiera; si vence o se cancela, ElectronArt":
-        ": they renew every 12 months and include the updates released during that period. You may cancel at any time; if the licence expires or is cancelled, ElectronArt",
+      "licencias anuales": "yearly licences",
       "sigue abriendo y editando sus proyectos": "still opens and edits your projects",
       "con las funciones de la edición Gratuita, y sus archivos permanecen accesibles en su disco y en un formato abierto. Las ediciones":
         "with the features of the Free edition, and your files stay accessible on your disk in an open format. The",
@@ -540,11 +564,9 @@
         "; it requires no account and no connection to design.",
       "Reembolso completo dentro de los 14 días":
         "Full refund within 14 days",
-      "si el software no funciona en su equipo y el soporte no pudo resolverlo. Las compras vía plataformas de pago se rigen además por las políticas de la plataforma.":
-        "if the software does not work on your machine and support could not resolve it. Purchases through payment platforms are also governed by the platform's policies.",
+      "desde la compra si el software no le sirve, sin necesidad de justificarlo: alcanza con pedirlo. Las compras vía plataformas de pago se rigen además por las políticas de la plataforma.":
+        "of purchase if the software does not work for you, no questions asked: just ask. Purchases through payment platforms are also governed by the platform's policies.",
       "Probarlo 14 días gratis": "Try it free for 14 days",
-      "Sin tarjeta y sin renovación automática.":
-        "No card, no automatic renewal.",
       "5. Datos personales": "5. Personal data",
       "Se guarda lo": "We keep the",
       "mínimo para que la licencia funcione": "minimum needed for the licence to work",
@@ -763,8 +785,8 @@
       ": chaflanes a 45° en vez de esquinas redondeadas, relieve de máscara de soldadura y pads perforados como viñetas. La misma piel en la app, la web y el foro.":
         ": 45° chamfers instead of rounded corners, solder-mask relief and drilled pads instead of bullets. The same skin across the app, the site and the forum.",
       "120 modelos 3D reales": "120 real 3D models",
-      "de la biblioteca de KiCad, centrados sobre sus pads, con cobre, estaño y oro que reflejan de verdad.":
-        "from the KiCad library, centred on their pads, with copper, tin and gold that actually reflect.",
+      "de una biblioteca 3D de código abierto, centrados sobre sus pads, con cobre, estaño y oro que reflejan de verdad.":
+        "from an open-source 3D library, centred on their pads, with copper, tin and gold that actually reflect.",
       "Impresión por capas y modo plancha": "Layer-by-layer printing and toner-transfer mode",
       ": espejado, negro pleno y escala 1:1. Antes el PDF salía con todas las capas encimadas.":
         ": mirrored, solid black and 1:1 scale. The PDF used to come out with every layer stacked on top of each other.",
@@ -824,8 +846,8 @@
         ": reference, X/Y position and free footprint rotation; editable net on tracks and vias; silkscreen text height per item.",
       "v8.71 — Planos de cobre nivel pro": "v8.71 — Pro-level copper pours",
       "Prioridad de pour": "Pour priority",
-      "entre planos solapados: el prioritario gana el solape y el resto le deja clearance (semántica Altium).":
-        "between overlapping pours: the priority one wins the overlap and the rest keep clear of it (Altium semantics).",
+      "entre planos solapados: el prioritario gana el solape y el resto le deja clearance (semántica estándar de la industria).":
+        "between overlapping pours: the priority one wins the overlap and the rest keep clear of it (industry-standard semantics).",
       "Islas huérfanas": "Orphan islands",
       ": el cobre desconectado de su red se elimina solo al recalcular (apagable por plano).":
         ": copper disconnected from its net removes itself on recalc (toggleable per pour).",
@@ -844,16 +866,16 @@
         "(the translucent effect is gone) and more realistic models: resistor bands, electrolytics with a polarity stripe, DIP legs.",
       "Dibujá un rectángulo → convertilo en plano de cobre o borde de placa":
         "Draw a rectangle → turn it into a copper pour or board edge",
-      "(clic derecho, estilo Altium); plano editable completo: térmico, puente, gap.":
-        "(right click, Altium style); fully editable pour: thermal, bridge, gap.",
+      "(clic derecho, como en las suites pro); plano editable completo: térmico, puente, gap.":
+        "(right click, pro-suite style); fully editable pour: thermal, bridge, gap.",
       "Traducción completa de menús (EN/PT) y miniaturas de los temas en Ver → Tema. Foro beta con categoría de feedback.":
         "Full menu translation (EN/PT) and theme thumbnails under View → Theme. Beta forum with a feedback category.",
       "v8.69 — Caricaturas universales + licencias limpias":
         "v8.69 — Universal cartoons + clean licences",
       "Modo caricatura para TODOS los componentes":
         "Cartoon mode for ALL components",
-      ": un generador automático crea el arte educativo de cualquier pieza a partir de su encapsulado, categoría y pines — incluidas las que importás de LCSC/EasyEDA, datasheets o tu biblioteca.":
-        ": an automatic generator creates the educational artwork of any part from its package, category and pins — including the ones you import from LCSC/EasyEDA, datasheets or your library.",
+      ": un generador automático crea el arte educativo de cualquier pieza a partir de su encapsulado, categoría y pines — incluidas las que importás de LCSC, datasheets o tu biblioteca.":
+        ": an automatic generator creates the educational artwork of any part from its package, category and pins — including the ones you import from LCSC, datasheets or your library.",
       "Lectura de PDFs con backend MIT": "PDF reading with an MIT backend",
       "(pdfplumber): el motor de datasheets ya no depende de bibliotecas AGPL — producto comercial con licencias limpias.":
         "(pdfplumber): the datasheet engine no longer depends on AGPL libraries — a commercial product with clean licences.",
@@ -876,8 +898,8 @@
         "“Manufacturer parts” chains exactly three levels",
       ": catálogo local → LCSC → datasheet. Cualquier componente del mundo sin salir del panel.":
         ": local catalogue → LCSC → datasheet. Any component in the world without leaving the panel.",
-      "MPN fuera del catálogo → un clic lo trae de LCSC con el CAD real de EasyEDA":
-        "MPN not in the catalogue → one click brings it from LCSC with EasyEDA's real CAD",
+      "MPN fuera del catálogo → un clic lo trae de LCSC con su CAD real":
+        "MPN not in the catalogue → one click brings it from LCSC with its real CAD",
       ": símbolo con pines verdaderos y footprint con pads exactos, guardado en tu biblioteca.":
         ": a symbol with true pins and a footprint with exact pads, saved to your library.",
       "Si tampoco está en LCSC, pasa directo al motor de datasheets":
@@ -969,7 +991,7 @@
         "Visual footprint editor with draggable pads, editable silkscreen and courtyard.",
       "v8.30 – v8.41 — Biblioteca universal e idiomas":
         "v8.30 – v8.41 — Universal library and languages",
-      "Importador EasyEDA/LCSC real": "Real EasyEDA/LCSC importer",
+      "Importador de CAD real desde LCSC": "Real LCSC CAD importer",
       ": símbolo y footprint reales desde la nube, con un clic.":
         ": real symbol and footprint from the cloud, in one click.",
       "Serie CMOS 4000 y TTL 74xx con pinouts curados; borneras y conectores.":
@@ -989,6 +1011,45 @@
     },
 
     pt: {
+      /* ── beta de fundador (29/9) ── */
+      "39": "39",
+      "149": "149",
+      "compradas durante la beta (hasta el 31/12/2026) son": "compradas durante a beta (até 31/12/2026) são",
+      "licencias perpetuas de fundador": "licenças perpétuas de fundador",
+      ": se pagan una sola vez, no vencen e incluyen todas las actualizaciones. Las compradas después de la beta serán": ": pagas uma única vez, não vencem e incluem todas as atualizações. As compradas depois da beta serão",
+      ". Si una licencia anual vence, ElectronArt": ". Se uma licença anual vencer, o ElectronArt",
+      "no vencen. Si una compra no le sirve, le devolvemos el importe si lo pide dentro de los 14 días.": "não vencem. Se uma compra não servir, devolvemos o valor se pedir em até 14 dias.",
+      "v9.4 — La placa se rutea sola": "v9.4 — A placa se roteia sozinha",
+      "La placa se rutea sola": "A placa se roteia sozinha",
+      ": una ESP32 de 74 conexiones queda 74 de 74 en menos de cinco segundos, con los codos a 45°, sin rodeos y sin errores de DRC. Corre aparte y la ventana no se traba.": ": uma placa ESP32 de 74 conexões fica 74 de 74 em menos de cinco segundos, com cantos a 45°, sem desvios e sem erros de DRC. Roda à parte e a janela não trava.",
+      "Triana arma circuitos comunes": "A Triana monta circuitos comuns",
+      "a partir de lo que le pedís (en beta), los modifica y los pasa a la placa, también con el modelo local y gratis.": "a partir do que você pede (em beta), os modifica e passa para a placa, também com o modelo local e gratuito.",
+      "El programa te guía al abrir": "O programa te guia ao abrir",
+      ": la hoja vacía te dice cómo empezar, las disposiciones de paneles están a un clic en la barra de estado y cada editor muestra sólo sus menús.": ": a folha vazia diz como começar, os layouts de painéis estão a um clique na barra de status e cada editor mostra só os seus menus.",
+      "Esquemático más prolijo": "Esquemático mais caprichado",
+      ": los cables salen del pin hacia afuera y los rótulos van donde no pisan cables, sin repetirse. El ERC entiende los planos IEC y la BOM se abre bien en Excel.": ": os fios saem do pino para fora e os rótulos ficam onde não cobrem fios, sem se repetir. O ERC entende as folhas IEC e a BOM abre bem no Excel.",
+      "63 componentes nuevos": "63 componentes novos",
+      "con el pinout del datasheet (TCA9548A, PCA9685, Raspberry Pi Pico, HX711, TB6612FNG…) y un": "com a pinagem do datasheet (TCA9548A, PCA9685, Raspberry Pi Pico, HX711, TB6612FNG…) e um",
+      "manual ilustrado": "manual ilustrado",
+      "con el programa real.": "feito com o programa real.",
+      "Beta abierta · Precio de fundador hasta el 31/12": "Beta aberta · Preço de fundador até 31/12",
+      "✓ Pago único, sin suscripción": "✓ Pagamento único, sem assinatura",
+      "Mirá a Triana armar una placa desde una frase": "Veja a Triana montar uma placa a partir de uma frase",
+      "Grabado dentro del programa real: le pide un ESP32 con LEDs, lo pasa a la placa, la rutea, vierte el plano de masa y la muestra en 3D. Triana está en beta: con circuitos comunes anda bien y con pedidos que nunca vio todavía se equivoca. La mejoramos cada semana.": "Gravado dentro do programa real: pedem um ESP32 com LEDs, ela passa para a placa, roteia, derrama o plano de terra e mostra em 3D. A Triana está em beta: vai bem com circuitos comuns e ainda erra pedidos que nunca viu. Melhoramos toda semana.",
+      "Precio de fundador: pagás una vez, es tuyo para siempre": "Preço de fundador: pague uma vez, é seu para sempre",
+      "ElectronArt está en beta. Quien entra ahora paga menos de la mitad, una sola vez, y se queda con la licencia perpetua y todas las actualizaciones. Hasta el 31/12/2026.": "O ElectronArt está em beta. Quem entra agora paga menos da metade, uma única vez, e fica com a licença perpétua e todas as atualizações. Até 31/12/2026.",
+      "Fundador · beta": "Fundador · beta",
+      "pago único": "pagamento único",
+      "· licencia perpetua": "· licença perpétua",
+      "✓ Actualizaciones incluidas, para siempre": "✓ Atualizações incluídas, para sempre",
+      "Sin tarjeta. Y si comprás y no te sirve, te devolvemos la plata dentro de los 14 días.": "Sem cartão. E se você comprar e não servir, devolvemos o dinheiro em até 14 dias.",
+      "¿En Argentina? Pagás en pesos con": "Na Argentina? Pague em pesos com",
+      "($ 59.900 Pro · $ 224.900 Industrial) · Pagos con tarjeta internacional vía": "($ 59.900 Pro · $ 224.900 Industrial) · Pagamentos com cartão internacional via",
+      "No. Durante la beta, Pro e Industrial se pagan una sola vez y la licencia es perpetua, con todas las actualizaciones. El programa funciona sin conexión y tus archivos son tuyos, en tu disco, en un formato abierto. Gratuita y Estudiante no vencen.": "Não. Durante a beta, Pro e Industrial são pagos uma única vez e a licença é perpétua, com todas as atualizações. O programa funciona offline e seus arquivos são seus, no seu disco, em formato aberto. Gratuita e Estudante não vencem.",
+      "¿Qué significa que está en beta?": "O que significa estar em beta?",
+      "Que el programa ya diseña, simula y exporta para fabricar de punta a punta, pero todavía tiene cosas por pulir, y te lo decimos de frente. Triana, el asistente, arma bien los circuitos comunes y todavía se equivoca con pedidos que nunca vio. A cambio, quien entra ahora paga menos de la mitad, una sola vez, y reporta en el foro directo a quien lo programa. El precio de fundador vale hasta el 31/12/2026: después vuelven las licencias anuales para quien compre, y las perpetuas ya vendidas se respetan.": "Que o programa já projeta, simula e exporta para fabricação de ponta a ponta, mas ainda tem arestas para aparar, e dizemos isso de frente. A Triana, a assistente, monta bem os circuitos comuns e ainda erra pedidos que nunca viu. Em troca, quem entra agora paga menos da metade, uma única vez, e reporta no fórum direto para quem o programa. O preço de fundador vale até 31/12/2026: depois as licenças anuais voltam para novas compras, e as perpétuas já vendidas são respeitadas.",
+      "USD 39, pago único (beta)": "USD 39, pagamento único (beta)",
+      "USD 149, pago único (beta)": "USD 149, pagamento único (beta)",
       "ElectronArt — EDA profesional: Esquemático, PCB, Simulación y PLC":
         "ElectronArt — EDA profissional: Esquemático, PCB, Simulação e CLP",
       "ElectronArt es una suite EDA de escritorio: diseño de esquemáticos, ruteo de PCB con DRC y Gerber, simulación SPICE, editor Ladder/PLC y exportación de fabricación. Por Electronik Lösungen.":
@@ -1016,7 +1077,6 @@
       "Empezar gratis": "Começar de graça",
       "Ver el flujo ▸": "Ver o fluxo ▸",
       "✓ Funciona sin internet": "✓ Funciona sem internet",
-      "✓ Sin suscripción obligatoria": "✓ Sem assinatura obrigatória",
       "✓ Windows 10/11": "✓ Windows 10/11",
       "ElectronArt — editor de PCB con la placa ruteada, capas y propiedades":
         "ElectronArt — editor de PCB com a placa roteada, camadas e propriedades",
@@ -1055,16 +1115,16 @@
       "DC, transitorio y AC con modelos no lineales reales (diodo exponencial, BJT Ebers-Moll, MOSFET nivel 1, SCR/Triac con enganche), barridos, Monte Carlo, Fourier/THD y banco con osciloscopio.":
         "DC, transitório e AC com modelos não lineares reais (diodo exponencial, BJT Ebers-Moll, MOSFET nível 1, SCR/Triac com engate), varreduras, Monte Carlo, Fourier/THD e bancada com osciloscópio.",
       "Salida de fabricación": "Saída de fabricação",
-      "Paquete completo en un clic: Gerber RS-274X con arcos G02/G03 reales, Excellon, Pick & Place, BOM con stock en vivo, PDF, IPC-2581 y ODB++, listo para JLCPCB o PCBWay.":
-        "Pacote completo em um clique: Gerber RS-274X com arcos G02/G03 reais, Excellon, Pick & Place, BOM com estoque ao vivo, PDF, IPC-2581 e ODB++, pronto para JLCPCB ou PCBWay.",
+      "Paquete completo en un clic: Gerber RS-274X con arcos G02/G03 reales, Excellon, Pick & Place, BOM con stock en vivo, PDF, IPC-2581 y ODB++, listo para cualquier fábrica de PCB.":
+        "Pacote completo em um clique: Gerber RS-274X com arcos G02/G03 reais, Excellon, Pick & Place, BOM com estoque ao vivo, PDF, IPC-2581 e ODB++, pronto para qualquer fábrica de PCB.",
       "Importa KiCad, EAGLE, Gerber multicapa, IPC-2581 y ODB++; exporta STEP 3D con color, DXF y bibliotecas KiCad. Sus proyectos nunca quedan encerrados en un formato.":
         "Importa KiCad, EAGLE, Gerber multicamada, IPC-2581 e ODB++; exporta STEP 3D colorido, DXF e bibliotecas KiCad. Seus projetos nunca ficam presos a um formato.",
       "Verificación DRC y ERC": "Verificação DRC e ERC",
       "Reglas por clase de red (clearance, ancho, anillo anular, borde, taladros, pares diferenciales) con panel de violaciones navegable, y verificación eléctrica del esquemático.":
         "Regras por classe de rede (isolamento, largura, anel anular, borda, furos, pares diferenciais) com painel de violações navegável, e verificação elétrica do esquemático.",
       "Biblioteca de componentes real": "Biblioteca de componentes real",
-      "Catálogo curado de más de 150 partes verificadas, stock LCSC en vivo, importación del CAD real de EasyEDA y un motor que interpreta datasheets en PDF para crear el símbolo exacto.":
-        "Catálogo curado de mais de 150 peças verificadas, estoque LCSC ao vivo, importação do CAD real do EasyEDA e um motor que interpreta datasheets em PDF para criar o símbolo exato.",
+      "Catálogo curado de más de 150 partes verificadas, stock LCSC en vivo, importación de su CAD real y un motor que interpreta datasheets en PDF para crear el símbolo exacto.":
+        "Catálogo curado de mais de 150 peças verificadas, estoque LCSC ao vivo, importação do seu CAD real e um motor que interpreta datasheets em PDF para criar o símbolo exato.",
       "Control industrial y PLC": "Controle industrial e CLP",
       "Símbolos IEC de potencia y maniobra, contactores con referencias cruzadas, editor Ladder con simulación en vivo y co-simulación de microcontroladores AVR en el esquemático.":
         "Símbolos IEC de potência e manobra, contatores com referências cruzadas, editor Ladder com simulação ao vivo e cossimulação de microcontroladores AVR no esquemático.",
@@ -1111,9 +1171,6 @@
       "Comparativa orientativa. Marcas de terceros pertenecen a sus respectivos dueños. “~” = parcial / con limitaciones.":
         "Comparação orientativa. Marcas de terceiros pertencem a seus respectivos donos. “~” = parcial / com limitações.",
 
-      "Precios simples, en USD": "Preços simples, em USD",
-      "Licencia anual. Sin nube y sin cuenta obligatoria.":
-        "Licença anual. Sem nuvem e sem conta obrigatória.",
       "/ año": "/ ano",
       "Gratuita": "Gratuita",
       "Sin registro, sin límite de tiempo": "Sem cadastro, sem prazo",
@@ -1133,7 +1190,6 @@
       "✓ Módulo eléctrico y PLC completo": "✓ Módulo elétrico e CLP completo",
       "— Uso no comercial": "— Uso não comercial",
       "Pedir licencia": "Pedir licença",
-      "Más elegido": "Mais escolhido",
       "sha256sum ElectronArt-*-win64.zip":
         "sha256sum ElectronArt-*-win64.zip",
       "shasum -a 256 ElectronArt-*-win64.zip":
@@ -1144,7 +1200,6 @@
       "✓ Uso comercial": "✓ Uso comercial",
       "✓ Hasta 16 capas de cobre": "✓ Até 16 camadas de cobre",
       "✓ IPC-2581, ODB++ y STEP 3D": "✓ IPC-2581, ODB++ e STEP 3D",
-      "✓ Actualizaciones 1 año": "✓ Atualizações por 1 ano",
       "Comprar Pro": "Comprar Pro",
       "Para control y automatización": "Para controle e automação",
       "✓ Todo lo de Pro": "✓ Tudo do Pro",
@@ -1167,11 +1222,7 @@
       "; en Linux y macOS se ejecuta desde el código, y el paquete compilado para esos dos está en camino.":
         "; no Linux e no macOS você executa a partir do código, e o pacote compilado para esses dois está a caminho.",
       "¿La licencia es por suscripción?": "A licença é por assinatura?",
-      "Pro e Industrial son anuales: se renuevan cada 12 meses y podés cancelarlas cuando quieras. Lo que":
-        "Pro e Industrial são anuais: renovam a cada 12 meses e você pode cancelar quando quiser. O que",
       "no": "não",
-      "es por suscripción es el programa: funciona sin conexión y tus archivos son tuyos, en tu disco, en un formato abierto. Gratuita y Estudiante no vencen.":
-        "é por assinatura é o programa: funciona sem conexão e seus arquivos são seus, no seu disco, em formato aberto. Gratuita e Estudante não expiram.",
       "¿Puedo usar la versión gratuita comercialmente?":
         "Posso usar a versão gratuita comercialmente?",
       "No. La Gratuita y la de Estudiante son para uso personal y educativo. Para trabajo comercial necesitás Pro o Industrial.":
@@ -1180,8 +1231,8 @@
         "O que dá para fazer de verdade com a versão Gratuita?",
       "¿Qué es el módulo eléctrico / Industrial?":
         "O que é o módulo elétrico / Industrial?",
-      "¿Exporta archivos para fabricar en JLCPCB/PCBWay?":
-        "Exporta arquivos para fabricar na JLCPCB/PCBWay?",
+      "¿Exporta archivos para fabricar en cualquier fábrica de PCB?":
+        "Exporta arquivos para fabricar em qualquer fábrica de PCB?",
       "Sí. Exporta Gerber RS-274X, taladros Excellon, Pick&Place y BOM, compatibles con las fábricas más comunes.":
         "Sim. Exporta Gerber RS-274X, furos Excellon, Pick & Place e BOM, compatíveis com as fábricas mais comuns.",
       "¿Qué métodos de pago aceptan?": "Quais formas de pagamento vocês aceitam?",
@@ -1226,8 +1277,6 @@
       "O corre en tu máquina": "Ou roda na sua máquina",
       "Podés usarlo con tu propia clave, o contra un modelo local: ahí el diseño no sale de tu computadora. Para trabajo bajo acuerdo de confidencialidad, esa diferencia lo es todo.": "Use com a sua própria chave, ou com um modelo local — aí o projeto nunca sai do seu computador. Para trabalho sob acordo de confidencialidade, essa diferença é tudo.",
       "Trabaja en los cuatro editores: coloca y conecta componentes en el esquemático, rutea y vierte cobre en la placa, corre simulaciones y arma la lógica del Ladder. Vos aceptás cada cambio antes de que toque tu proyecto.": "Trabalha nos quatro editores: coloca e conecta componentes no esquemático, roteia e verte cobre na placa, roda simulações e monta a lógica do Ladder. Você aceita cada mudança antes de tocar no seu projeto.",
-      "Mirá a Triana diseñar una placa, de cero": "Veja a Triana projetar uma placa, do zero",
-      "Le pedís la placa y la hace: la coloca por circuito, la rutea en dos capas, vierte el plano de masa, la mira en 3D y la simula. Grabado dentro del programa real.": "Você pede a placa e ela a faz: posiciona por circuito, roteia em duas camadas, verte o plano de massa, vê em 3D e simula. Gravado dentro do programa real.",
       "Asistente": "Assistente",
       "Flux": "Flux",
       "Asistente de IA que": "Assistente de IA que",
@@ -1333,7 +1382,6 @@
       "· Software propietario — sus diseños le pertenecen":
         "· Software proprietário — seus projetos pertencem a você",
 
-      "¿En Argentina? También aceptamos": "Na Argentina? Também aceitamos",
       "· Pagos con tarjeta internacional vía": "· Pagamentos com cartão internacional via",
       ". Al comprar o descargar aceptás los":
         ". Ao comprar ou baixar você aceita os",
@@ -1431,8 +1479,6 @@
         "incluído com o produto — não a propriedade do software. As edições",
       "son": "são",
       "licencias anuales": "licenças anuais",
-      ": se renuevan cada 12 meses e incluyen las actualizaciones publicadas durante ese período. Puede cancelarlas cuando quiera; si vence o se cancela, ElectronArt":
-        ": renovam a cada 12 meses e incluem as atualizações publicadas nesse período. Você pode cancelar quando quiser; se vencer ou for cancelada, o ElectronArt",
       "sigue abriendo y editando sus proyectos": "continua abrindo e editando seus projetos",
       "con las funciones de la edición Gratuita, y sus archivos permanecen accesibles en su disco y en un formato abierto. Las ediciones":
         "com os recursos da edição Gratuita, e seus arquivos continuam acessíveis no seu disco e em formato aberto. As edições",
@@ -1479,11 +1525,9 @@
         "; não exige conta nem conexão para projetar.",
       "Reembolso completo dentro de los 14 días":
         "Reembolso integral dentro de 14 dias",
-      "si el software no funciona en su equipo y el soporte no pudo resolverlo. Las compras vía plataformas de pago se rigen además por las políticas de la plataforma.":
-        "se o software não funcionar no seu computador e o suporte não conseguir resolver. As compras por plataformas de pagamento também são regidas pelas políticas da plataforma.",
+      "desde la compra si el software no le sirve, sin necesidad de justificarlo: alcanza con pedirlo. Las compras vía plataformas de pago se rigen además por las políticas de la plataforma.":
+        "da compra se o software não servir para você, sem precisar justificar: basta pedir. As compras por plataformas de pagamento também são regidas pelas políticas da plataforma.",
       "Probarlo 14 días gratis": "Teste grátis por 14 dias",
-      "Sin tarjeta y sin renovación automática.":
-        "Sem cartão e sem renovação automática.",
       "5. Datos personales": "5. Dados pessoais",
       "Se guarda lo": "Guardamos o",
       "mínimo para que la licencia funcione": "mínimo para que a licença funcione",
@@ -1702,8 +1746,8 @@
       ": chaflanes a 45° en vez de esquinas redondeadas, relieve de máscara de soldadura y pads perforados como viñetas. La misma piel en la app, la web y el foro.":
         ": chanfros a 45° em vez de cantos arredondados, relevo de máscara de solda e pads perfurados no lugar de marcadores. A mesma pele no app, no site e no fórum.",
       "120 modelos 3D reales": "120 modelos 3D reais",
-      "de la biblioteca de KiCad, centrados sobre sus pads, con cobre, estaño y oro que reflejan de verdad.":
-        "da biblioteca do KiCad, centrados sobre os seus pads, com cobre, estanho e ouro que refletem de verdade.",
+      "de una biblioteca 3D de código abierto, centrados sobre sus pads, con cobre, estaño y oro que reflejan de verdad.":
+        "de uma biblioteca 3D de código aberto, centrados sobre os seus pads, com cobre, estanho e ouro que refletem de verdade.",
       "Impresión por capas y modo plancha": "Impressão por camadas e modo transferência térmica",
       ": espejado, negro pleno y escala 1:1. Antes el PDF salía con todas las capas encimadas.":
         ": espelhado, preto pleno e escala 1:1. Antes o PDF saía com todas as camadas sobrepostas.",
@@ -1763,8 +1807,8 @@
         ": referência, posição X/Y e rotação livre do footprint; rede editável em trilhas e vias; altura do texto de serigrafia por item.",
       "v8.71 — Planos de cobre nivel pro": "v8.71 — Planos de cobre nível pro",
       "Prioridad de pour": "Prioridade de pour",
-      "entre planos solapados: el prioritario gana el solape y el resto le deja clearance (semántica Altium).":
-        "entre planos sobrepostos: o prioritário ganha a sobreposição e o resto mantém distância (semântica Altium).",
+      "entre planos solapados: el prioritario gana el solape y el resto le deja clearance (semántica estándar de la industria).":
+        "entre planos sobrepostos: o prioritário ganha a sobreposição e o resto mantém distância (semântica padrão da indústria).",
       "Islas huérfanas": "Ilhas órfãs",
       ": el cobre desconectado de su red se elimina solo al recalcular (apagable por plano).":
         ": o cobre desconectado da sua rede se elimina sozinho ao recalcular (desativável por plano).",
@@ -1783,16 +1827,16 @@
         "(fim do efeito translúcido) e modelos mais realistas: faixas de resistor, eletrolíticos com faixa de polaridade, pernas DIP.",
       "Dibujá un rectángulo → convertilo en plano de cobre o borde de placa":
         "Desenhe um retângulo → transforme-o em plano de cobre ou borda de placa",
-      "(clic derecho, estilo Altium); plano editable completo: térmico, puente, gap.":
-        "(clique direito, estilo Altium); plano editável completo: térmico, ponte, gap.",
+      "(clic derecho, como en las suites pro); plano editable completo: térmico, puente, gap.":
+        "(clique direito, como nas suítes pro); plano editável completo: térmico, ponte, gap.",
       "Traducción completa de menús (EN/PT) y miniaturas de los temas en Ver → Tema. Foro beta con categoría de feedback.":
         "Tradução completa dos menus (EN/PT) e miniaturas dos temas em Ver → Tema. Fórum beta com categoria de feedback.",
       "v8.69 — Caricaturas universales + licencias limpias":
         "v8.69 — Caricaturas universais + licenças limpas",
       "Modo caricatura para TODOS los componentes":
         "Modo caricatura para TODOS os componentes",
-      ": un generador automático crea el arte educativo de cualquier pieza a partir de su encapsulado, categoría y pines — incluidas las que importás de LCSC/EasyEDA, datasheets o tu biblioteca.":
-        ": um gerador automático cria a arte educativa de qualquer peça a partir do seu encapsulamento, categoria e pinos — inclusive as que você importa do LCSC/EasyEDA, datasheets ou da sua biblioteca.",
+      ": un generador automático crea el arte educativo de cualquier pieza a partir de su encapsulado, categoría y pines — incluidas las que importás de LCSC, datasheets o tu biblioteca.":
+        ": um gerador automático cria a arte educativa de qualquer peça a partir do seu encapsulamento, categoria e pinos — inclusive as que você importa do LCSC, datasheets ou da sua biblioteca.",
       "Lectura de PDFs con backend MIT": "Leitura de PDFs com backend MIT",
       "(pdfplumber): el motor de datasheets ya no depende de bibliotecas AGPL — producto comercial con licencias limpias.":
         "(pdfplumber): o motor de datasheets não depende mais de bibliotecas AGPL — produto comercial com licenças limpas.",
@@ -1815,8 +1859,8 @@
         "“Peças de fabricante” encadeia apenas três níveis",
       ": catálogo local → LCSC → datasheet. Cualquier componente del mundo sin salir del panel.":
         ": catálogo local → LCSC → datasheet. Qualquer componente do mundo sem sair do painel.",
-      "MPN fuera del catálogo → un clic lo trae de LCSC con el CAD real de EasyEDA":
-        "MPN fora do catálogo → um clique o traz do LCSC com o CAD real do EasyEDA",
+      "MPN fuera del catálogo → un clic lo trae de LCSC con su CAD real":
+        "MPN fora do catálogo → um clique o traz do LCSC com o seu CAD real",
       ": símbolo con pines verdaderos y footprint con pads exactos, guardado en tu biblioteca.":
         ": símbolo com pinos verdadeiros e footprint com pads exatos, salvo na sua biblioteca.",
       "Si tampoco está en LCSC, pasa directo al motor de datasheets":
@@ -1908,7 +1952,7 @@
         "Editor visual de footprints com arrastrar pads, serigrafia e courtyard editáveis.",
       "v8.30 – v8.41 — Biblioteca universal e idiomas":
         "v8.30 – v8.41 — Biblioteca universal e idiomas",
-      "Importador EasyEDA/LCSC real": "Importador real do EasyEDA/LCSC",
+      "Importador de CAD real desde LCSC": "Importador de CAD real do LCSC",
       ": símbolo y footprint reales desde la nube, con un clic.":
         ": símbolo e footprint reais da nuvem, com um clique.",
       "Serie CMOS 4000 y TTL 74xx con pinouts curados; borneras y conectores.":
@@ -1933,7 +1977,7 @@
   var T_HTML = {
     en: {
       "faq-offline":
-        "No. Everything that touches the design —schematic, simulation, routing, DRC, 3D view and fabrication output— runs entirely on your machine, with no account and no cloud. PDF datasheet reading is local too: it rebuilds the pin table from the document's geometry. You only need internet for what is online by nature: live LCSC stock, importing EasyEDA CAD, or plugging in your own AI key as a last resort for a difficult datasheet.",
+        "No. Everything that touches the design —schematic, simulation, routing, DRC, 3D view and fabrication output— runs entirely on your machine, with no account and no cloud. PDF datasheet reading is local too: it rebuilds the pin table from the document's geometry. You only need internet for what is online by nature: live LCSC stock, importing LCSC CAD, or plugging in your own AI key as a last resort for a difficult datasheet.",
       "faq-gratuita":
         "A complete two-layer design, end to end: draw the schematic, simulate it in SPICE, route the board by hand or with the autorouter, check it with DRC and ERC, look at it in 3D, and export the Gerber, the Excellon and the BOM to send it out for manufacturing. It comes out watermarked and is for non-commercial use. What is left for the paid plans is what more demanding work needs: more than two layers, differential pairs and length-matching meanders, Monte Carlo and FFT, the IPC-2581/ODB++/STEP outputs a large fab asks for, and the industrial electrical module.",
       "faq-industrial":
@@ -1947,7 +1991,7 @@
     },
     pt: {
       "faq-offline":
-        "Não. Tudo o que faz parte do projeto —esquemático, simulação, roteamento, DRC, vista 3D e saída de fabricação— roda inteiro na sua máquina, sem conta e sem nuvem. A leitura de datasheets em PDF também é local: reconstrói a tabela de pinos pela geometria do documento. A internet só é necessária para o que é online por natureza: estoque LCSC ao vivo, importar o CAD do EasyEDA ou conectar sua própria chave de IA como último recurso para um datasheet difícil.",
+        "Não. Tudo o que faz parte do projeto —esquemático, simulação, roteamento, DRC, vista 3D e saída de fabricação— roda inteiro na sua máquina, sem conta e sem nuvem. A leitura de datasheets em PDF também é local: reconstrói a tabela de pinos pela geometria do documento. A internet só é necessária para o que é online por natureza: estoque LCSC ao vivo, importar o CAD do LCSC ou conectar sua própria chave de IA como último recurso para um datasheet difícil.",
       "faq-gratuita":
         "Um projeto completo de duas faces, de ponta a ponta: desenhar o esquemático, simulá-lo em SPICE, rotear a placa à mão ou com o autorroteador, verificar com DRC e ERC, olhá-la em 3D e exportar o Gerber, o Excellon e o BOM para mandar fabricar. Sai com marca-d'água e é para uso não comercial. O que fica para os planos pagos é o que um trabalho mais exigente precisa: mais de duas camadas, pares diferenciais e serpentinas de igualação, Monte Carlo e FFT, as saídas IPC-2581/ODB++/STEP que uma fábrica grande pede, e o módulo elétrico industrial.",
       "faq-industrial":
