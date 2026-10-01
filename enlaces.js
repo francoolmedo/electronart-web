@@ -43,6 +43,8 @@
     // de empaquetado hacía que el visor 3D dibujara primitivas.
     "instalador-9.4": "https://github.com/francoolmedo/electronart-releases/releases/download/v9.4/ElectronArt-v9.4-win64-setup.exe",
     "descarga-9.4": "https://github.com/francoolmedo/electronart-releases/releases/download/v9.4/ElectronArt-v9.4-win64.zip",
+    "instalador-9.5": "https://github.com/francoolmedo/electronart-releases/releases/download/v9.5/ElectronArt-v9.5-win64-setup.exe",
+    "descarga-9.5": "https://github.com/francoolmedo/electronart-releases/releases/download/v9.5/ElectronArt-v9.5-win64.zip",
     "instalador-9.3": "https://github.com/francoolmedo/electronart-releases/releases/download/v9.3/ElectronArt-v9.3-win64-setup.exe",
     "descarga-9.3": "https://github.com/francoolmedo/electronart-releases/releases/download/v9.3/ElectronArt-v9.3-win64.zip",
     "instalador-9.2": "https://github.com/francoolmedo/electronart-releases/releases/download/v9.2/ElectronArt-v9.2-win64-setup.exe",
