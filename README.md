@@ -52,7 +52,7 @@ python -m http.server 8000
 
 ## Publicar
 Subí la carpeta `website/` tal cual a cualquier hosting estático. Ya vienen configs zero-config:
-- **GitHub Pages** (automático): el workflow `.github/workflows/deploy-pages.yml` publica `website/` en cada push a `main`. Una sola vez: *Settings ▸ Pages ▸ Source = "GitHub Actions"*. (Asume raíz del repo = `Circuitron/`; si tu raíz es un nivel más arriba, cambiá `website` → `Circuitron/website` en el workflow). El `.nojekyll` evita el procesado Jekyll.
+- **GitHub Pages** (automático): el workflow `.github/workflows/deploy-pages.yml` publica `website/` en cada push a `main`. Una sola vez: *Settings ▸ Pages ▸ Source = "GitHub Actions"*. (Asume raíz del repo = `ElectronArtEDA/`; si tu raíz es un nivel más arriba, cambiá `website` → `ElectronArtEDA/website` en el workflow). El `.nojekyll` evita el procesado Jekyll.
 - **Netlify**: conectá el repo; `netlify.toml` fija *base = website*, sin build command.
 - **Vercel**: importá el repo con *Root Directory = website*; `vercel.json` aplica clean URLs + cache de assets.
 - **Cloudflare Pages / a mano**: arrastrá la carpeta `website/` (sin build; publish dir = la carpeta misma).

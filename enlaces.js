@@ -58,7 +58,7 @@
     // Vacías a propósito: las cuentas de la marca todavía no existen y el pie
     // del sitio ya no las ofrece. Cuando se creen, se completan acá y se
     // vuelve a poner la columna «Seguinos» en `index.html`.
-    instagram: "",
+    instagram: "https://www.instagram.com/electronart.eda/",
     youtube: "",
     github: ""
     // Las descargas de versiones anteriores las escribe

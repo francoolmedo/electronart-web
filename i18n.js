@@ -105,13 +105,27 @@
       "Idioma": "Language",
 
       /* ── hero ── */
-      "Diseñe, simule y fabrique": "Design, simulate and manufacture",
+      "Diseñá, simulá y fabricá": "Design, simulate and manufacture",
+      /* hero 3D, reels, foro y pie (2/10/2026) */
+      "Seis capas": "Six layers",
+      "en vivo · arrastrá para girarla": "live · drag to spin it",
+      "Controladora de referencia hecha en ElectronArt · diseño en progreso": "Reference controller made in ElectronArt · work in progress",
+      "Mirá lo que hace, en 20 segundos": "See what it does, in 20 seconds",
+      "Nada de maquetas: cada reel sale de un archivo real abierto en ElectronArt o de una simulación que corrió de verdad.": "No mock-ups: every reel comes from a real file opened in ElectronArt or from a simulation that actually ran.",
+      "SONIDO": "SOUND",
+      "Micro de 144 pines, SDRAM BGA, Ethernet y CAN aislado; planos internos de GND y 3,3 V y pares USB con el largo igualado.": "144-pin micro, BGA SDRAM, Ethernet and isolated CAN; internal GND and 3.3 V planes and length-matched USB pairs.",
+      "El tablero se simula": "The panel gets simulated",
+      "Marcha, contactor que se enclava, motor que arranca y térmico que dispara: el simulador del esquema de mando, antes de pelar un cable.": "Start button, a contactor that latches, a motor that starts and an overload that trips: the control-circuit simulator, before you strip a single wire.",
+      "Más en Instagram:": "More on Instagram:",
+      "@electronart.eda": "@electronart.eda",
+      "Lo último del foro": "Latest from the forum",
+      "Seguinos": "Follow us",
       "en una sola herramienta": "in a single tool",
       "ElectronArt integra captura de esquemáticos, simulación SPICE, ruteo de PCB multicapa con autorouter configurable y salida de fabricación completa — Gerber con arcos reales, Excellon, IPC-2581, ODB++ — en una aplicación de escritorio rápida y sin dependencias de la nube.":
         "ElectronArt brings together schematic capture, SPICE simulation, multilayer PCB routing with a configurable autorouter, and a complete fabrication output — Gerber with true arcs, Excellon, IPC-2581, ODB++ — in a fast desktop application with no cloud dependencies.",
       "Empezar gratis": "Start for free",
       "Ver el flujo ▸": "See the workflow ▸",
-      "✓ Funciona sin internet": "✓ Works offline",
+      "✓ IA incluida, corre en tu PC": "✓ AI included, runs on your PC",
       "✓ Windows 10/11": "✓ Windows 10/11",
 
       /* ── viaje ── */
@@ -744,6 +758,21 @@
       "El programa, en movimiento": "The program, in motion",
       "El visor 3D con los modelos reales de cada componente y el cobre vertido del plano de masa — el mismo motor que corre dentro del programa.":
         "The 3D viewer with the real models of every component and the poured copper of the ground plane — the same engine that runs inside the program.",
+      /* ── seis capas, desglosadas (1/10) ── */
+      "Multicapa de verdad": "Real multilayer",
+      "Seis capas, desglosadas": "Six layers, exploded",
+      "Una controladora industrial de referencia hecha en ElectronArt, abierta capa por capa: microcontrolador LQFP-144, SDRAM BGA-54, Ethernet y CAN aislado.":
+        "A reference industrial controller made in ElectronArt, opened layer by layer: LQFP-144 microcontroller, BGA-54 SDRAM, Ethernet and isolated CAN.",
+      "Stackup de 6 capas": "6-layer stackup",
+      "con espesores y materiales reales": "with real thicknesses and materials",
+      "Planos internos": "Internal planes",
+      "dedicados a GND y +3V3": "dedicated to GND and +3V3",
+      "Pares diferenciales USB": "USB differential pairs",
+      "con el largo igualado: skew medido 0,000 mm": "length-matched: measured skew 0.000 mm",
+      "Es un diseño de referencia en progreso: el video muestra el archivo real, no una placa terminada.":
+        "It is a reference design in progress: the video shows the real file, not a finished board.",
+      "Reel de 18 segundos: una controladora industrial de seis capas que se desglosa en 3D, con sus componentes y la ficha técnica.":
+        "18-second reel: a six-layer industrial controller exploding in 3D, with its components and spec sheet.",
       "Tu navegador no puede reproducir este video.":
         "Your browser cannot play this video.",
       /* ── hero: Triana muestra la placa en el visor 3D ── */
@@ -1092,13 +1121,27 @@
       "Menú": "Menu",
       "Idioma": "Idioma",
 
-      "Diseñe, simule y fabrique": "Projete, simule e fabrique",
+      "Diseñá, simulá y fabricá": "Projete, simule e fabrique",
+      /* hero 3D, reels, foro y pie (2/10/2026) */
+      "Seis capas": "Seis camadas",
+      "en vivo · arrastrá para girarla": "ao vivo · arraste para girar",
+      "Controladora de referencia hecha en ElectronArt · diseño en progreso": "Controladora de referência feita no ElectronArt · projeto em andamento",
+      "Mirá lo que hace, en 20 segundos": "Veja o que ele faz, em 20 segundos",
+      "Nada de maquetas: cada reel sale de un archivo real abierto en ElectronArt o de una simulación que corrió de verdad.": "Nada de maquetes: cada reel sai de um arquivo real aberto no ElectronArt ou de uma simulação que rodou de verdade.",
+      "SONIDO": "SOM",
+      "Micro de 144 pines, SDRAM BGA, Ethernet y CAN aislado; planos internos de GND y 3,3 V y pares USB con el largo igualado.": "Micro de 144 pinos, SDRAM BGA, Ethernet e CAN isolado; planos internos de GND e 3,3 V e pares USB com o comprimento igualado.",
+      "El tablero se simula": "O painel é simulado",
+      "Marcha, contactor que se enclava, motor que arranca y térmico que dispara: el simulador del esquema de mando, antes de pelar un cable.": "Botão de partida, contator que se sela, motor que parte e térmico que dispara: o simulador do circuito de comando, antes de descascar um fio.",
+      "Más en Instagram:": "Mais no Instagram:",
+      "@electronart.eda": "@electronart.eda",
+      "Lo último del foro": "Últimas do fórum",
+      "Seguinos": "Siga-nos",
       "en una sola herramienta": "em uma única ferramenta",
       "ElectronArt integra captura de esquemáticos, simulación SPICE, ruteo de PCB multicapa con autorouter configurable y salida de fabricación completa — Gerber con arcos reales, Excellon, IPC-2581, ODB++ — en una aplicación de escritorio rápida y sin dependencias de la nube.":
         "O ElectronArt reúne captura de esquemáticos, simulação SPICE, roteamento de PCB multicamada com autorroteador configurável e saída de fabricação completa — Gerber com arcos reais, Excellon, IPC-2581, ODB++ — em um aplicativo de desktop rápido e sem dependências de nuvem.",
       "Empezar gratis": "Começar de graça",
       "Ver el flujo ▸": "Ver o fluxo ▸",
-      "✓ Funciona sin internet": "✓ Funciona sem internet",
+      "✓ IA incluida, corre en tu PC": "✓ IA incluída, roda no seu PC",
       "✓ Windows 10/11": "✓ Windows 10/11",
 
       "Recorrido por una placa": "Um passeio pela placa",
@@ -1715,6 +1758,21 @@
       "El programa, en movimiento": "O programa, em movimento",
       "El visor 3D con los modelos reales de cada componente y el cobre vertido del plano de masa — el mismo motor que corre dentro del programa.":
         "O visualizador 3D com os modelos reais de cada componente e o cobre vertido do plano de massa — o mesmo motor que roda dentro do programa.",
+      /* ── seis capas, desglosadas (1/10) ── */
+      "Multicapa de verdad": "Multicamada de verdade",
+      "Seis capas, desglosadas": "Seis camadas, explodidas",
+      "Una controladora industrial de referencia hecha en ElectronArt, abierta capa por capa: microcontrolador LQFP-144, SDRAM BGA-54, Ethernet y CAN aislado.":
+        "Uma controladora industrial de referência feita no ElectronArt, aberta camada por camada: microcontrolador LQFP-144, SDRAM BGA-54, Ethernet e CAN isolado.",
+      "Stackup de 6 capas": "Stackup de 6 camadas",
+      "con espesores y materiales reales": "com espessuras e materiais reais",
+      "Planos internos": "Planos internos",
+      "dedicados a GND y +3V3": "dedicados a GND e +3V3",
+      "Pares diferenciales USB": "Pares diferenciais USB",
+      "con el largo igualado: skew medido 0,000 mm": "com o comprimento igualado: skew medido 0,000 mm",
+      "Es un diseño de referencia en progreso: el video muestra el archivo real, no una placa terminada.":
+        "É um projeto de referência em andamento: o vídeo mostra o arquivo real, não uma placa pronta.",
+      "Reel de 18 segundos: una controladora industrial de seis capas que se desglosa en 3D, con sus componentes y la ficha técnica.":
+        "Reel de 18 segundos: uma controladora industrial de seis camadas que se desmonta em 3D, com seus componentes e a ficha técnica.",
       /* ── hero: Triana muestra la placa en el visor 3D ── */
       "Triana": "Triana",
       "asistente · local": "assistente · local",

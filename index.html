@@ -204,15 +204,16 @@
       <a class="brand" href="#top">
         <img src="assets/logo.svg" alt="ElectronArt" height="32" />
       </a>
+      <!-- Los mismos ítems, en el mismo orden, que la barra del foro
+           (backend/templates/base.html): portada y foro son un solo sitio.
+           Flujo, Comparación y Comunidad siguen en la página y en el pie. -->
       <nav class="nav-links" aria-label="Principal">
         <a href="#asistente">Triana</a>
         <a href="#caracteristicas">Características</a>
-        <a href="#flujo">Flujo</a>
-        <a href="#comparacion">Comparación</a>
         <a href="#precios">Precios</a>
         <a href="descargas.html">Descargas</a>
+        <a href="#" data-link="foro">Foro</a>
         <a href="#faq">FAQ</a>
-        <a href="#comunidad">Comunidad</a>
       </nav>
       <!-- El programa está en tres idiomas desde la v8.30 y la web estaba sólo
            en español: quien lo abre en inglés y viene a comprar, no entiende la
@@ -238,7 +239,7 @@
         <option value="en">EN</option>
         <option value="pt">PT</option>
       </select>
-      <a class="btn btn-primary btn-sm" href="#precios">Descargar</a>
+      <a class="btn btn-primary btn-sm" href="descargas.html">Descargar</a>
       <button class="nav-toggle" id="navToggle" aria-label="Menú" aria-expanded="false">☰</button>
     </div>
   </header>
@@ -248,7 +249,7 @@
     <div class="container hero-grid">
       <div class="hero-copy">
         <p class="eyebrow">Beta abierta · Precio de fundador hasta el 31/12</p>
-        <h1>Diseñe, simule y fabrique <span class="grad">en una sola herramienta</span></h1>
+        <h1>Diseñá, simulá y fabricá <span class="grad">en una sola herramienta</span></h1>
         <p class="lead">
           ElectronArt integra captura de esquemáticos, simulación SPICE,
           ruteo de PCB multicapa con autorouter configurable y salida de fabricación
@@ -266,34 +267,26 @@
              es una palabra que nadie busca ni siente. Acá llega en los
              primeros segundos, que es cuando se decide seguir leyendo. -->
         <ul class="trust">
-          <li>✓ Funciona sin internet</li>
+          <li>✓ IA incluida, corre en tu PC</li>
           <li>✓ Pago único, sin suscripción</li>
           <li>✓ Abre tus proyectos de KiCad y EAGLE</li>
           <li>✓ Windows 10/11</li>
         </ul>
       </div>
 
-      <!-- Triana en acción: el asistente muestra la placa en el visor 3D REAL del
-           programa —modelos reales, cobre vertido—, no una captura ni un dibujo.
-           Es el diferenciador del producto —la IA de diseño local sobre el motor
-           3D de verdad— apareciendo en los primeros segundos. -->
+      <!-- La placa de 6 capas, en vivo (website/hero3d.js): la misma escena del
+           reel «6 capas», interactiva. Reemplaza al video viejo de la ESP32.
+           Las texturas salen del archivo real (examples/triana-industrial-controller)
+           rasterizado con el renderer del programa. Sin WebGL queda el póster. -->
       <div class="hero-mock">
-        <div class="mica-panel" aria-label="Triana, el asistente de diseño, muestra una placa ESP32 en el visor 3D con modelos reales">
-          <div class="mica-cab"><span class="mica-led"></span><b>Triana</b><span class="mica-s">asistente · local</span></div>
-          <div class="mica-chat">
-            <div class="mica-burb yo">Mostrame la placa del ESP32 en 3D<span class="mica-cur"></span></div>
-            <div class="mica-burb m"><b>Ahí está.</b> Con los modelos reales de cada componente y el cobre vertido del plano de masa. Giralá para verla.</div>
+        <div class="mica-panel panel-3d">
+          <div class="mica-cab"><span class="mica-led"></span><b>Seis capas</b><span class="mica-s">en vivo · arrastrá para girarla</span></div>
+          <div class="hero3d" id="hero3d">
+            <img class="hero3d-poster" src="assets/hero3d/poster.jpg" width="824" height="762"
+                 alt="Controladora industrial de 6 capas hecha en ElectronArt, con sus láminas separadas en 3D." />
           </div>
-          <div class="mica-lienzo mica-lienzo-3d">
-            <span class="mica-rl">Visor 3D</span>
-            <span class="mica-chip">Triana ▸ modelos reales</span>
-            <video class="mica-video" muted playsinline loop autoplay preload="metadata"
-                   poster="assets/video/poster-3d.png"
-                   aria-label="Placa de desarrollo ESP32 en el visor 3D, con modelos reales y cobre vertido.">
-              <source src="assets/video/esp32-3d-hero.webm" type="video/webm" />
-              <source src="assets/video/esp32-3d-hero.mp4" type="video/mp4" />
-            </video>
-          </div>
+          <div class="capas-leyenda" id="hero3dLeyenda" aria-label="Capas de la placa"></div>
+          <p class="hero3d-nota">Controladora de referencia hecha en ElectronArt · diseño en progreso</p>
         </div>
       </div>
     </div>
@@ -337,51 +330,67 @@
   </section>
 
   <!-- ───────────────── El programa en movimiento ───────────────── -->
-  <!-- Clips reales de la v9.0, no mockups: el esquemático, la simulación
-       SPICE y la placa con paneos y zooms suaves. El autoplay sólo arranca
-       al entrar en pantalla y se pausa al salir; con movimiento reducido
-       queda el póster y el visitante usa los controles. -->
-  <section class="section video-seccion" aria-label="El programa, en movimiento">
+  <!-- ───────────────── Reels: lo que hace, en 20 segundos ───────────────── -->
+  <!-- Los reels de la campaña, hechos con el motor de motion
+       (marketing/motion/) sobre archivos y simulaciones REALES del programa.
+       Reemplazan al video viejo del 74HC595 y a la sección suelta «Seis capas».
+       Verticales como en el teléfono; arrancan mudos al entrar en pantalla y un
+       toque les da sonido (la voz cuenta lo que pasa). -->
+  <section id="reels" class="section reels-seccion" aria-label="Mirá lo que hace, en 20 segundos">
     <div class="container">
-      <h2 class="section-title">El programa, en movimiento</h2>
-      <p class="section-sub">El visor 3D con los modelos reales de cada componente y el cobre vertido del plano de masa — el mismo motor que corre dentro del programa.</p>
-      <div class="video-caja">
-        <!-- Acá el WebM va PRIMERO porque para este clip es el más liviano
-             (0,76 MB contra 2,3 del MP4), y el navegador se queda con el primer
-             <source> que declara soportar. El MP4 queda de respaldo para los que
-             no reproducen VP9. -->
-        <video id="ea-video" poster="assets/video/poster-3d-2.png"
-               muted playsinline loop preload="metadata"
-               aria-label="Visor 3D real de una placa con un registro de desplazamiento 74HC595 y ocho LED, con modelos reales y cobre vertido, orbitando.">
-          <source src="assets/video/esp32-3d.webm" type="video/webm" />
-          <source src="assets/video/esp32-3d.mp4" type="video/mp4" />
-          Tu navegador no puede reproducir este video.
-        </video>
+      <h2 class="section-title">Mirá lo que hace, en 20 segundos</h2>
+      <p class="section-sub">Nada de maquetas: cada reel sale de un archivo real abierto en ElectronArt o de una simulación que corrió de verdad.</p>
+      <div class="reels-fila">
+        <figure class="reel">
+          <div class="reel-marco">
+            <video class="reel-video" muted playsinline loop preload="metadata" poster="assets/video/capas-6-poster.jpg"
+                   aria-label="Reel de 18 segundos: una controladora industrial de seis capas que se desglosa en 3D.">
+              <source src="assets/video/capas-6.mp4" type="video/mp4" />
+            </video>
+            <button class="reel-sonido" type="button" aria-label="Activar el sonido">SONIDO</button>
+          </div>
+          <figcaption><b>Seis capas, desglosadas</b>Micro de 144 pines, SDRAM BGA, Ethernet y CAN aislado; planos internos de GND y 3,3 V y pares USB con el largo igualado.</figcaption>
+        </figure>
+        <figure class="reel">
+          <div class="reel-marco">
+            <video class="reel-video" muted playsinline loop preload="metadata" poster="assets/video/tablero-poster.jpg"
+                   aria-label="Reel de 24 segundos: un tablerista simula el arranque directo de un motor y el térmico dispara.">
+              <source src="assets/video/tablero.mp4" type="video/mp4" />
+            </video>
+            <button class="reel-sonido" type="button" aria-label="Activar el sonido">SONIDO</button>
+          </div>
+          <figcaption><b>El tablero se simula</b>Marcha, contactor que se enclava, motor que arranca y térmico que dispara: el simulador del esquema de mando, antes de pelar un cable.</figcaption>
+        </figure>
       </div>
+      <p class="reels-mas">Más en Instagram: <a href="#" data-link="instagram">@electronart.eda</a></p>
     </div>
     <script>
-      // Autoplay sólo con la sección en pantalla, y se pausa al salir: un
-      // video que corre fuera de vista gasta batería en un teléfono. Con
-      // movimiento reducido no arranca solo — el visitante usa los controles.
+      // Arrancan mudos al entrar en pantalla y se pausan al salir (batería del
+      // teléfono). «SONIDO» les da voz; con movimiento reducido no arrancan solos.
       (function () {
         "use strict";
-        var video = document.getElementById("ea-video");
-        if (!video) return;
+        var vids = document.querySelectorAll(".reel-video");
         var quieto = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        document.querySelectorAll(".reel-sonido").forEach(function (b) {
+          b.addEventListener("click", function () {
+            var v = b.parentNode.querySelector("video");
+            vids.forEach(function (o) { if (o !== v) { o.muted = true; } });
+            document.querySelectorAll(".reel-sonido").forEach(function (o) { if (o !== b) o.classList.remove("on"); });
+            v.muted = !v.muted; b.classList.toggle("on", !v.muted);
+            if (!v.muted) { v.currentTime = 0; v.play().catch(function () {}); }
+          });
+        });
         if (quieto || !("IntersectionObserver" in window)) {
-          video.controls = true;
+          vids.forEach(function (v) { v.controls = true; });
           return;
         }
         var obs = new IntersectionObserver(function (es) {
           es.forEach(function (e) {
-            if (e.isIntersecting) {
-              video.play().catch(function () { video.controls = true; });
-            } else {
-              video.pause();
-            }
+            if (e.isIntersecting) e.target.play().catch(function () { e.target.controls = true; });
+            else e.target.pause();
           });
-        }, { threshold: 0.25 });
-        obs.observe(video);
+        }, { threshold: 0.35 });
+        vids.forEach(function (v) { obs.observe(v); });
       })();
     </script>
   </section>
@@ -723,8 +732,35 @@
         <a class="btn btn-primary" href="#" data-link="foro">Entrar al foro</a>
         <a class="btn btn-ghost" href="descargas.html">Descargas y checksums ▸</a>
       </div>
+      <!-- Lo último del foro, en vivo (GET /api/foro/recientes del backend, CORS
+           sólo para esta portada). Si el foro no contesta, la lista no aparece y
+           queda el botón de arriba: nunca un hueco ni un error a la vista. -->
+      <div class="foro-feed" id="foroFeed" hidden>
+        <p class="eyebrow">Lo último del foro</p>
+        <ul id="foroLista"></ul>
+      </div>
       <p class="fineprint">¿Encontraste un error? Desde la app, <b>Ayuda → «Reportar un problema…»</b> arma el reporte con la versión, tu sistema y el log — sin que tengas que buscar nada.</p>
     </div>
+    <script>
+      (function () {
+        "use strict";
+        var caja = document.getElementById("foroFeed"), lista = document.getElementById("foroLista");
+        if (!caja || !window.fetch) return;
+        fetch("https://electronart.pythonanywhere.com/api/foro/recientes")
+          .then(function (r) { return r.ok ? r.json() : null; })
+          .then(function (d) {
+            if (!d || !d.temas || !d.temas.length) return;
+            d.temas.forEach(function (t) {
+              var li = document.createElement("li"), a = document.createElement("a"), m = document.createElement("span");
+              a.href = t.url; a.textContent = t.titulo;
+              m.className = "foro-meta"; m.textContent = t.categoria + " · " + t.fecha;
+              li.appendChild(a); li.appendChild(m); lista.appendChild(li);
+            });
+            caja.hidden = false;
+          })
+          .catch(function () { /* sin foro, queda el botón */ });
+      })();
+    </script>
   </section>
 
   <!-- ───────────────── Quién lo hace ─────────────────
@@ -783,9 +819,12 @@
         <a href="terminos.html">Términos y licencia</a>
         <a href="#" data-link="contacto">Contacto</a>
       </div>
-      <!-- La columna «Seguinos» se quita hasta que las cuentas existan: tres
-           links que abren un cartel de «enlace pendiente de configurar» dan
-           peor impresión que no ofrecer redes. Vuelve cuando haya qué seguir. -->
+      <!-- «Seguinos» vuelve el 2/10/2026: @electronart.eda ya publica. Las demás
+           redes se suman cuando existan (un link a nada es peor que no ofrecerlo). -->
+      <div>
+        <h4>Seguinos</h4>
+        <a href="#" data-link="instagram">Instagram</a>
+      </div>
     </div>
     <div class="container foot-bottom">
       <span>© <span id="year">2026</span> Electronik Lösungen · ElectronArt. Todos los derechos reservados.</span>
@@ -794,6 +833,7 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="hero3d.js" defer></script>
   <script src="i18n.js"></script>
   <!-- Asistente: contesta las dudas de descarga, instalación, planes y
        cuenta sin salir de la página. Va DESPUÉS de i18n.js a propósito
