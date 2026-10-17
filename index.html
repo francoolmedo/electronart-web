@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ElectronArt — EDA profesional: Esquemático, PCB, Simulación y PLC</title>
-  <meta name="description" content="ElectronArt es una suite EDA de escritorio: diseño de esquemáticos, ruteo de PCB con DRC y Gerber, simulación SPICE, editor Ladder/PLC y exportación de fabricación. Por Electronik Lösungen." />
+  <title>ElectronArt — Simulá tu tablero antes de cablearlo. Pagás una vez.</title>
+  <meta name="description" content="El programa de electrónica en castellano que simula tu tablero IEC antes de cablearlo. También hace esquemático, SPICE, PCB y Gerber. Pago único, 14 días de prueba sin tarjeta." />
   <meta name="theme-color" content="#0c0e12" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <!-- Lo que se ve cuando alguien comparte el link por WhatsApp, X o LinkedIn.
        Sin `og:image` el link sale como un rectángulo vacío con texto chico, y
        ese es el primer contacto de casi todo el que llega recomendado. -->
-  <meta property="og:title" content="ElectronArt — Suite EDA profesional" />
-  <meta property="og:description" content="Esquemático · PCB · Simulación SPICE · Ladder/PLC · Fabricación. Sin internet, sin suscripción obligatoria." />
+  <meta property="og:title" content="ElectronArt — Simulá tu tablero antes de cablearlo" />
+  <meta property="og:description" content="El programa de electrónica en castellano. Tablero IEC, esquemático, SPICE y PCB. Pagás una vez." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://electroniklosungen.com.ar/" />
   <meta property="og:site_name" content="ElectronArt" />
@@ -19,12 +19,24 @@
   <meta property="og:image" content="https://electroniklosungen.com.ar/assets/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="ElectronArt 9.0 — esquemático, SPICE, PCB y 3D en un solo programa" />
+  <meta property="og:image:alt" content="ElectronArt: esquemático, SPICE, PCB y 3D en un solo programa" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="ElectronArt — Suite EDA profesional" />
-  <meta name="twitter:description" content="Esquemático · PCB · SPICE · Ladder/PLC. Funciona sin internet." />
+  <meta name="twitter:title" content="ElectronArt — Simulá tu tablero antes de cablearlo" />
+  <meta name="twitter:description" content="El programa de electrónica en castellano. Tablero IEC, esquemático, SPICE y PCB. Pagás una vez." />
   <meta name="twitter:image" content="https://electroniklosungen.com.ar/assets/og-image.png" />
+  <!-- Un idioma por URL (cola D9): `?lang=en|pt` gana sobre el idioma del
+       navegador, así un link desde la cuenta en inglés abre en inglés. El
+       canonical de cada idioma lo ajusta i18n.js; acá queda el castellano. -->
   <link rel="canonical" href="https://electroniklosungen.com.ar/" />
+  <link rel="alternate" hreflang="es" href="https://electroniklosungen.com.ar/" />
+  <link rel="alternate" hreflang="en" href="https://electroniklosungen.com.ar/?lang=en" />
+  <link rel="alternate" hreflang="pt" href="https://electroniklosungen.com.ar/?lang=pt" />
+  <link rel="alternate" hreflang="x-default" href="https://electroniklosungen.com.ar/" />
+  <!-- La captura del hero es el elemento más grande de la primera pantalla:
+       pedirla antes que el CSS termine de bajar adelanta el primer pintado. -->
+  <link rel="preload" as="image" type="image/webp"
+        imagesrcset="assets/hero/tablero-simulado-400.webp 400w, assets/hero/tablero-simulado-656.webp 656w"
+        imagesizes="(max-width: 940px) 92vw, 540px" />
   <link rel="stylesheet" href="styles.css" />
 
   <!-- Datos estructurados: sin esto Google ve una página cualquiera. Con esto
@@ -39,7 +51,7 @@
     "applicationCategory": "DesignApplication",
     "applicationSubCategory": "EDA / PCB design",
     "operatingSystem": "Windows 10, Windows 11",
-    "softwareVersion": "9.1",
+    "softwareVersion": "9.5",
     "inLanguage": ["es", "en", "pt"],
     "url": "https://electroniklosungen.com.ar/",
     "downloadUrl": "https://electroniklosungen.com.ar/descargas.html",
@@ -249,117 +261,86 @@
     <div class="container hero-grid">
       <div class="hero-copy">
         <p class="eyebrow">Beta abierta · Precio de fundador hasta el 31/12</p>
-        <h1>Diseñá, simulá y fabricá <span class="grad">en una sola herramienta</span></h1>
+        <!-- Titular de la auditoría de octubre (§1.3, cola D1): lo único que no
+             tiene otro EDA es el tablero que se simula, en castellano y con
+             pago único. «Diseñá, simulá y fabricá» lo decía cualquiera. -->
+        <h1 class="h1-largo">El programa de electrónica en castellano que simula tu tablero antes de cablearlo. <span class="grad">Pagás una vez.</span></h1>
         <p class="lead">
-          ElectronArt integra captura de esquemáticos, simulación SPICE,
-          ruteo de PCB multicapa con autorouter configurable y salida de fabricación
-          completa — Gerber con arcos reales, Excellon, IPC-2581, ODB++ —
-          en una aplicación de escritorio rápida y sin dependencias de la nube.
+          Dibujás el esquema de mando con símbolos IEC 60617. Apretás marcha en la
+          pantalla. El contactor engancha, el motor arranca y el térmico dispara si
+          lo sobrecargás. El mismo programa hace la placa: esquemático, SPICE, PCB y Gerber.
         </p>
         <div class="hero-cta">
-          <a class="btn btn-primary" href="#precios">Empezar gratis</a>
-          <a class="btn btn-ghost" href="#flujo">Ver el flujo ▸</a>
+          <a class="btn btn-primary" href="#" data-link="prueba" data-ev="prueba-hero">Probalo 14 días gratis</a>
+          <a class="btn btn-ghost" href="#precios">Ver precios ▸</a>
         </div>
-        <!-- El tercer punto contesta el freno más grande para migrar de
-             herramienta: «tengo cuarenta proyectos en KiCad, ¿los pierdo?».
-             La respuesta ya existía en el código y en la página, pero estaba
-             enterrada a media altura bajo el título «Interoperabilidad», que
-             es una palabra que nadie busca ni siente. Acá llega en los
-             primeros segundos, que es cuando se decide seguir leyendo. -->
+        <!-- «Placas» y no «proyectos»: el import de KiCad/EAGLE trae el
+             .kicad_pcb y el .brd, no el esquemático (ver 75a582f). -->
         <ul class="trust">
-          <li>✓ IA incluida, corre en tu PC</li>
-          <li>✓ Pago único, sin suscripción</li>
-          <li>✓ Abre tus proyectos de KiCad y EAGLE</li>
-          <li>✓ Windows 10/11</li>
+          <li>Pago único, sin suscripción</li>
+          <li>14 días de prueba, sin tarjeta</li>
+          <li>Abre tus placas de KiCad y EAGLE</li>
+          <li>Windows 10/11</li>
         </ul>
       </div>
 
-      <!-- La placa de 6 capas, en vivo (website/hero3d.js): la misma escena del
-           reel «6 capas», interactiva. Reemplaza al video viejo de la ESP32.
-           Las texturas salen del archivo real (examples/triana-industrial-controller)
-           rasterizado con el renderer del programa. Sin WebGL queda el póster. -->
+      <!-- Captura del programa real con el ejemplo `arranque-directo-motor`
+           simulándose (marketing/demo_tablero_real.py, 16/10/2026): S1
+           apretado, KM1 enganchado, M1 girando, H1 prendida. Reemplaza a la
+           controladora de 6 capas, que es diseño en progreso y no prueba nada
+           (auditoría 2026-10 §1.3). Una imagen WebP de ~30 KB en vez de
+           three.js (600 KB) más texturas: la primera pantalla carga sola. -->
       <div class="hero-mock">
-        <div class="mica-panel panel-3d">
-          <div class="mica-cab"><span class="mica-led"></span><b>Seis capas</b><span class="mica-s">en vivo · arrastrá para girarla</span></div>
-          <div class="hero3d" id="hero3d">
-            <img class="hero3d-poster" src="assets/hero3d/poster.jpg" width="824" height="762"
-                 alt="Controladora industrial de 6 capas hecha en ElectronArt, con sus láminas separadas en 3D." />
-          </div>
-          <div class="capas-leyenda" id="hero3dLeyenda" aria-label="Capas de la placa"></div>
-          <p class="hero3d-nota">Controladora de referencia hecha en ElectronArt · diseño en progreso</p>
-        </div>
+        <figure class="mica-panel panel-tablero">
+          <div class="mica-cab"><span class="mica-led"></span><b>Tablero simulado</b><span class="mica-s">captura del programa</span></div>
+          <picture>
+            <source type="image/webp"
+                    srcset="assets/hero/tablero-simulado-400.webp 400w, assets/hero/tablero-simulado-656.webp 656w"
+                    sizes="(max-width: 940px) 92vw, 540px" />
+            <img class="hero-captura" src="assets/hero/tablero-simulado-656.jpg" width="656" height="574"
+                 fetchpriority="high" decoding="async"
+                 alt="Esquema de arranque directo simulado en ElectronArt: los cables con tensión en naranja, el motor M1 girando y el panel que dice bobinas enganchadas KM1." />
+          </picture>
+          <figcaption class="hero3d-nota">Arranque directo de un motor trifásico. Apretaste S1: KM1 engancha, M1 gira y H1 prende.</figcaption>
+        </figure>
       </div>
     </div>
   </section>
 
-  <!-- ───────────────── Lanzamiento: Triana diseña una placa ───────────────── -->
-  <!-- El video de lanzamiento: la intro de marca, el visor 3D real y el
-       programa de verdad con Triana diseñando una placa de cero. Lleva controles
-       para que se pueda mirar entero; autoplay silencioso al entrar en pantalla. -->
-  <section class="section video-seccion alt" aria-label="Mirá a Triana armar una placa desde una frase">
+  <!-- ───────────────── Lo que hace, sin maquetas ───────────────── -->
+  <!-- Cola D2 (auditoría 2026-10): afuera el video de Triana (lo grabó el
+       proveedor simulado, no el modelo real), el reel de la controladora de 6
+       capas (diseño en progreso) y el de la placa grande (no se probó en el
+       visor 3D). Queda lo que se midió: el tablero que se simula y la placa
+       ESP32 del ejemplo, ruteada 65/65 con DRC limpio el 16/10/2026
+       (`scripts/demo_esp32_manufacturing.py --check`). -->
+  <section id="reels" class="section reels-seccion" aria-label="Lo que hace, sin maquetas">
     <div class="container">
-      <h2 class="section-title">Mirá a Triana armar una placa desde una frase</h2>
-      <p class="section-sub">Grabado dentro del programa real: le pide un ESP32 con LEDs, lo pasa a la placa, la rutea, vierte el plano de masa y la muestra en 3D. Triana está en beta: con circuitos comunes anda bien y con pedidos que nunca vio todavía se equivoca. La mejoramos cada semana.</p>
-      <div class="video-caja">
-        <video id="ea-lanzamiento" poster="assets/video/lanzamiento-poster.jpg"
-               controls muted playsinline loop preload="metadata"
-               aria-label="Video de lanzamiento de ElectronArt: intro de marca, visor 3D real y el asistente Triana armando una placa desde una frase dentro del programa.">
-          <source src="assets/video/lanzamiento.mp4" type="video/mp4" />
-          Tu navegador no puede reproducir este video.
-        </video>
-      </div>
-    </div>
-    <script>
-      // Autoplay silencioso sólo con la sección en pantalla (se pausa al salir).
-      // Con movimiento reducido no arranca solo: quedan los controles.
-      (function () {
-        "use strict";
-        var v = document.getElementById("ea-lanzamiento");
-        if (!v) return;
-        var quieto = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        if (quieto || !("IntersectionObserver" in window)) return;
-        var obs = new IntersectionObserver(function (es) {
-          es.forEach(function (e) {
-            if (e.isIntersecting) { v.play().catch(function () {}); }
-            else { v.pause(); }
-          });
-        }, { threshold: 0.35 });
-        obs.observe(v);
-      })();
-    </script>
-  </section>
-
-  <!-- ───────────────── El programa en movimiento ───────────────── -->
-  <!-- ───────────────── Reels: lo que hace, en 20 segundos ───────────────── -->
-  <!-- Los reels de la campaña, hechos con el motor de motion
-       (marketing/motion/) sobre archivos y simulaciones REALES del programa.
-       Reemplazan al video viejo del 74HC595 y a la sección suelta «Seis capas».
-       Verticales como en el teléfono; arrancan mudos al entrar en pantalla y un
-       toque les da sonido (la voz cuenta lo que pasa). -->
-  <section id="reels" class="section reels-seccion" aria-label="Mirá lo que hace, en 20 segundos">
-    <div class="container">
-      <h2 class="section-title">Mirá lo que hace, en 20 segundos</h2>
-      <p class="section-sub">Nada de maquetas: cada reel sale de un archivo real abierto en ElectronArt o de una simulación que corrió de verdad.</p>
+      <h2 class="section-title">Lo que hace, sin maquetas</h2>
+      <p class="section-sub">El reel sale de una simulación que corrió de verdad. La placa es un archivo real, abierto en ElectronArt.</p>
       <div class="reels-fila">
         <figure class="reel">
           <div class="reel-marco">
-            <video class="reel-video" muted playsinline loop preload="metadata" poster="assets/video/capas-6-poster.jpg"
-                   aria-label="Reel de 18 segundos: una controladora industrial de seis capas que se desglosa en 3D.">
-              <source src="assets/video/capas-6.mp4" type="video/mp4" />
-            </video>
-            <button class="reel-sonido" type="button" aria-label="Activar el sonido">SONIDO</button>
-          </div>
-          <figcaption><b>Seis capas, desglosadas</b>Micro de 144 pines, SDRAM BGA, Ethernet y CAN aislado; planos internos de GND y 3,3 V y pares USB con el largo igualado.</figcaption>
-        </figure>
-        <figure class="reel">
-          <div class="reel-marco">
-            <video class="reel-video" muted playsinline loop preload="metadata" poster="assets/video/tablero-poster.jpg"
+            <video class="reel-video" muted playsinline loop preload="none" poster="assets/video/tablero-poster.jpg"
                    aria-label="Reel de 24 segundos: un tablerista simula el arranque directo de un motor y el térmico dispara.">
               <source src="assets/video/tablero.mp4" type="video/mp4" />
             </video>
             <button class="reel-sonido" type="button" aria-label="Activar el sonido">SONIDO</button>
           </div>
           <figcaption><b>El tablero se simula</b>Marcha, contactor que se enclava, motor que arranca y térmico que dispara: el simulador del esquema de mando, antes de pelar un cable.</figcaption>
+        </figure>
+        <figure class="reel reel-placa">
+          <div class="reel-marco">
+            <picture>
+              <source type="image/webp"
+                      srcset="assets/hero/esp32-2capas-560.webp 560w, assets/hero/esp32-2capas-900.webp 900w"
+                      sizes="(max-width: 640px) 86vw, 460px" />
+              <img class="reel-img" src="assets/hero/esp32-2capas-900.webp" width="900" height="778"
+                   loading="lazy" decoding="async"
+                   alt="Placa ESP32 de dos capas en el editor de PCB de ElectronArt: pistas de cobre arriba en naranja, abajo en azul, ocho LED con sus resistencias." />
+            </picture>
+          </div>
+          <figcaption><b>Placa ESP32, 2 capas</b>65 de 65 conexiones ruteadas y el DRC sin errores. Lo medimos el 16/10/2026 sobre el archivo, no sobre una captura.</figcaption>
         </figure>
       </div>
       <p class="reels-mas">Más en Instagram: <a href="#" data-link="instagram">@electronart.eda</a></p>
@@ -591,10 +572,10 @@
           <p class="price"><span class="amt">Gratis</span></p>
           <p class="price-sub">Sin registro, sin límite de tiempo</p>
           <ul>
-            <li>✓ Esquemático, PCB y 3D completos</li>
-            <li>✓ Autorouter, DRC y ERC</li>
-            <li>✓ Simulación SPICE</li>
-            <li>✓ Gerber, Excellon y BOM</li>
+            <li>Esquemático, PCB y 3D completos</li>
+            <li>Autorouter, DRC y ERC</li>
+            <li>Simulación SPICE</li>
+            <li>Gerber, Excellon y BOM</li>
             <li class="muted">— Hasta 2 capas de cobre</li>
             <li class="muted">— Con marca de agua, uso no comercial</li>
           </ul>
@@ -606,12 +587,12 @@
           <p class="price"><span class="amt">Gratis</span></p>
           <p class="price-sub">Verificando que estudiás</p>
           <ul>
-            <li>✓ Todo lo de Gratuita, sin marca de agua</li>
-            <li>✓ Hasta 6 capas de cobre</li>
-            <li>✓ Pares diferenciales y serpentinas</li>
-            <li>✓ Monte Carlo y FFT en SPICE</li>
-            <li>✓ Lectura de datasheets con IA</li>
-            <li>✓ Módulo eléctrico y PLC completo</li>
+            <li>Todo lo de Gratuita, sin marca de agua</li>
+            <li>Hasta 6 capas de cobre</li>
+            <li>Pares diferenciales y serpentinas</li>
+            <li>Monte Carlo y FFT en SPICE</li>
+            <li>Lectura de datasheets con IA</li>
+            <li>Módulo eléctrico y PLC completo</li>
             <li class="muted">— Uso no comercial</li>
           </ul>
           <a class="btn btn-ghost full" data-pay="student" data-link="tienda"
@@ -622,15 +603,15 @@
           <div class="ribbon">Fundador · beta</div>
           <h3>Pro</h3>
           <p class="price"><span class="cur">USD</span><span class="amt">39</span><span class="per">pago único</span></p>
-          <p class="price-sub"><s>USD 79 / año</s> · licencia perpetua</p>
+          <p class="price-sub">Licencia perpetua, con todas las actualizaciones</p>
           <p class="price-sub">Para makers y profesionales</p>
           <ul>
-            <li>✓ Uso comercial</li>
-            <li>✓ Hasta 16 capas de cobre</li>
-            <li>✓ Pares diferenciales y serpentinas</li>
-            <li>✓ Monte Carlo y FFT en SPICE</li>
-            <li>✓ IPC-2581, ODB++ y STEP 3D</li>
-            <li>✓ Actualizaciones incluidas, para siempre</li>
+            <li>Uso comercial</li>
+            <li>Hasta 16 capas de cobre</li>
+            <li>Pares diferenciales y serpentinas</li>
+            <li>Monte Carlo y FFT en SPICE</li>
+            <li>IPC-2581, ODB++ y STEP 3D</li>
+            <li>Actualizaciones incluidas, para siempre</li>
           </ul>
           <a class="btn btn-primary full" data-pay="pro" data-link="tienda"
              href="#">Comprar Pro</a>
@@ -646,15 +627,15 @@
         <article class="price-card">
           <h3>Industrial</h3>
           <p class="price"><span class="cur">USD</span><span class="amt">149</span><span class="per">pago único</span></p>
-          <p class="price-sub"><s>USD 299 / año</s> · licencia perpetua</p>
+          <p class="price-sub">Licencia perpetua, con todas las actualizaciones</p>
           <p class="price-sub">Para control y automatización</p>
           <ul>
-            <li>✓ Todo lo de Pro</li>
-            <li>✓ Librería IEC 60617 de control</li>
-            <li>✓ Simulación del esquema de mando</li>
-            <li>✓ Montaje en riel DIN y tablero</li>
-            <li>✓ Editor Ladder / PLC</li>
-            <li>✓ Soporte prioritario y licencia de equipo</li>
+            <li>Todo lo de Pro</li>
+            <li>Librería IEC 60617 de control</li>
+            <li>Simulación del esquema de mando</li>
+            <li>Montaje en riel DIN y tablero</li>
+            <li>Editor Ladder / PLC</li>
+            <li>Soporte prioritario y licencia de equipo</li>
           </ul>
           <a class="btn btn-ghost full" data-pay="industrial" data-link="tienda"
              href="#">Comprar Industrial</a>
@@ -832,20 +813,25 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
-  <script src="hero3d.js" defer></script>
-  <script src="i18n.js"></script>
+  <!-- Todos con `defer`: bajan en paralelo con la página, corren en este
+       mismo orden y ninguno frena el primer pintado. hero3d.js (y three.js,
+       600 KB) ya no se cargan: el hero es una captura (cola D1). -->
+  <script src="script.js" defer></script>
+  <script src="i18n.js" defer></script>
   <!-- Asistente: contesta las dudas de descarga, instalación, planes y
        cuenta sin salir de la página. Va DESPUÉS de i18n.js a propósito
        (se traduce solo; ver la cabecera de asistente.js). -->
-  <script src="asistente.js"></script>
-  <script src="enlaces.js"></script>
-  <script src="fondo.js"></script>
-  <script src="viaje.js"></script>
+  <script src="asistente.js" defer></script>
+  <script src="enlaces.js" defer></script>
+  <script src="fondo.js" defer></script>
+  <script src="viaje.js" defer></script>
 <script>
 // Analítica propia de ElectronArt: sin cookies, sin terceros.
 (function(){try{
-  var d={r:location.pathname,f:document.referrer||""};
+  // ref: de qué link vino (?ref=ig|yt|mail|reddit|fb, cola D10); sigue en la sesión.
+  var m=/[?&]ref=([a-z0-9_-]{1,24})(?:&|#|$)/i.exec(location.search),rf=m?m[1].toLowerCase():"";
+  try{if(rf)sessionStorage.setItem("ea_ref",rf);else rf=sessionStorage.getItem("ea_ref")||"";}catch(_){}
+  var d={r:location.pathname,f:document.referrer||"",ref:rf};
   var b=new Blob([JSON.stringify(d)],{type:"text/plain"});
   (navigator.sendBeacon&&navigator.sendBeacon("https://electronart.pythonanywhere.com/api/v",b))||
     fetch("https://electronart.pythonanywhere.com/api/v",{method:"POST",body:JSON.stringify(d),
@@ -853,7 +839,7 @@
   document.addEventListener("click",function(e){
     var a=e.target.closest&&e.target.closest("[data-ev]");
     if(!a)return;
-    var p={r:location.pathname,f:document.referrer||"",e:a.dataset.ev};
+    var p={r:location.pathname,f:document.referrer||"",e:a.dataset.ev,ref:rf};
     navigator.sendBeacon&&navigator.sendBeacon("https://electronart.pythonanywhere.com/api/v",
       new Blob([JSON.stringify(p)],{type:"text/plain"}));
   },true);

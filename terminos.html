@@ -6,6 +6,11 @@
   <title>Términos y licencia — ElectronArt</title>
   <meta name="description" content="Términos de compra, descarga y licencia de ElectronArt." />
   <link rel="icon" href="assets/favicon.svg" />
+  <link rel="canonical" href="https://electroniklosungen.com.ar/terminos.html" />
+  <link rel="alternate" hreflang="es" href="https://electroniklosungen.com.ar/terminos.html" />
+  <link rel="alternate" hreflang="en" href="https://electroniklosungen.com.ar/terminos.html?lang=en" />
+  <link rel="alternate" hreflang="pt" href="https://electroniklosungen.com.ar/terminos.html?lang=pt" />
+  <link rel="alternate" hreflang="x-default" href="https://electroniklosungen.com.ar/terminos.html" />
   <link rel="stylesheet" href="styles.css" />
   <style>
     .legal{max-width:860px;margin:0 auto;padding:clamp(2rem,6vw,3.6rem) 20px;line-height:1.7;color:var(--muted)}
@@ -151,7 +156,10 @@
 <script>
 // Analítica propia de ElectronArt: sin cookies, sin terceros.
 (function(){try{
-  var d={r:location.pathname,f:document.referrer||""};
+  // ref: de qué link vino (?ref=ig|yt|mail|reddit|fb, cola D10); sigue en la sesión.
+  var m=/[?&]ref=([a-z0-9_-]{1,24})(?:&|#|$)/i.exec(location.search),rf=m?m[1].toLowerCase():"";
+  try{if(rf)sessionStorage.setItem("ea_ref",rf);else rf=sessionStorage.getItem("ea_ref")||"";}catch(_){}
+  var d={r:location.pathname,f:document.referrer||"",ref:rf};
   var b=new Blob([JSON.stringify(d)],{type:"text/plain"});
   (navigator.sendBeacon&&navigator.sendBeacon("https://electronart.pythonanywhere.com/api/v",b))||
     fetch("https://electronart.pythonanywhere.com/api/v",{method:"POST",body:JSON.stringify(d),
@@ -159,7 +167,7 @@
   document.addEventListener("click",function(e){
     var a=e.target.closest&&e.target.closest("[data-ev]");
     if(!a)return;
-    var p={r:location.pathname,f:document.referrer||"",e:a.dataset.ev};
+    var p={r:location.pathname,f:document.referrer||"",e:a.dataset.ev,ref:rf};
     navigator.sendBeacon&&navigator.sendBeacon("https://electronart.pythonanywhere.com/api/v",
       new Blob([JSON.stringify(p)],{type:"text/plain"}));
   },true);

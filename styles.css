@@ -332,7 +332,16 @@ body { transition: background-color .35s ease, color .35s ease; }
   margin-bottom: .9rem;
 }
 .hero h1 { font-size: clamp(2.4rem, 6vw, 4rem); text-wrap: balance; }
+/* El titular de octubre es una frase entera (95 letras): a 4rem ocupaba seis
+   renglones y empujaba el botón fuera de la primera pantalla. */
+.hero h1.h1-largo { font-size: clamp(1.9rem, 3.6vw, 3rem); line-height: 1.12; }
 .lead { font-size: 1.1rem; color: var(--muted); max-width: 32em; }
+/* Las trazas del fondo pasan al azar por detrás del texto, y una línea fina
+   justo a la altura de las letras se lee como un tachado. Un halo del color
+   del sustrato las corta alrededor de cada letra; el tejido sigue a la vista. */
+.hero-copy .lead, .hero-copy .eyebrow, .hero-copy .trust {
+  text-shadow: 0 0 3px var(--bg), 0 0 6px var(--bg), 0 0 10px var(--bg);
+}
 .hero-cta { display: flex; gap: .8rem; flex-wrap: wrap; margin: 1.6rem 0 1.4rem; }
 
 /* La lista de confianza se marca con pads perforados, no con tildes. */
@@ -458,11 +467,22 @@ body { transition: background-color .35s ease, color .35s ease; }
 .hero3d-nota { margin: 0; padding: 4px 14px 12px; font-size: .72rem; color: var(--muted-2); }
 @media (max-width: 820px) { .panel-3d .hero3d { height: 280px; } }
 
+/* ── Hero: el tablero simulado (captura del programa) ──────────────────────
+   Una imagen con su ancho y alto declarados: no salta nada al cargar. */
+.panel-tablero { margin: 0; }
+.panel-tablero picture { display: block; border-top: 1px solid var(--border); background: var(--bg); }
+.hero-captura { display: block; width: 100%; height: auto; }
+.panel-tablero .hero3d-nota { padding-top: 10px; font-size: .78rem; color: var(--muted); }
+
 /* ── Reels: lo que hace, en 20 segundos ─────────────────────────────────────
    Verticales, como en el teléfono: dos (o tres) marcos con chaflán, uno al
    lado del otro; en pantallas angostas se apilan. El botón de sonido es un
    rótulo de serigrafía sobre el borde del marco, no un ícono suelto. */
-.reels-fila { display: flex; flex-wrap: wrap; justify-content: center; gap: clamp(1.4rem, 3vw, 2.6rem); margin-top: 1.6rem; }
+.reels-fila { display: flex; flex-wrap: wrap; justify-content: center; gap: clamp(1.4rem, 3vw, 2.6rem); margin-top: 1.6rem; align-items: center; }
+/* La placa no es un reel vertical: mismo marco con chaflán, en su proporción. */
+.reel-placa { width: min(460px, 86vw); }
+.reel-placa .reel-marco { aspect-ratio: 900 / 778; }
+.reel-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
 .reel { margin: 0; width: min(320px, 86vw); }
 .reel-marco { position: relative; aspect-ratio: 9 / 16; background: var(--bg-2); border: 1px solid var(--border);
   clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
@@ -692,7 +712,10 @@ body { transition: background-color .35s ease, color .35s ease; }
 .price .amt { font-family: var(--f-title); font-size: 2.8rem; font-weight: 600; letter-spacing: -.02em; }
 .price .per { color: var(--muted-2); font-family: var(--f-data); font-size: .78rem; margin-left: .35em; }
 .price-sub { color: var(--muted); font-size: .9rem; }
-.price-card ul { list-style: none; padding: 0; margin: 1.2rem 0 1.6rem; display: grid; gap: .55rem; flex: 1; }
+.price-card ul { list-style: none; padding: 0; margin: 1.2rem 0 1.6rem; display: grid; gap: .55rem; flex: 1;
+  /* Sin esto la grilla reparte el alto sobrante entre los ítems y la lista
+     corta queda con renglones sueltos a lo alto de la tarjeta. */
+  align-content: start; }
 .price-card li { color: var(--text); font-size: .92rem; display: flex; gap: .55rem; align-items: flex-start; }
 .price-card li::before {
   content: ""; flex: none;
@@ -768,7 +791,8 @@ body { transition: background-color .35s ease, color .35s ease; }
      `overflow-x: clip` cortaba título, párrafo y viñetas sin barra para verlos. */
   .hero-grid { grid-template-columns: minmax(0, 1fr); }
   .hero-grid > * { min-width: 0; }
-  .hero-mock { order: -1; }
+  /* El titular va primero: con la imagen arriba, en el celular la primera
+     pantalla no decía qué es el programa. */
   .pricing { grid-template-columns: 1fr; max-width: 460px; margin-inline: auto; }
   .foot-grid { grid-template-columns: 1fr 1fr; }
 }

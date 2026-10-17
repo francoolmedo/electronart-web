@@ -31,6 +31,51 @@
      traducción cortada a la mitad se lee peor que no traducir. */
   var T = {
     en: {
+      /* ── precios: el pad ya marca el ítem, sin «✓» (16/10/2026) ── */
+      "Esquemático, PCB y 3D completos": "Full schematic, PCB and 3D",
+      "Autorouter, DRC y ERC": "Autorouter, DRC and ERC",
+      "Simulación SPICE": "SPICE simulation",
+      "Gerber, Excellon y BOM": "Gerber, Excellon and BOM",
+      "Todo lo de Gratuita, sin marca de agua": "Everything in Free, without the watermark",
+      "Hasta 6 capas de cobre": "Up to 6 copper layers",
+      "Pares diferenciales y serpentinas": "Differential pairs and meanders",
+      "Monte Carlo y FFT en SPICE": "Monte Carlo and FFT in SPICE",
+      "Lectura de datasheets con IA": "AI-assisted datasheet reading",
+      "Módulo eléctrico y PLC completo": "Full electrical and PLC module",
+      "Uso comercial": "Commercial use",
+      "Hasta 16 capas de cobre": "Up to 16 copper layers",
+      "IPC-2581, ODB++ y STEP 3D": "IPC-2581, ODB++ and 3D STEP",
+      "Actualizaciones incluidas, para siempre": "Updates included, forever",
+      "Todo lo de Pro": "Everything in Pro",
+      "Librería IEC 60617 de control": "IEC 60617 control symbol library",
+      "Simulación del esquema de mando": "Control-circuit simulation",
+      "Montaje en riel DIN y tablero": "DIN rail and enclosure layout",
+      "Soporte prioritario y licencia de equipo": "Priority support and team licence",
+      /* ── hero del tablero y D1/D2 (16/10/2026) ── */
+      "ElectronArt — Simulá tu tablero antes de cablearlo. Pagás una vez.": "ElectronArt — Simulate your control panel before you wire it. Pay once.",
+      "El programa de electrónica en castellano que simula tu tablero IEC antes de cablearlo. También hace esquemático, SPICE, PCB y Gerber. Pago único, 14 días de prueba sin tarjeta.": "The electronics program that simulates your IEC control panel before you wire it. It also does schematics, SPICE, PCB and Gerber. One-time payment, 14-day trial with no card.",
+      "ElectronArt — Simulá tu tablero antes de cablearlo": "ElectronArt — Simulate your control panel before you wire it",
+      "El programa de electrónica en castellano. Tablero IEC, esquemático, SPICE y PCB. Pagás una vez.": "The electronics program in English, Spanish and Portuguese. IEC control panels, schematics, SPICE and PCB. Pay once.",
+      "ElectronArt: esquemático, SPICE, PCB y 3D en un solo programa": "ElectronArt: schematic, SPICE, PCB and 3D in one program",
+      "El programa de electrónica en castellano que simula tu tablero antes de cablearlo.": "The electronics program that simulates your control panel before you wire it.",
+      "Pagás una vez.": "Pay once.",
+      "Dibujás el esquema de mando con símbolos IEC 60617. Apretás marcha en la pantalla. El contactor engancha, el motor arranca y el térmico dispara si lo sobrecargás. El mismo programa hace la placa: esquemático, SPICE, PCB y Gerber.": "You draw the control circuit with IEC 60617 symbols. You press start on the screen. The contactor latches, the motor starts and the overload relay trips if you overload it. The same program makes the board: schematic, SPICE, PCB and Gerber.",
+      "Probalo 14 días gratis": "Try it free for 14 days",
+      "Ver precios ▸": "See pricing ▸",
+      "Pago único, sin suscripción": "One-time payment, no subscription",
+      "14 días de prueba, sin tarjeta": "14-day trial, no card",
+      "Abre tus placas de KiCad y EAGLE": "Opens your KiCad and EAGLE boards",
+      "Windows 10/11": "Windows 10/11",
+      "Tablero simulado": "Simulated panel",
+      "captura del programa": "program screenshot",
+      "Esquema de arranque directo simulado en ElectronArt: los cables con tensión en naranja, el motor M1 girando y el panel que dice bobinas enganchadas KM1.": "Direct-on-line starter simulated in ElectronArt: live wires in orange, motor M1 running and the panel that says coils latched KM1.",
+      "Arranque directo de un motor trifásico. Apretaste S1: KM1 engancha, M1 gira y H1 prende.": "Direct-on-line starter for a three-phase motor. You pressed S1: KM1 latches, M1 runs and H1 lights up.",
+      "Lo que hace, sin maquetas": "What it does, no mock-ups",
+      "El reel sale de una simulación que corrió de verdad. La placa es un archivo real, abierto en ElectronArt.": "The reel comes from a simulation that really ran. The board is a real file, open in ElectronArt.",
+      "Placa ESP32, 2 capas": "ESP32 board, 2 layers",
+      "65 de 65 conexiones ruteadas y el DRC sin errores. Lo medimos el 16/10/2026 sobre el archivo, no sobre una captura.": "65 of 65 connections routed and DRC with no errors. We measured it on 16 Oct 2026 on the file, not on a screenshot.",
+      "Placa ESP32 de dos capas en el editor de PCB de ElectronArt: pistas de cobre arriba en naranja, abajo en azul, ocho LED con sus resistencias.": "Two-layer ESP32 board in the ElectronArt PCB editor: top copper tracks in orange, bottom in blue, eight LEDs with their resistors.",
+      "Licencia perpetua, con todas las actualizaciones": "Perpetual licence, with every update",
       /* ── beta de fundador (29/9) ── */
       "39": "39",
       "149": "149",
@@ -53,7 +98,7 @@
       ": un círculo convertido en plano de cobre sale redondo y la serigrafía acepta polígonos cerrados.": ": a circle converted into a copper pour comes out round, and silkscreen accepts closed polygons.",
       "v9.4 — La placa se rutea sola": "v9.4 — The board routes itself",
       "La placa se rutea sola": "The board routes itself",
-      ": una ESP32 de 74 conexiones queda 74 de 74 en menos de cinco segundos, con los codos a 45°, sin rodeos y sin errores de DRC. Corre aparte y la ventana no se traba.": ": a 74-connection ESP32 board gets 74 of 74 in under five seconds, with 45° corners, no detours and no DRC errors. It runs separately so the window never freezes.",
+      ": el autoruteo termina una placa ESP32 de 2 capas con los codos a 45°, sin rodeos y sin errores de DRC. Corre aparte y la ventana no se traba.": ": the autorouter finishes a 2-layer ESP32 board with 45° corners, no detours and no DRC errors. It runs separately so the window never freezes.",
       "Triana arma circuitos comunes": "Triana builds common circuits",
       "a partir de lo que le pedís (en beta), los modifica y los pasa a la placa, también con el modelo local y gratis.": "from what you ask for (in beta), edits them and moves them to the board, also with the free local model.",
       "El programa te guía al abrir": "The program guides you when it opens",
@@ -120,6 +165,17 @@
       "@electronart.eda": "@electronart.eda",
       "Lo último del foro": "Latest from the forum",
       "Seguinos": "Follow us",
+      "Miles de componentes": "Thousands of components",
+      "Una placa de prueba tipo motherboard: 8 capas, 3.338 componentes y un BGA de 1.089 bolas, abierta en ElectronArt y desglosada capa por capa.": "A motherboard-style test board: 8 layers, 3,338 components and a 1,089-ball BGA, opened in ElectronArt and broken down layer by layer.",
+      /* ── aria-label de los reels y su botón de sonido ── */
+      "Reel de 18 segundos: una controladora industrial de seis capas que se desglosa en 3D.":
+        "18-second reel: a six-layer industrial controller exploding in 3D.",
+      "Reel de 24 segundos: un tablerista simula el arranque directo de un motor y el térmico dispara.":
+        "24-second reel: a panel builder simulates a direct-on-line motor start and the thermal overload trips.",
+      "Reel de 18 segundos: una placa de prueba tipo motherboard de 8 capas y 3.338 componentes, abierta en ElectronArt y desglosada capa por capa.":
+        "18-second reel: a motherboard-style test board with 8 layers and 3,338 components, opened in ElectronArt and broken down layer by layer.",
+      "Activar el sonido":
+        "Turn sound on",
       "en una sola herramienta": "in a single tool",
       "ElectronArt integra captura de esquemáticos, simulación SPICE, ruteo de PCB multicapa con autorouter configurable y salida de fabricación completa — Gerber con arcos reales, Excellon, IPC-2581, ODB++ — en una aplicación de escritorio rápida y sin dependencias de la nube.":
         "ElectronArt brings together schematic capture, SPICE simulation, multilayer PCB routing with a configurable autorouter, and a complete fabrication output — Gerber with true arcs, Excellon, IPC-2581, ODB++ — in a fast desktop application with no cloud dependencies.",
@@ -1050,6 +1106,51 @@
     },
 
     pt: {
+      /* ── precios: el pad ya marca el ítem, sin «✓» (16/10/2026) ── */
+      "Esquemático, PCB y 3D completos": "Esquemático, PCB e 3D completos",
+      "Autorouter, DRC y ERC": "Autorroteador, DRC e ERC",
+      "Simulación SPICE": "Simulação SPICE",
+      "Gerber, Excellon y BOM": "Gerber, Excellon e BOM",
+      "Todo lo de Gratuita, sin marca de agua": "Tudo da Gratuita, sem marca-d'água",
+      "Hasta 6 capas de cobre": "Até 6 camadas de cobre",
+      "Pares diferenciales y serpentinas": "Pares diferenciais e serpentinas",
+      "Monte Carlo y FFT en SPICE": "Monte Carlo e FFT no SPICE",
+      "Lectura de datasheets con IA": "Leitura de datasheets com IA",
+      "Módulo eléctrico y PLC completo": "Módulo elétrico e CLP completo",
+      "Uso comercial": "Uso comercial",
+      "Hasta 16 capas de cobre": "Até 16 camadas de cobre",
+      "IPC-2581, ODB++ y STEP 3D": "IPC-2581, ODB++ e STEP 3D",
+      "Actualizaciones incluidas, para siempre": "Atualizações incluídas, para sempre",
+      "Todo lo de Pro": "Tudo do Pro",
+      "Librería IEC 60617 de control": "Biblioteca IEC 60617 de comando",
+      "Simulación del esquema de mando": "Simulação do esquema de comando",
+      "Montaje en riel DIN y tablero": "Montagem em trilho DIN e painel",
+      "Soporte prioritario y licencia de equipo": "Suporte prioritário e licença de equipe",
+      /* ── hero del tablero y D1/D2 (16/10/2026) ── */
+      "ElectronArt — Simulá tu tablero antes de cablearlo. Pagás una vez.": "ElectronArt — Simule seu quadro de comando antes de montá-lo. Pague uma vez.",
+      "El programa de electrónica en castellano que simula tu tablero IEC antes de cablearlo. También hace esquemático, SPICE, PCB y Gerber. Pago único, 14 días de prueba sin tarjeta.": "O programa de eletrônica em português que simula seu quadro de comando IEC antes de montá-lo. Também faz esquemático, SPICE, PCB e Gerber. Pagamento único, 14 dias de teste sem cartão.",
+      "ElectronArt — Simulá tu tablero antes de cablearlo": "ElectronArt — Simule seu quadro de comando antes de montá-lo",
+      "El programa de electrónica en castellano. Tablero IEC, esquemático, SPICE y PCB. Pagás una vez.": "O programa de eletrônica em português. Quadro de comando IEC, esquemático, SPICE e PCB. Pague uma vez.",
+      "ElectronArt: esquemático, SPICE, PCB y 3D en un solo programa": "ElectronArt: esquemático, SPICE, PCB e 3D em um só programa",
+      "El programa de electrónica en castellano que simula tu tablero antes de cablearlo.": "O programa de eletrônica em português que simula seu quadro de comando antes de montá-lo.",
+      "Pagás una vez.": "Pague uma vez.",
+      "Dibujás el esquema de mando con símbolos IEC 60617. Apretás marcha en la pantalla. El contactor engancha, el motor arranca y el térmico dispara si lo sobrecargás. El mismo programa hace la placa: esquemático, SPICE, PCB y Gerber.": "Você desenha o circuito de comando com símbolos IEC 60617. Aperta partida na tela. O contator sela, o motor parte e o relé térmico atua se você o sobrecarregar. O mesmo programa faz a placa: esquemático, SPICE, PCB e Gerber.",
+      "Probalo 14 días gratis": "Teste grátis por 14 dias",
+      "Ver precios ▸": "Ver preços ▸",
+      "Pago único, sin suscripción": "Pagamento único, sem assinatura",
+      "14 días de prueba, sin tarjeta": "14 dias de teste, sem cartão",
+      "Abre tus placas de KiCad y EAGLE": "Abre suas placas do KiCad e do EAGLE",
+      "Windows 10/11": "Windows 10/11",
+      "Tablero simulado": "Quadro simulado",
+      "captura del programa": "captura do programa",
+      "Esquema de arranque directo simulado en ElectronArt: los cables con tensión en naranja, el motor M1 girando y el panel que dice bobinas enganchadas KM1.": "Partida direta simulada no ElectronArt: os fios energizados em laranja, o motor M1 girando e o painel que diz bobinas seladas KM1.",
+      "Arranque directo de un motor trifásico. Apretaste S1: KM1 engancha, M1 gira y H1 prende.": "Partida direta de um motor trifásico. Você apertou S1: KM1 sela, M1 gira e H1 acende.",
+      "Lo que hace, sin maquetas": "O que ele faz, sem maquetes",
+      "El reel sale de una simulación que corrió de verdad. La placa es un archivo real, abierto en ElectronArt.": "O reel sai de uma simulação que rodou de verdade. A placa é um arquivo real, aberto no ElectronArt.",
+      "Placa ESP32, 2 capas": "Placa ESP32, 2 camadas",
+      "65 de 65 conexiones ruteadas y el DRC sin errores. Lo medimos el 16/10/2026 sobre el archivo, no sobre una captura.": "65 de 65 conexões roteadas e o DRC sem erros. Medimos em 16/10/2026 sobre o arquivo, não sobre uma captura.",
+      "Placa ESP32 de dos capas en el editor de PCB de ElectronArt: pistas de cobre arriba en naranja, abajo en azul, ocho LED con sus resistencias.": "Placa ESP32 de duas camadas no editor de PCB do ElectronArt: trilhas de cobre em cima em laranja, embaixo em azul, oito LEDs com seus resistores.",
+      "Licencia perpetua, con todas las actualizaciones": "Licença perpétua, com todas as atualizações",
       /* ── beta de fundador (29/9) ── */
       "39": "39",
       "149": "149",
@@ -1072,7 +1173,7 @@
       ": un círculo convertido en plano de cobre sale redondo y la serigrafía acepta polígonos cerrados.": ": um círculo convertido em plano de cobre sai redondo e a serigrafia aceita polígonos fechados.",
       "v9.4 — La placa se rutea sola": "v9.4 — A placa se roteia sozinha",
       "La placa se rutea sola": "A placa se roteia sozinha",
-      ": una ESP32 de 74 conexiones queda 74 de 74 en menos de cinco segundos, con los codos a 45°, sin rodeos y sin errores de DRC. Corre aparte y la ventana no se traba.": ": uma placa ESP32 de 74 conexões fica 74 de 74 em menos de cinco segundos, com cantos a 45°, sem desvios e sem erros de DRC. Roda à parte e a janela não trava.",
+      ": el autoruteo termina una placa ESP32 de 2 capas con los codos a 45°, sin rodeos y sin errores de DRC. Corre aparte y la ventana no se traba.": ": o autorroteador termina uma placa ESP32 de 2 camadas com cantos a 45°, sem desvios e sem erros de DRC. Roda à parte e a janela não trava.",
       "Triana arma circuitos comunes": "A Triana monta circuitos comuns",
       "a partir de lo que le pedís (en beta), los modifica y los pasa a la placa, también con el modelo local y gratis.": "a partir do que você pede (em beta), os modifica e passa para a placa, também com o modelo local e gratuito.",
       "El programa te guía al abrir": "O programa te guia ao abrir",
@@ -1136,6 +1237,17 @@
       "@electronart.eda": "@electronart.eda",
       "Lo último del foro": "Últimas do fórum",
       "Seguinos": "Siga-nos",
+      "Miles de componentes": "Milhares de componentes",
+      "Una placa de prueba tipo motherboard: 8 capas, 3.338 componentes y un BGA de 1.089 bolas, abierta en ElectronArt y desglosada capa por capa.": "Uma placa de teste tipo motherboard: 8 camadas, 3.338 componentes e um BGA de 1.089 esferas, aberta no ElectronArt e desmontada camada por camada.",
+      /* ── aria-label de los reels y su botón de sonido ── */
+      "Reel de 18 segundos: una controladora industrial de seis capas que se desglosa en 3D.":
+        "Reel de 18 segundos: uma controladora industrial de seis camadas que se desmonta em 3D.",
+      "Reel de 24 segundos: un tablerista simula el arranque directo de un motor y el térmico dispara.":
+        "Reel de 24 segundos: um montador de painéis simula a partida direta de um motor e o relé térmico dispara.",
+      "Reel de 18 segundos: una placa de prueba tipo motherboard de 8 capas y 3.338 componentes, abierta en ElectronArt y desglosada capa por capa.":
+        "Reel de 18 segundos: uma placa de teste tipo motherboard de 8 camadas e 3.338 componentes, aberta no ElectronArt e desmontada camada por camada.",
+      "Activar el sonido":
+        "Ativar o som",
       "en una sola herramienta": "em uma única ferramenta",
       "ElectronArt integra captura de esquemáticos, simulación SPICE, ruteo de PCB multicapa con autorouter configurable y salida de fabricación completa — Gerber con arcos reales, Excellon, IPC-2581, ODB++ — en una aplicación de escritorio rápida y sin dependencias de la nube.":
         "O ElectronArt reúne captura de esquemáticos, simulação SPICE, roteamento de PCB multicamada com autorroteador configurável e saída de fabricação completa — Gerber com arcos reais, Excellon, IPC-2581, ODB++ — em um aplicativo de desktop rápido e sem dependências de nuvem.",
@@ -2158,9 +2270,46 @@
     try { localStorage.setItem(CLAVE, lang); } catch (e) {}
     var sel = document.getElementById("selIdioma");
     if (sel && sel.value !== lang) sel.value = lang;
+    canonicalDe(lang);
+  }
+
+  /* ── Un idioma por URL (cola D9) ───────────────────────────────────────────
+     `?lang=en` y `?lang=pt` existen para que un link desde la cuenta en inglés
+     abra en inglés aunque el teléfono esté en castellano, y para que Google
+     tenga una URL por idioma (los <link hreflang> del <head> apuntan acá). */
+  function idiomaDeLaUrl() {
+    var m = /[?&]lang=([a-z]{2})\b/i.exec(location.search);
+    var l = m ? m[1].toLowerCase() : null;
+    return l && IDIOMAS[l] ? l : null;
+  }
+
+  // El canonical de la versión traducida es su propia URL con `?lang=`; el
+  // castellano queda en la URL pelada, que es lo que dice el HTML.
+  function canonicalDe(lang) {
+    var c = document.querySelector('link[rel="canonical"]');
+    if (!c) return;
+    if (!c.getAttribute("data-es")) c.setAttribute("data-es", c.getAttribute("href"));
+    var es = c.getAttribute("data-es");
+    c.setAttribute("href", lang === "es" ? es : es + "?lang=" + lang);
+  }
+
+  // Al cambiar el selector, la barra de direcciones también cambia: el link que
+  // se copia de ahí abre en el idioma que se está viendo. Conserva el resto de
+  // la query (por ejemplo `?ref=ig`) y el ancla.
+  function urlConIdioma(lang) {
+    if (!window.history || !history.replaceState) return;
+    var q = location.search.replace(/^\?/, "").split("&").filter(function (p) {
+      return p && !/^lang=/i.test(p);
+    });
+    if (lang !== "es") q.push("lang=" + lang);
+    try {
+      history.replaceState(null, "", location.pathname + (q.length ? "?" + q.join("&") : "") + location.hash);
+    } catch (e) {}
   }
 
   function elegido() {
+    var u = idiomaDeLaUrl();
+    if (u) return u;
     var g;
     try { g = localStorage.getItem(CLAVE); } catch (e) {}
     if (g && IDIOMAS[g]) return g;
@@ -2173,7 +2322,7 @@
   function iniciar() {
     var sel = document.getElementById("selIdioma");
     if (sel) {
-      sel.addEventListener("change", function () { aplicar(sel.value); });
+      sel.addEventListener("change", function () { aplicar(sel.value); urlConIdioma(sel.value); });
     }
     aplicar(elegido());
   }
