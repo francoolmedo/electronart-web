@@ -45,6 +45,8 @@
     "descarga-9.4": "https://github.com/francoolmedo/electronart-releases/releases/download/v9.4/ElectronArt-v9.4-win64.zip",
     "instalador-9.5": "https://github.com/francoolmedo/electronart-releases/releases/download/v9.5/ElectronArt-v9.5-win64-setup.exe",
     "descarga-9.5": "https://github.com/francoolmedo/electronart-releases/releases/download/v9.5/ElectronArt-v9.5-win64.zip",
+    "instalador-9.6": "https://github.com/francoolmedo/electronart-releases/releases/download/v9.6/ElectronArt-v9.6-win64-setup.exe",
+    "descarga-9.6": "https://github.com/francoolmedo/electronart-releases/releases/download/v9.6/ElectronArt-v9.6-win64.zip",
     "instalador-9.3": "https://github.com/francoolmedo/electronart-releases/releases/download/v9.3/ElectronArt-v9.3-win64-setup.exe",
     "descarga-9.3": "https://github.com/francoolmedo/electronart-releases/releases/download/v9.3/ElectronArt-v9.3-win64.zip",
     "instalador-9.2": "https://github.com/francoolmedo/electronart-releases/releases/download/v9.2/ElectronArt-v9.2-win64-setup.exe",
@@ -66,16 +68,62 @@
     // verdad y no pasan por acá.
   };
 
+  /* ── De dónde vino la visita (cola D10) ─────────────────────────────────────
+     Los links que se publican llevan `?ref=ig`, `yt`, `mail`, `reddit`, `fb`
+     (la tabla está en docs/plan/metricas-difusion.md). El ref se guarda en la
+     sesión del navegador y viaja con la persona: a las otras páginas del sitio
+     y a la tienda, la prueba y el foro, que viven en otro dominio. Sin esto,
+     una compra que empezó en Instagram llega a la tienda sin origen. */
+  var REF_OK = /^[a-z0-9_-]{1,24}$/;
+  var ref = (function () {
+    var m = /[?&]ref=([^&#]+)/i.exec(location.search);
+    var r = m ? decodeURIComponent(m[1]).toLowerCase() : "";
+    try {
+      if (REF_OK.test(r)) sessionStorage.setItem("ea_ref", r);
+      else r = sessionStorage.getItem("ea_ref") || "";
+    } catch (e) {}
+    return REF_OK.test(r) ? r : "";
+  })();
+  window.EA_REF = ref;
+
+  function esNuestro(url) {
+    return /^https:\/\/electronart\.pythonanywhere\.com\//i.test(url) ||
+           /^[\w-]+\.html(?:[?#]|$)/i.test(url);
+  }
+
+  function conRef(url) {
+    if (!ref || !esNuestro(url) || /[?&]ref=/i.test(url)) return url;
+    var i = url.indexOf("#"), ancla = i < 0 ? "" : url.slice(i);
+    var base = i < 0 ? url : url.slice(0, i);
+    return base + (base.indexOf("?") < 0 ? "?" : "&") + "ref=" + ref + ancla;
+  }
+
   document.querySelectorAll("a[data-link]").forEach(function (a) {
     var clave = a.getAttribute("data-link");
     var url = ENLACES[clave];
     if (url) {
-      a.setAttribute("href", url);
+      a.setAttribute("href", conRef(url));
       if (/^https?:/i.test(url)) {
         a.setAttribute("rel", "noopener");
       }
     }
   });
+
+  // Los links entre páginas del sitio (descargas.html, comparacion.html…) y
+  // los que arma el asistente o el feed del foro después de cargar: el ref se
+  // agrega al hacer clic, así cubre también lo que todavía no existe ahora.
+  if (ref) {
+    document.querySelectorAll("a[href]").forEach(function (a) {
+      var h = a.getAttribute("href");
+      if (h && esNuestro(h)) a.setAttribute("href", conRef(h));
+    });
+    document.addEventListener("click", function (e) {
+      var a = e.target.closest && e.target.closest("a[href]");
+      if (!a) return;
+      var h = a.getAttribute("href");
+      if (h && esNuestro(h)) a.setAttribute("href", conRef(h));
+    }, true);
+  }
 
   // Lo que quedó sin configurar no puede navegar a "#" en silencio: avisa.
   document.querySelectorAll('a[href="#"][data-pay], a[href="#"][data-link]')

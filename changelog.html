@@ -6,6 +6,11 @@
   <title>Novedades — ElectronArt</title>
   <meta name="description" content="Historial de novedades de ElectronArt, la suite EDA de Electronik Lösungen." />
   <link rel="icon" href="assets/favicon.svg" />
+  <link rel="canonical" href="https://electroniklosungen.com.ar/changelog.html" />
+  <link rel="alternate" hreflang="es" href="https://electroniklosungen.com.ar/changelog.html" />
+  <link rel="alternate" hreflang="en" href="https://electroniklosungen.com.ar/changelog.html?lang=en" />
+  <link rel="alternate" hreflang="pt" href="https://electroniklosungen.com.ar/changelog.html?lang=pt" />
+  <link rel="alternate" hreflang="x-default" href="https://electroniklosungen.com.ar/changelog.html" />
   <link rel="stylesheet" href="styles.css" />
   <style>
     .log{max-width:880px;margin:0 auto;padding:clamp(2rem,6vw,3.6rem) 20px}
@@ -52,7 +57,23 @@
     <p class="lead">Todo lo que fue ganando ElectronArt, versión a versión.</p>
 
     <div class="rel">
-      <h2>v9.5 — Triana viene incluida <span class="pill">actual</span></h2>
+      <h2>v9.6 — La placa sale prolija y la simulación, exacta <span class="pill">actual</span></h2>
+      <div class="date">Octubre 2026</div>
+      <ul>
+        <li><b>La placa arranca prolija</b>: «Actualizar PCB» coloca las piezas nuevas por circuito, juntas y dentro del contorno. Ya no quedan en una fila arriba a la izquierda.</li>
+        <li><b>Clase de red «Potencia»</b>: con un clic, las redes de alimentación (VIN, +5V, GND…) llevan pistas de 1 mm, y el autoruteo las respeta.</li>
+        <li><b>Simulación más exacta</b>: los divisores de MΩ dan el valor exacto, el op-amp funciona en transitorio y en AC, y el simulador lee valores como 4k7, 2u2, 4R7 o 1meg.</li>
+        <li><b>Analizador de espectro</b>: la vista FFT del banco mide THD, SNR, SINAD y SFDR, con cinco ventanas, escalas dBV y dBm, y marcadores de armónicos.</li>
+        <li><b>Esquemático</b>: rectángulos, líneas, flechas y notas desde Colocar ▸ Dibujo. Copiar y pegar lleva también etiquetas, buses, figuras y notas, y Ctrl+D duplica cables y etiquetas.</li>
+        <li><b>Triana con tu diseño abierto</b>: cambia valores («cambiá R1 a 1k»), conecta pines, asigna huellas y corre el ERC y el DRC en el acto, sin esperar al modelo. Los resultados se leen como texto, no como código.</li>
+        <li><b>Plugins incluidos</b>: una galería instala de un clic «Exportar a JLCPCB» (BOM y CPL con código LCSC) y «Cotizar BOM». La BOM ya no lista los rieles VCC/GND ni las fuentes ideales.</li>
+        <li><b>Fabricación y biblioteca</b>: «Exportar Gerbers» deja también el archivo de taladros (.drl). El generador de componentes arma zeners y optoacopladores (TLP250, TLP521, PS2501, PC814…) con el pinout del datasheet.</li>
+        <li><b>Más rápido y sin sustos</b>: el DRC, el netlist y la sincronización con la placa corren varias veces más rápido en diseños grandes, con los mismos resultados. Ir y volver entre Esquemático y PCB ya no deja la placa vacía al deshacer, y la pestaña PCB de un proyecto abre su placa.</li>
+      </ul>
+    </div>
+
+    <div class="rel">
+      <h2>v9.5 — Triana viene incluida</h2>
       <div class="date">Octubre 2026</div>
       <ul>
         <li><b>Triana viene incluida</b>: la IA local ya no pide instalar Ollama ni cargar claves. Tocás «Activar Triana», baja su modelo una sola vez (2,6 GB, licencia comercial Apache 2.0) y funciona sin Internet, también en la GPU integrada. Sigue en beta.</li>
@@ -67,7 +88,7 @@
       <h2>v9.4 — La placa se rutea sola</h2>
       <div class="date">Septiembre 2026</div>
       <ul>
-        <li><b>La placa se rutea sola</b>: una ESP32 de 74 conexiones queda 74 de 74 en menos de cinco segundos, con los codos a 45°, sin rodeos y sin errores de DRC. Corre aparte y la ventana no se traba.</li>
+        <li><b>La placa se rutea sola</b>: el autoruteo termina una placa ESP32 de 2 capas con los codos a 45°, sin rodeos y sin errores de DRC. Corre aparte y la ventana no se traba.</li>
         <li><b>Triana arma circuitos comunes</b> a partir de lo que le pedís (en beta), los modifica y los pasa a la placa, también con el modelo local y gratis.</li>
         <li><b>El programa te guía al abrir</b>: la hoja vacía te dice cómo empezar, las disposiciones de paneles están a un clic en la barra de estado y cada editor muestra sólo sus menús.</li>
         <li><b>Esquemático más prolijo</b>: los cables salen del pin hacia afuera y los rótulos van donde no pisan cables, sin repetirse. El ERC entiende los planos IEC y la BOM se abre bien en Excel.</li>
@@ -305,7 +326,10 @@
 <script>
 // Analítica propia de ElectronArt: sin cookies, sin terceros.
 (function(){try{
-  var d={r:location.pathname,f:document.referrer||""};
+  // ref: de qué link vino (?ref=ig|yt|mail|reddit|fb, cola D10); sigue en la sesión.
+  var m=/[?&]ref=([a-z0-9_-]{1,24})(?:&|#|$)/i.exec(location.search),rf=m?m[1].toLowerCase():"";
+  try{if(rf)sessionStorage.setItem("ea_ref",rf);else rf=sessionStorage.getItem("ea_ref")||"";}catch(_){}
+  var d={r:location.pathname,f:document.referrer||"",ref:rf};
   var b=new Blob([JSON.stringify(d)],{type:"text/plain"});
   (navigator.sendBeacon&&navigator.sendBeacon("https://electronart.pythonanywhere.com/api/v",b))||
     fetch("https://electronart.pythonanywhere.com/api/v",{method:"POST",body:JSON.stringify(d),
@@ -313,7 +337,7 @@
   document.addEventListener("click",function(e){
     var a=e.target.closest&&e.target.closest("[data-ev]");
     if(!a)return;
-    var p={r:location.pathname,f:document.referrer||"",e:a.dataset.ev};
+    var p={r:location.pathname,f:document.referrer||"",e:a.dataset.ev,ref:rf};
     navigator.sendBeacon&&navigator.sendBeacon("https://electronart.pythonanywhere.com/api/v",
       new Blob([JSON.stringify(p)],{type:"text/plain"}));
   },true);

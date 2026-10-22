@@ -6,6 +6,11 @@
   <title>Descargas — ElectronArt</title>
   <meta name="description" content="Descargá ElectronArt: enlaces de descarga, verificación SHA-256, requisitos del sistema y resolución de problemas." />
   <link rel="icon" href="assets/favicon.svg" />
+  <link rel="canonical" href="https://electroniklosungen.com.ar/descargas.html" />
+  <link rel="alternate" hreflang="es" href="https://electroniklosungen.com.ar/descargas.html" />
+  <link rel="alternate" hreflang="en" href="https://electroniklosungen.com.ar/descargas.html?lang=en" />
+  <link rel="alternate" hreflang="pt" href="https://electroniklosungen.com.ar/descargas.html?lang=pt" />
+  <link rel="alternate" hreflang="x-default" href="https://electroniklosungen.com.ar/descargas.html" />
   <link rel="stylesheet" href="styles.css" />
   <style>
     .legal{max-width:860px;margin:0 auto;padding:clamp(2rem,6vw,3.6rem) 20px;line-height:1.7;color:var(--muted)}
@@ -60,16 +65,16 @@
         <th>SHA-256</th>
       </tr>
       <tr>
-        <td><a href="#" data-link="instalador-9.5" data-ev="descargar">ElectronArt-v9.5-win64-setup.exe</a></td>
+        <td><a href="#" data-link="instalador-9.6" data-ev="descargar">ElectronArt-v9.6-win64-setup.exe</a></td>
         <td>Windows 10/11 (64 bits) — instalador</td>
-        <td>120 MB</td>
-        <td><code>967ee67ed5359ca13085042184b5c671e3445044b23fdc69cdb5d8cabb0067bb</code></td>
+        <td>122 MB</td>
+        <td><code>d2fb2f66e657ce55a88d41a3c643647fa8157ad9c9b3ca2a11be091ffcf857e2</code></td>
       </tr>
       <tr>
-        <td><a href="#" data-link="descarga-9.5" data-ev="descargar">ElectronArt-v9.5-win64.zip</a></td>
+        <td><a href="#" data-link="descarga-9.6" data-ev="descargar">ElectronArt-v9.6-win64.zip</a></td>
         <td>Windows 10/11 (64 bits) — ZIP portable</td>
-        <td>185 MB</td>
-        <td><code>03b56a09c3c4aa21141edbfd5fbc039480afcf54e9550c873ac529f53c748a7b</code></td>
+        <td>187 MB</td>
+        <td><code>5ef57451cb97aa692a869109efb7ac17d36abf65842b873c3e1af12fdc0397b8</code></td>
       </tr>
     </table>
     <!-- /AUTO:descargas -->
@@ -139,7 +144,10 @@
 <script>
 // Analítica propia de ElectronArt: sin cookies, sin terceros.
 (function(){try{
-  var d={r:location.pathname,f:document.referrer||""};
+  // ref: de qué link vino (?ref=ig|yt|mail|reddit|fb, cola D10); sigue en la sesión.
+  var m=/[?&]ref=([a-z0-9_-]{1,24})(?:&|#|$)/i.exec(location.search),rf=m?m[1].toLowerCase():"";
+  try{if(rf)sessionStorage.setItem("ea_ref",rf);else rf=sessionStorage.getItem("ea_ref")||"";}catch(_){}
+  var d={r:location.pathname,f:document.referrer||"",ref:rf};
   var b=new Blob([JSON.stringify(d)],{type:"text/plain"});
   (navigator.sendBeacon&&navigator.sendBeacon("https://electronart.pythonanywhere.com/api/v",b))||
     fetch("https://electronart.pythonanywhere.com/api/v",{method:"POST",body:JSON.stringify(d),
@@ -147,7 +155,7 @@
   document.addEventListener("click",function(e){
     var a=e.target.closest&&e.target.closest("[data-ev]");
     if(!a)return;
-    var p={r:location.pathname,f:document.referrer||"",e:a.dataset.ev};
+    var p={r:location.pathname,f:document.referrer||"",e:a.dataset.ev,ref:rf};
     navigator.sendBeacon&&navigator.sendBeacon("https://electronart.pythonanywhere.com/api/v",
       new Blob([JSON.stringify(p)],{type:"text/plain"}));
   },true);
