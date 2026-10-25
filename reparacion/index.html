@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reparación de placas de maquinaria agrícola — Electronik Lösungen</title>
+  <meta name="description" content="Electronik Lösungen, Córdoba. Diagnóstico y reparación de placas de monitores de siembra, computadoras de pulverización, controladores de dosificación, balanzas y sensores. Diseño de placas y firmware a medida. Diagnóstico sin cargo de 1 o 2 placas." />
+  <meta name="theme-color" content="#0c0e12" />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="canonical" href="https://electroniklosungen.com.ar/reparacion/" />
+  <meta property="og:title" content="Electronik Lösungen — Diagnóstico y reparación de placas" />
+  <meta property="og:description" content="Placas de maquinaria agrícola: monitores, computadoras de pulverización, controladores, balanzas y sensores. Córdoba, Argentina. Diagnóstico sin cargo de 1 o 2 placas." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://electroniklosungen.com.ar/reparacion/" />
+  <meta property="og:site_name" content="Electronik Lösungen" />
+  <meta property="og:locale" content="es_AR" />
+  <link rel="stylesheet" href="../styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Electronik Lösungen",
+    "url": "https://electroniklosungen.com.ar/reparacion/",
+    "description": "Diagnóstico y reparación de placas electrónicas de maquinaria agrícola. Diseño de placas y firmware a medida. Automatización de planta.",
+    "telephone": "+54 9 351 248-7080",
+    "email": "ventas@electroniklosungen.com.ar",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Córdoba",
+      "addressRegion": "Córdoba",
+      "addressCountry": "AR"
+    },
+    "areaServed": "AR",
+    "founder": { "@type": "Person", "name": "Franco Olmedo" },
+    "makesOffer": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Diagnóstico y reparación de placas de maquinaria agrícola"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Diseño de placas y firmware a medida"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Automatización de planta"}}
+    ]
+  }
+  </script>
+  <style>
+    /* Página de la empresa de servicios. Usa los tokens y componentes de
+       styles.css (chaflán, botones, cotas) pero sin fondo de trazas, sin
+       capturas y sin animaciones de producto: se lee como un taller. */
+    .el-nav { display: flex; align-items: center; gap: 1rem; padding: .75rem 0; }
+    .el-marca { display: flex; flex-direction: column; line-height: 1.15; min-width: 0; }
+    .el-marca strong { font-family: var(--f-title); font-size: 1.15rem; font-weight: 600; letter-spacing: .01em; }
+    .el-marca span { font-family: var(--f-data); font-size: .62rem; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--muted-2); }
+    .el-links { display: flex; gap: 1.4rem; margin-left: auto; }
+    .el-links a { color: var(--muted); font-size: .92rem; }
+    .el-links a:hover { color: var(--text); }
+    .el-nav .btn { flex: none; }
+
+    .el-hero { padding: clamp(2.6rem, 8vw, 5.5rem) 0 clamp(2.4rem, 6vw, 4rem); }
+    .el-hero-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr);
+      gap: clamp(1.6rem, 4vw, 3.2rem); align-items: start; }
+    .el-hero h1 { font-size: clamp(1.9rem, 5.2vw, 3.1rem); line-height: 1.1; text-wrap: balance; }
+    .el-hero .lead { max-width: 36em; }
+    .el-ctas { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.6rem; }
+
+    .el-oferta { background: var(--surface); border: 1px solid var(--border-2); padding: 1.5rem 1.4rem; }
+    .el-oferta .eyebrow { color: var(--gold); margin-bottom: .6rem; }
+    .el-oferta h2 { font-size: 1.35rem; line-height: 1.2; }
+    .el-oferta p { color: var(--muted); font-size: .95rem; }
+    .el-oferta p:last-child { margin-bottom: 0; }
+
+    .el-sec { padding: clamp(2.6rem, 6vw, 4.5rem) 0; border-top: 1px solid var(--border); }
+    .el-sec.alt { background: var(--bg-2); }
+    .el-sec h2 { font-size: clamp(1.5rem, 3.4vw, 2.1rem); }
+    .el-sec .intro { color: var(--muted); max-width: 46em; margin-bottom: 2rem; }
+
+    .el-servicios { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.1rem; }
+    .el-servicios .card:hover { transform: none; }
+    .el-num { font-family: var(--f-data); font-size: .72rem; letter-spacing: .2em; color: var(--gold); margin-bottom: .7rem; }
+
+    /* Lista con pads perforados, igual que en el resto del sistema. */
+    .el-lista { list-style: none; padding: 0; margin: .9rem 0 0; display: grid; gap: .45rem; }
+    .el-lista li { display: flex; gap: .65rem; align-items: flex-start; color: var(--muted); font-size: .93rem; }
+    .el-lista li::before { content: ""; flex: none; width: 10px; height: 10px; margin-top: .45rem;
+      border-radius: 50%; background: var(--bg); border: 3px solid var(--gold-lo); }
+
+    .el-equipos { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+      gap: 0; border: 1px solid var(--border); }
+    .el-equipos > div { padding: 1.1rem 1.2rem; border: 1px solid var(--border); margin: -1px 0 0 -1px; }
+    .el-equipos h3 { font-size: 1.02rem; margin-bottom: .3rem; }
+    .el-equipos p { color: var(--muted); font-size: .9rem; margin: 0; }
+
+    .el-pasos { list-style: none; padding: 0; margin: 0; counter-reset: paso; display: grid; gap: 0; }
+    .el-pasos li { counter-increment: paso; display: grid; grid-template-columns: 3.2rem minmax(0, 1fr);
+      gap: 1rem; padding: 1.1rem 0; border-top: 1px solid var(--border); }
+    .el-pasos li:last-child { border-bottom: 1px solid var(--border); }
+    .el-pasos li::before { content: counter(paso, decimal-leading-zero); font-family: var(--f-data);
+      color: var(--gold); font-size: .95rem; letter-spacing: .1em; padding-top: .1rem; }
+    .el-pasos h3 { font-size: 1.05rem; margin-bottom: .25rem; }
+    .el-pasos p { color: var(--muted); font-size: .93rem; margin: 0; }
+
+    .el-dos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.6rem, 4vw, 3rem); }
+    .el-dos p { color: var(--muted); }
+    .el-dos a.link { color: var(--gold); border-bottom: 1px solid var(--gold-lo); }
+
+    .el-contacto { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.1rem; margin-top: 1.4rem; }
+    .el-contacto .card:hover { transform: none; }
+    .el-contacto .eyebrow { margin-bottom: .4rem; }
+    .el-contacto a, .el-contacto .dato { font-family: var(--f-data); font-size: .98rem; color: var(--text);
+      overflow-wrap: anywhere; }
+    .el-contacto a:hover { color: var(--gold); }
+    .el-contacto p { margin: .4rem 0 0; color: var(--muted); font-size: .88rem; }
+
+    .el-foot { background: var(--bg-2); border-top: 1px solid var(--border); padding: 1.6rem 0;
+      color: var(--muted-2); font-size: .85rem; }
+    .el-foot .container { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .8rem; }
+    .el-foot a { color: var(--muted); }
+    .el-foot a:hover { color: var(--gold); }
+
+    @media (max-width: 940px) {
+      .el-hero-grid, .el-dos { grid-template-columns: minmax(0, 1fr); }
+      .el-servicios, .el-contacto { grid-template-columns: minmax(0, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .el-links { display: none; }
+      .el-nav { justify-content: space-between; }
+      .el-ctas .btn { width: 100%; }
+      .el-pasos li { grid-template-columns: 2.4rem minmax(0, 1fr); gap: .7rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container el-nav">
+      <a class="el-marca" href="./">
+        <strong>Electronik Lösungen</strong>
+        <span>Electrónica industrial · Córdoba</span>
+      </a>
+      <nav class="el-links" aria-label="Secciones">
+        <a href="#servicios">Servicios</a>
+        <a href="#proceso">Cómo trabajamos</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <a class="btn btn-sm btn-ghost" href="https://wa.me/5493512487080" data-ev="wa-header">WhatsApp</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="el-hero">
+      <div class="container el-hero-grid">
+        <div>
+          <p class="eyebrow">Electronik Lösungen · Córdoba, Argentina</p>
+          <h1>Diagnóstico y reparación de placas electrónicas de maquinaria agrícola</h1>
+          <p class="lead">Reparamos la electrónica de monitores de siembra, computadoras de pulverización,
+          controladores de dosificación, balanzas y sensores. También diseñamos placas y firmware a medida
+          y automatizamos procesos de planta.</p>
+          <div class="el-ctas">
+            <a class="btn btn-primary" href="https://wa.me/5493512487080?text=Hola%2C%20vi%20la%20web%20de%20Electronik%20L%C3%B6sungen.%20Tengo%20una%20placa%20para%20diagnosticar." data-ev="wa-hero">Escribir por WhatsApp</a>
+            <a class="btn btn-ghost" href="mailto:ventas@electroniklosungen.com.ar?subject=Diagn%C3%B3stico%20de%20placas" data-ev="mail-hero">Mandar un mail</a>
+          </div>
+        </div>
+        <aside class="el-oferta chaflan" aria-labelledby="oferta-titulo">
+          <p class="eyebrow">Para empezar</p>
+          <h2 id="oferta-titulo">Diagnóstico sin cargo de 1 o 2 placas</h2>
+          <p>Nos mandan una o dos placas paradas, de garantía o de posventa. Encontramos la falla y les
+          pasamos un presupuesto de reparación con plazo.</p>
+          <p>Si les sirve, seguimos. Si no, se quedan con el diagnóstico.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="el-sec alt" id="servicios">
+      <div class="container">
+        <h2>Servicios</h2>
+        <p class="intro">Trabajamos con fabricantes, concesionarios, servicios de posventa y contratistas.</p>
+        <div class="el-servicios">
+          <article class="card">
+            <p class="el-num">01</p>
+            <h3>Reparación de placas de maquinaria agrícola</h3>
+            <p>Diagnóstico a nivel componente y reparación de la electrónica de equipos de siembra,
+            pulverización y pesaje.</p>
+            <ul class="el-lista">
+              <li>Fuentes, reguladores y protecciones de entrada</li>
+              <li>Entradas de sensores y salidas a actuadores</li>
+              <li>Comunicaciones CAN, RS-232 y RS-485</li>
+              <li>Displays, teclados y conectores</li>
+            </ul>
+          </article>
+          <article class="card">
+            <p class="el-num">02</p>
+            <h3>Diseño de placas y firmware a medida</h3>
+            <p>Del requerimiento a la placa fabricada: esquemático, PCB, prototipo, firmware y pruebas.
+            También rediseñamos placas discontinuadas o sin repuesto.</p>
+            <ul class="el-lista">
+              <li>Microcontroladores y firmware embebido</li>
+              <li>Placas de control para máquinas</li>
+              <li>Documentación para fabricar en serie</li>
+            </ul>
+          </article>
+          <article class="card">
+            <p class="el-num">03</p>
+            <h3>Automatización de planta</h3>
+            <p>Tableros, control y adquisición de datos para procesos industriales y agroindustriales.</p>
+            <ul class="el-lista">
+              <li>Tableros eléctricos y de control</li>
+              <li>PLC, sensores e instrumentación</li>
+              <li>Puesta en marcha y ajustes</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="el-sec">
+      <div class="container">
+        <h2>Qué equipos reparamos</h2>
+        <p class="intro">Si su equipo no está en la lista, consúltenos igual. Para el diagnóstico nos sirve
+        saber la marca, el modelo y la falla que reporta el cliente.</p>
+        <div class="el-equipos">
+          <div><h3>Monitores de siembra</h3><p>Monitores de semilla y fertilizante, consolas de cabina.</p></div>
+          <div><h3>Computadoras de pulverización</h3><p>Control de caudal, secciones y presión.</p></div>
+          <div><h3>Controladores de dosificación</h3><p>Dosis variable, motores y control de velocidad.</p></div>
+          <div><h3>Balanzas</h3><p>Indicadores de pesaje, celdas de carga y su electrónica.</p></div>
+          <div><h3>Sensores</h3><p>Sensores de semilla, velocidad, rotación, nivel y presión.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="el-sec alt" id="proceso">
+      <div class="container">
+        <h2>Cómo trabajamos</h2>
+        <p class="intro">Cada placa sigue los mismos pasos. Antes de reparar, ustedes aprueban el presupuesto.</p>
+        <ol class="el-pasos">
+          <li><div><h3>Recepción</h3><p>Reciben la placa en Córdoba o la mandan por encomienda. Registramos
+          el equipo, el número de serie y la falla reportada.</p></div></li>
+          <li><div><h3>Diagnóstico</h3><p>Medimos la placa y encontramos la falla. Les mandamos un informe
+          breve con la causa.</p></div></li>
+          <li><div><h3>Presupuesto</h3><p>Les pasamos el costo y el plazo de la reparación. No hacemos nada
+          sin su aprobación.</p></div></li>
+          <li><div><h3>Reparación y prueba</h3><p>Reparamos y probamos la placa en banco antes de
+          devolverla.</p></div></li>
+          <li><div><h3>Garantía</h3><p>La reparación tiene 90 días de garantía.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="el-sec">
+      <div class="container el-dos">
+        <div>
+          <h2>Quién está detrás</h2>
+          <p>Electronik Lösungen es la empresa de Franco Olmedo, técnico electrónico y estudiante de
+          Ingeniería Electrónica en la UTN Facultad Regional Córdoba.</p>
+          <p>Viene de Contraut, donde diseña y fabrica placas, con su firmware, para máquinas que trabajan
+          en planta.</p>
+        </div>
+        <div>
+          <h2>Producto propio: ElectronArt</h2>
+          <p>También desarrollamos ElectronArt, un programa de diseño electrónico en castellano: esquemático,
+          simulación, diseño de PCB y tableros eléctricos.</p>
+          <p><a class="link" href="/">Conocer ElectronArt</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="el-sec alt" id="contacto">
+      <div class="container">
+        <h2>Contacto</h2>
+        <p class="intro">Escríbannos con la marca y el modelo del equipo, y la falla que tiene.
+        Les respondemos con los pasos para mandar la placa.</p>
+        <div class="el-contacto">
+          <div class="card">
+            <p class="eyebrow">WhatsApp</p>
+            <a href="https://wa.me/5493512487080" data-ev="wa-contacto">+54 9 351 248-7080</a>
+          </div>
+          <div class="card">
+            <p class="eyebrow">Mail</p>
+            <a href="mailto:ventas@electroniklosungen.com.ar" data-ev="mail-contacto">ventas@electroniklosungen.com.ar</a>
+          </div>
+          <div class="card">
+            <p class="eyebrow">Ubicación</p>
+            <span class="dato">Córdoba, Argentina</span>
+            <p>Recibimos placas de otras provincias por encomienda.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="el-foot">
+    <div class="container">
+      <span>© 2026 Electronik Lösungen · Córdoba, Argentina</span>
+      <span><a href="/">ElectronArt</a> · <a href="../privacidad.html">Privacidad</a></span>
+    </div>
+  </footer>
+
+<script>
+// Analítica propia (la misma de la landing): sin cookies, sin terceros.
+(function(){try{
+  var m=/[?&]ref=([a-z0-9_-]{1,24})(?:&|#|$)/i.exec(location.search),rf=m?m[1].toLowerCase():"";
+  var d={r:location.pathname,f:document.referrer||"",ref:rf};
+  var u="https://electronart.pythonanywhere.com/api/v";
+  (navigator.sendBeacon&&navigator.sendBeacon(u,new Blob([JSON.stringify(d)],{type:"text/plain"})))||
+    fetch(u,{method:"POST",body:JSON.stringify(d),headers:{"Content-Type":"text/plain"},keepalive:true,mode:"no-cors"});
+}catch(_){}})();
+</script>
+</body>
+</html>
